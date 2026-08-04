@@ -522,20 +522,20 @@ p{margin:0 0 1.15em}
   <div class="sec sec--sand">
     <div class="wrap">
       <div class="sec-head center rv"><span class="kicker">Kind words</span><h2>Testimonials</h2></div>
-      <!-- ⚠ PLACEHOLDERS — replace with real client quotes before launch -->
+      <!-- ⚠ SAMPLE QUOTES — replace with real client testimonials before launch -->
       <div class="grid g2">
         <div class="quote rv"><h4>Brand identity &amp; website</h4>
-          <p>"Replace this with a real quote from a client. Two or three sentences about what changed for their business works best."</p>
-          <cite>[Client name]<span>[Business name]</span></cite></div>
+          <p>"Our old site looked like it was built in 2010 — the new brand and website actually feel like us now. Customers comment on it."</p>
+          <cite>Sample review<span>Local bakery owner</span></cite></div>
         <div class="quote rv"><h4>Logo, signage &amp; web design</h4>
-          <p>"Replace this with a real quote. Specific results — more calls, faster site, easier updates — land harder than general praise."</p>
-          <cite>[Client name]<span>[Business name]</span></cite></div>
+          <p>"We went from no consistent look across our storefront, van and social pages to one clean identity everywhere. Easy process, fast turnaround."</p>
+          <cite>Sample review<span>Landscaping company owner</span></cite></div>
         <div class="quote rv"><h4>Custom booking app</h4>
-          <p>"Replace this with a real quote. Mentioning the problem they had before you started makes it far more persuasive."</p>
-          <cite>[Client name]<span>[Business name]</span></cite></div>
+          <p>"We were juggling phone calls and a paper calendar. The booking app cut our no-shows in half and gave us our evenings back."</p>
+          <cite>Sample review<span>Fitness studio owner</span></cite></div>
         <div class="quote rv"><h4>SEO &amp; online presence</h4>
-          <p>"Replace this with a real quote. If they gave you a number, use the number."</p>
-          <cite>[Client name]<span>[Business name]</span></cite></div>
+          <p>"We went from page three of search results to showing up first for the searches that actually bring in customers."</p>
+          <cite>Sample review<span>Boutique retail owner</span></cite></div>
       </div>
     </div>
   </div>
@@ -885,9 +885,10 @@ function svcHTML(s,i){return '<a class="box rv" href="'+s.h+'"><div class="box-i
 document.getElementById('svcBoxes').innerHTML=SERVICES.map(svcHTML).join('');
 document.getElementById('svcBoxes2').innerHTML=SERVICES.map(svcHTML).join('');
 
-document.getElementById('caseGrid').innerHTML=[1,2,3,4].map(function(n,i){
+var CASES=['Bakery Rebrand & Site','Fitness Studio Booking App','Boutique Retail SEO Turnaround','Landscaping Co. Identity'];
+document.getElementById('caseGrid').innerHTML=CASES.map(function(n,i){
  return '<a class="case rv" href="#/portfolio">'+art(i+1,'sq')
-  +'<span class="case-label"><small>Case Study</small><strong>Project '+n+'</strong></span></a>';}).join('');
+  +'<span class="case-label"><small>Case Study</small><strong>'+n+'</strong></span></a>';}).join('');
 
 document.getElementById('retGrid').innerHTML=[
  {t:'Online Presence',d:'Ongoing SEO, listings and content so you keep climbing instead of plateauing after launch.'},
@@ -896,22 +897,24 @@ document.getElementById('retGrid').innerHTML=[
 ].map(function(r,i){return '<a class="box rv" href="#/contact"><div class="box-img">'+art(i,'wide')+'</div>'
  +'<div class="box-body"><h3>'+r.t+'</h3><p>'+r.d+'</p><span class="more">Learn More →</span></div></a>';}).join('');
 
+var LOGOS=['Coffee Roaster','Dental Practice','Boutique Hotel','Yoga Studio','Law Firm','Bakery',
+ 'Landscaping Co.','Auto Shop','Hair Salon','Nonprofit','Retail Boutique','Tech Startup'];
 document.getElementById('logoGrid').innerHTML=
- Array.from({length:12},function(){return '<div class="logo-cell">Your Client</div>';}).join('');
+ LOGOS.map(function(l){return '<div class="logo-cell">'+l+'</div>';}).join('');
 
 /* ══════ PORTFOLIO ══════
    ▼▼ REPLACE WITH YOUR OWN PROJECTS ▼▼
    Add img:'shots/name.jpg' to any item to use a real screenshot. */
 var CATS=['All','Branding','Logo &amp; Identity','Website Development','App Development','Online Presence','Photography','Video'];
 var WORK=[
- {n:'Project One',c:'Website Development'},{n:'Project Two',c:'Branding'},
- {n:'Project Three',c:'App Development'},{n:'Project Four',c:'Logo &amp; Identity'},
- {n:'Project Five',c:'Website Development'},{n:'Project Six',c:'Online Presence'},
- {n:'Project Seven',c:'Branding'},{n:'Project Eight',c:'Photography'},
- {n:'Project Nine',c:'Website Development'},{n:'Project Ten',c:'Video'},
- {n:'Project Eleven',c:'App Development'},{n:'Project Twelve',c:'Logo &amp; Identity'},
- {n:'Project Thirteen',c:'Branding'},{n:'Project Fourteen',c:'Website Development'},
- {n:'Project Fifteen',c:'Online Presence'},{n:'Project Sixteen',c:'Photography'}
+ {n:'Coffee Roaster Website',c:'Website Development'},{n:'Bakery Brand Refresh',c:'Branding'},
+ {n:'Fitness Studio Booking App',c:'App Development'},{n:'Dental Practice Logo',c:'Logo &amp; Identity'},
+ {n:'Boutique Hotel Site',c:'Website Development'},{n:'Retail Boutique SEO',c:'Online Presence'},
+ {n:'Landscaping Co. Identity',c:'Branding'},{n:'Product Photography Set',c:'Photography'},
+ {n:'Law Firm Website',c:'Website Development'},{n:'Brand Story Video',c:'Video'},
+ {n:'Salon Booking App',c:'App Development'},{n:'Nonprofit Logo &amp; Icon Set',c:'Logo &amp; Identity'},
+ {n:'Auto Shop Rebrand',c:'Branding'},{n:'Yoga Studio Website',c:'Website Development'},
+ {n:'Local Search Turnaround',c:'Online Presence'},{n:'Storefront Photography',c:'Photography'}
 ];
 (function(){
  var g=document.getElementById('pfGrid'),f=document.getElementById('filters');
