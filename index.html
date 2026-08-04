@@ -937,6 +937,9 @@ var WORK=[
      links=document.querySelectorAll('.nav-link'),
      burger=document.getElementById('burger'),
      drawer=document.getElementById('drawer');
+ var io=new IntersectionObserver(function(es){es.forEach(function(e){
+  if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.1});
+ function scan(){document.querySelectorAll('.page.on .rv:not(.in)').forEach(function(el){io.observe(el);});}
  function shut(){drawer.classList.remove('on');burger.classList.remove('on');
   burger.setAttribute('aria-expanded','false');document.body.style.overflow='';}
  function route(){
@@ -959,9 +962,6 @@ var WORK=[
    document.getElementById(b.dataset.t).classList.toggle('on');
    b.querySelector('.plus').classList.toggle('on');});});
  drawer.querySelectorAll('a').forEach(function(a){a.addEventListener('click',shut);});
- var io=new IntersectionObserver(function(es){es.forEach(function(e){
-  if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.1});
- function scan(){document.querySelectorAll('.page.on .rv:not(.in)').forEach(function(el){io.observe(el);});}
 })();
 
 document.querySelectorAll('.faq-q').forEach(function(q){
