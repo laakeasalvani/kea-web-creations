@@ -814,9 +814,9 @@ p{margin:0 0 1.15em}
 /* ══════ WAVE HERO ══════ */
 (function(){
   var cv=document.getElementById('wave'); if(!cv) return;
-  var ctx=cv.getContext('2d'), reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
   var vid=document.getElementById('heroVid');
-  if(vid&&vid.getAttribute('src')) vid.classList.add('on');
+  if(vid&&vid.getAttribute('src')){vid.classList.add('on');cv.style.display='none';return;}
+  var ctx=cv.getContext('2d'), reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
   var w,h,dpr;
   function size(){dpr=Math.min(devicePixelRatio||1,2);w=cv.offsetWidth;h=cv.offsetHeight;
     cv.width=w*dpr;cv.height=h*dpr;ctx.setTransform(dpr,0,0,dpr,0,0);}
