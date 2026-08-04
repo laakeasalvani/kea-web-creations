@@ -168,6 +168,63 @@ a { color: inherit; text-decoration: none; }
 .hero h1 { font-size: clamp(2.25rem, 6vw, 3.75rem); margin-bottom: var(--space-3); }
 .hero p { font-size: 1.15rem; color: rgba(255,255,255,0.85); margin-bottom: var(--space-4); }
 .hero-ctas { display: flex; flex-wrap: wrap; gap: var(--space-2); justify-content: center; }
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: var(--space-4);
+}
+.card {
+  background: var(--color-bg-alt);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: var(--space-4);
+  box-shadow: var(--shadow);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.card:hover { transform: translateY(-6px); box-shadow: 0 16px 34px rgba(11, 61, 69, 0.18); }
+.card-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: rgba(31, 111, 74, 0.12);
+  color: var(--color-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  margin-bottom: var(--space-2);
+}
+.card h3 { margin-bottom: var(--space-1); font-size: 1.2rem; }
+.card p { color: var(--color-text-muted); }
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--space-4);
+  counter-reset: step;
+}
+.step { position: relative; padding-top: var(--space-5); }
+.step::before {
+  counter-increment: step;
+  content: counter(step);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 700;
+}
+.step h3 { margin-bottom: var(--space-1); font-size: 1.1rem; }
+.step p { color: var(--color-text-muted); }
+.section-alt { background: var(--color-bg-alt); }
 </style>
 </head>
 <body>
@@ -198,6 +255,61 @@ a { color: inherit; text-decoration: none; }
     </div>
   </div>
 </header>
+
+<main>
+<section class="section" id="services">
+  <div class="container">
+    <div class="section-header reveal">
+      <h2 class="section-title">What I Can Build For You</h2>
+      <p class="section-subtitle" style="margin-left:auto;margin-right:auto;">Whether you're starting from scratch or need a fresh start, here's how I help.</p>
+    </div>
+    <div class="card-grid">
+      <div class="card reveal">
+        <div class="card-icon">&#128187;</div>
+        <h3>Custom Business Websites</h3>
+        <p>A site built around your business, not a generic template &mdash; designed to turn visitors into customers.</p>
+      </div>
+      <div class="card reveal">
+        <div class="card-icon">&#10024;</div>
+        <h3>Website Redesigns</h3>
+        <p>Outdated or hard to use? I'll rebuild it with modern design, faster load times, and mobile-friendly layouts.</p>
+      </div>
+      <div class="card reveal">
+        <div class="card-icon">&#128736;&#65039;</div>
+        <h3>Ongoing Maintenance &amp; Support</h3>
+        <p>Updates, fixes, and hosting help after launch, so your site keeps working while you run your business.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt" id="process">
+  <div class="container">
+    <div class="section-header reveal">
+      <h2 class="section-title">How It Works</h2>
+      <p class="section-subtitle" style="margin-left:auto;margin-right:auto;">A simple, low-stress process from first email to launch day.</p>
+    </div>
+    <div class="steps">
+      <div class="step reveal">
+        <h3>Discover</h3>
+        <p>We talk through your goals, your customers, and what your current site is missing.</p>
+      </div>
+      <div class="step reveal">
+        <h3>Design</h3>
+        <p>You'll see a real design of your site before any heavy building begins &mdash; no surprises.</p>
+      </div>
+      <div class="step reveal">
+        <h3>Build</h3>
+        <p>I build the site to be fast, responsive, and easy for you to update later.</p>
+      </div>
+      <div class="step reveal">
+        <h3>Launch &amp; Support</h3>
+        <p>We launch together, and I stay available for updates and questions after.</p>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
 
 </body>
 </html>
