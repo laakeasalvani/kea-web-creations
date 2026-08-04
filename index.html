@@ -1,614 +1,972 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pacific Web Design | Websites That Work as Hard as You Do</title>
-<meta name="description" content="Pacific Web Design builds custom websites for businesses in Beaverton, Oregon and beyond. Book a free consultation or get a quote today.">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kea Web Creations — Brand &amp; Website Design</title>
+<meta name="description" content="Modern websites, branding, online visibility and custom apps — built to grow your business and make waves.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&family=Sacramento&display=swap" rel="stylesheet">
 <style>
-:root {
-  --color-bg: #f7faf9;
-  --color-bg-alt: #ffffff;
-  --color-surface: #eef4f3;
-  --color-primary: #0b3d45;
-  --color-primary-light: #0f5964;
-  --color-secondary: #1f6f4a;
-  --color-accent: #ff8b5e;
-  --color-accent-dark: #e5713f;
-  --color-text: #10262a;
-  --color-text-muted: #4c6167;
-  --color-border: #dbe6e4;
-  --font-display: 'Poppins', system-ui, sans-serif;
-  --font-body: 'Inter', system-ui, sans-serif;
-  --radius: 14px;
-  --shadow: 0 10px 30px rgba(11, 61, 69, 0.12);
-  --container-width: 1120px;
-  --space-1: 0.5rem;
-  --space-2: 1rem;
-  --space-3: 1.5rem;
-  --space-4: 2rem;
-  --space-5: 3rem;
-  --space-6: 4rem;
-  --space-7: 6rem;
-  --space-8: 8rem;
-}
-* { box-sizing: border-box; margin: 0; padding: 0; }
-body {
-  font-family: var(--font-body);
-  color: var(--color-text);
-  background: var(--color-bg);
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
-}
-h1, h2, h3, h4 { font-family: var(--font-display); line-height: 1.15; }
-img { max-width: 100%; display: block; }
-a { color: inherit; text-decoration: none; }
-.container {
-  max-width: var(--container-width);
-  margin: 0 auto;
-  padding: 0 var(--space-3);
-}
-.section { padding: var(--space-7) 0; }
-.section-title { font-size: clamp(1.75rem, 4vw, 2.5rem); margin-bottom: var(--space-2); }
-.section-subtitle { color: var(--color-text-muted); max-width: 640px; margin-bottom: var(--space-5); font-size: 1.05rem; }
-.section-header { text-align: center; }
-.section-header .section-subtitle { margin-left: auto; margin-right: auto; }
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  padding: 0.9rem 1.6rem;
-  border-radius: 999px;
-  font-weight: 600;
-  font-size: 1rem;
-  border: 2px solid transparent;
-  cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
-}
-.btn-primary {
-  background: var(--color-accent);
-  color: var(--color-text);
-  box-shadow: 0 8px 20px rgba(255, 139, 94, 0.35);
-}
-.btn-primary:hover { background: var(--color-accent-dark); transform: translateY(-2px); }
-.btn-secondary {
-  background: transparent;
-  border-color: rgba(255, 255, 255, 0.6);
-  color: inherit;
-}
-.btn-secondary:hover { background: rgba(255, 255, 255, 0.12); transform: translateY(-2px); }
+/* ═══════════════════════════════════════════════════════════
+   KEA WEB CREATIONS
+   ── CHANGE YOUR COLORS HERE ─────────────────────────────
+   --bar     = dark header / footer / banner background
+   --accent  = logo tile, buttons, periods, highlights
+   Alternates to try:
+     Navy + sea glass (current)  #16203D / #58B0A8
+     Plum + rose gold            #2A2244 / #C98A7A
+     Ink + coral                 #17262B / #E2705A
+     Forest + sand               #14312A / #CFA85F
+     Charcoal + electric blue    #1C1F26 / #4C8DF5
+   ═══════════════════════════════════════════════════════════ */
+:root{
+  --bar:#16203D;
+  --bar-2:#1D2B4F;
+  --accent:#58B0A8;
+  --accent-dk:#3E8E87;
 
-/* Nav */
-.nav {
-  position: sticky;
-  top: 0;
-  z-index: 50;
-  background: rgba(247, 250, 249, 0.9);
-  border-bottom: 1px solid var(--color-border);
-}
-.nav .container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding-top: var(--space-2);
-  padding-bottom: var(--space-2);
-}
-.nav-logo { font-family: var(--font-display); font-weight: 700; font-size: 1.25rem; color: var(--color-primary); }
-.nav-logo span { color: var(--color-accent); }
-.nav-links {
-  display: flex;
-  align-items: center;
-  gap: var(--space-4);
-  list-style: none;
-}
-.nav-links a:not(.btn) {
-  font-weight: 500;
-  color: var(--color-text-muted);
-}
-.nav-links a:not(.btn):hover { color: var(--color-primary); }
-.nav-toggle {
-  position: absolute;
-  opacity: 0;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-}
-.nav-toggle:focus-visible ~ .nav-toggle-label {
-  outline: 2px solid var(--color-accent);
-  outline-offset: 2px;
-}
-.nav-toggle-label {
-  display: none;
-  flex-direction: column;
-  gap: 5px;
-  cursor: pointer;
-}
-.nav-toggle-label span { width: 26px; height: 3px; background: var(--color-primary); border-radius: 2px; }
+  --ink:#1B2233;
+  --soft:#5C6577;
+  --paper:#fff;
+  --sand:#F6F4F0;
+  --line:#E5E1DA;
 
-@media (max-width: 1024px) {
-  .nav-links {
-    position: fixed;
-    inset: 64px 0 0 0;
-    background: var(--color-bg-alt);
-    flex-direction: column;
-    align-items: flex-start;
-    padding: var(--space-4);
-    gap: var(--space-3);
-    transform: translateY(-120%);
-    transition: transform 0.3s ease;
-    border-bottom: 1px solid var(--color-border);
-    visibility: hidden;
-  }
-  .nav-toggle:checked ~ .nav-links { transform: translateY(0); visibility: visible; }
-  .nav-toggle-label { display: flex; }
+  --serif:"Playfair Display",Georgia,serif;
+  --sans:"Poppins",system-ui,sans-serif;
+  --script:"Sacramento",cursive;
+
+  --bar-h:84px;
+  --tile-w:132px;
+  --tile-h:150px;
+  --pad:clamp(18px,4.5vw,56px);
+  --maxw:1240px;
 }
 
-/* Hero */
-.hero {
-  position: relative;
-  overflow: hidden;
-  color: #fff;
-  background: linear-gradient(120deg, var(--color-primary), var(--color-primary-light), var(--color-secondary));
-  background-size: 200% 200%;
-  animation: heroShift 12s ease infinite;
-  padding: var(--space-8) 0 var(--space-7);
-}
-@keyframes heroShift {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-.hero .container { position: relative; z-index: 1; max-width: 780px; text-align: center; margin: 0 auto; }
-.hero-eyebrow {
-  display: inline-block;
-  background: rgba(255,255,255,0.15);
-  padding: 0.4rem 1rem;
-  border-radius: 999px;
-  font-size: 0.85rem;
-  font-weight: 600;
-  letter-spacing: 0.02em;
-  margin-bottom: var(--space-3);
-}
-.hero h1 { font-size: clamp(2.25rem, 6vw, 3.75rem); margin-bottom: var(--space-3); }
-.hero p { font-size: 1.15rem; color: rgba(255,255,255,0.85); margin-bottom: var(--space-4); }
-.hero-ctas { display: flex; flex-wrap: wrap; gap: var(--space-2); justify-content: center; }
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:var(--sans);font-weight:300;font-size:16px;line-height:1.75;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
 
-.card-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: var(--space-4);
-}
-.card {
-  background: var(--color-bg-alt);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius);
-  padding: var(--space-4);
-  box-shadow: var(--shadow);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-.card:hover { transform: translateY(-6px); box-shadow: 0 16px 34px rgba(11, 61, 69, 0.18); }
-.card-icon {
-  width: 48px;
-  height: 48px;
-  border-radius: 12px;
-  background: rgba(31, 111, 74, 0.12);
-  color: var(--color-secondary);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.4rem;
-  margin-bottom: var(--space-2);
-}
-.card h3 { margin-bottom: var(--space-1); font-size: 1.2rem; }
-.card p { color: var(--color-text-muted); }
+h1,h2,h3{font-family:var(--serif);font-weight:500;margin:0;line-height:1.16}
+h1{font-size:clamp(2.1rem,4.4vw,3.3rem)}
+h2{font-size:clamp(1.8rem,3.4vw,2.7rem)}
+h3{font-size:clamp(1.15rem,1.8vw,1.45rem)}
+h4,h5{font-family:var(--sans);margin:0}
+p{margin:0 0 1.15em}
+/* the accent period, as in the reference */
+.dot{color:var(--accent)}
 
-.steps {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: var(--space-4);
-  counter-reset: step;
-}
-.step { position: relative; padding-top: var(--space-5); }
-.step::before {
-  counter-increment: step;
-  content: counter(step);
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  background: var(--color-primary);
-  color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--font-display);
-  font-weight: 700;
-}
-.step h3 { margin-bottom: var(--space-1); font-size: 1.1rem; }
-.step p { color: var(--color-text-muted); }
-.section-alt { background: var(--color-surface); }
-.price-card { display: flex; flex-direction: column; text-align: left; }
-.price-card.featured {
-  border-color: var(--color-accent);
-  box-shadow: 0 16px 34px rgba(255, 139, 94, 0.25);
-  transform: scale(1.03);
-}
-.price-card.featured:hover { transform: scale(1.03) translateY(-6px); }
-.price-card .badge {
-  align-self: flex-start;
-  background: var(--color-accent);
-  color: var(--color-text);
-  font-size: 0.75rem;
-  font-weight: 700;
-  padding: 0.25rem 0.75rem;
-  border-radius: 999px;
-  margin-bottom: var(--space-2);
-}
-.price { font-family: var(--font-display); font-size: 2.25rem; margin: var(--space-1) 0 var(--space-2); }
-.price span { font-size: 1rem; font-family: var(--font-body); color: var(--color-text-muted); font-weight: 400; }
-.price-features { list-style: none; margin: var(--space-3) 0; flex-grow: 1; }
-.price-features li { padding: 0.4rem 0; color: var(--color-text-muted); }
-.price-features li::before { content: "\2713"; color: var(--color-secondary); font-weight: 700; margin-right: 0.5rem; }
-.price-card .btn { width: 100%; }
-.about-grid {
-  display: grid;
-  grid-template-columns: 220px 1fr;
-  gap: var(--space-5);
-  align-items: center;
-}
-.about-photo {
-  width: 100%;
-  aspect-ratio: 1 / 1;
-  border-radius: var(--radius);
-  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-  font-family: var(--font-display);
-  font-size: 3rem;
-  font-weight: 700;
-}
-.about-copy h2 { margin-bottom: var(--space-2); }
-.about-copy p { color: var(--color-text-muted); margin-bottom: var(--space-2); }
-@media (max-width: 640px) {
-  .about-grid { grid-template-columns: 1fr; text-align: center; }
-  .about-photo { max-width: 180px; margin: 0 auto; }
-}
-.testimonial-card { font-style: italic; color: var(--color-text); }
-.testimonial-card .stars { color: var(--color-accent); margin-bottom: var(--space-2); font-style: normal; }
-.testimonial-card .attribution { margin-top: var(--space-3); font-style: normal; font-weight: 600; color: var(--color-text-muted); }
+.wrap{max-width:var(--maxw);margin:0 auto;padding-inline:var(--pad)}
+.sec{padding-block:clamp(56px,7.5vw,104px)}
+.sec--sand{background:var(--sand)}
+.sec--bar{background:var(--bar);color:#fff}
+.sec--bar h2{color:#fff}
+.sec--bar .sub{color:rgba(255,255,255,.72)}
+.center{text-align:center}
+.center .sub{margin-inline:auto}
+.kicker{font-family:var(--sans);font-size:.7rem;font-weight:600;letter-spacing:.22em;
+  text-transform:uppercase;color:var(--accent);display:block;margin-bottom:14px}
+.sub{color:var(--soft);font-size:1.02rem;max-width:66ch;font-weight:300}
+.sec-head{margin-bottom:clamp(30px,4vw,52px)}
+.sec-head h2{margin-bottom:14px}
 
-.faq-list { max-width: 760px; margin: 0 auto; display: flex; flex-direction: column; gap: var(--space-2); }
-.faq-item {
-  background: var(--color-bg-alt);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius);
-  padding: var(--space-3);
-}
-.faq-item summary {
-  cursor: pointer;
-  font-weight: 600;
-  font-family: var(--font-display);
-  list-style: none;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.faq-item summary::-webkit-details-marker { display: none; }
-.faq-item summary::after { content: "+"; font-size: 1.4rem; color: var(--color-accent); }
-.faq-item[open] summary::after { content: "\2212"; }
-.faq-item p { color: var(--color-text-muted); margin-top: var(--space-2); }
+/* ── BUTTONS (flat rectangles, uppercase, letterspaced) ── */
+.btn{display:inline-block;padding:18px 40px;font-family:var(--sans);font-weight:500;
+  font-size:.82rem;letter-spacing:.13em;text-transform:uppercase;transition:background .25s,color .25s,border-color .25s}
+.btn--fill{background:var(--accent);color:#fff}
+.btn--fill:hover{background:var(--accent-dk)}
+.btn--out{border:1px solid var(--accent);color:var(--accent)}
+.btn--out:hover{background:var(--accent);color:#fff}
+.btn--white{border:1px solid rgba(255,255,255,.8);color:#fff}
+.btn--white:hover{background:#fff;color:var(--bar)}
+.more{display:inline-block;font-family:var(--sans);font-weight:500;font-size:.78rem;
+  letter-spacing:.1em;text-transform:uppercase;color:var(--accent);transition:letter-spacing .2s}
+.more:hover{letter-spacing:.16em}
 
-.cta-banner {
-  background: linear-gradient(120deg, var(--color-primary), var(--color-secondary));
-  color: #fff;
-  text-align: center;
-  padding: var(--space-6) 0;
+/* ══════ HEADER: dark bar, nav split around a hanging logo tile ══════ */
+.bar{position:fixed;inset:0 0 auto;height:var(--bar-h);background:var(--bar);z-index:400}
+.bar-in{max-width:1560px;margin:0 auto;height:100%;padding-inline:var(--pad);
+  display:flex;align-items:center;justify-content:space-between;gap:12px}
+.nav{display:flex;align-items:center;gap:clamp(10px,2.6vw,46px);flex:1}
+.nav--r{justify-content:flex-end}
+.nav-item{position:relative}
+.nav-link{display:flex;align-items:center;gap:8px;padding:30px 0;color:#fff;
+  font-family:var(--sans);font-weight:400;font-size:.86rem;letter-spacing:.06em;
+  text-transform:uppercase;white-space:nowrap;transition:color .2s}
+.nav-item:hover>.nav-link,.nav-link.on{color:var(--accent)}
+.caret{width:7px;height:7px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;
+  transform:translateY(-3px) rotate(45deg);transition:transform .25s}
+.nav-item:hover .caret{transform:translateY(1px) rotate(225deg)}
+
+.dropdown{position:absolute;top:100%;left:50%;transform:translate(-50%,10px);min-width:296px;
+  background:var(--bar-2);padding:8px 0;opacity:0;visibility:hidden;
+  box-shadow:0 22px 50px rgba(0,0,0,.4);transition:opacity .2s,transform .2s,visibility .2s}
+.nav-item:hover .dropdown,.nav-item:focus-within .dropdown{opacity:1;visibility:visible;transform:translate(-50%,0)}
+.dropdown a{display:block;padding:12px 24px;color:rgba(255,255,255,.82);font-size:.86rem;
+  font-weight:300;transition:background .18s,color .18s,padding-left .18s}
+.dropdown a:hover{background:rgba(255,255,255,.07);color:var(--accent);padding-left:31px}
+
+/* the tile — centered, overhangs below the bar */
+.tile{position:absolute;left:50%;top:0;transform:translateX(-50%);
+  width:var(--tile-w);height:var(--tile-h);background:var(--accent);z-index:2;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;
+  transition:background .25s}
+.tile:hover{background:var(--accent-dk)}
+.tile-script{font-family:var(--script);font-size:3.5rem;color:#fff;line-height:.85;
+  transform:rotate(-4deg);text-shadow:0 1px 6px rgba(0,0,0,.14)}
+.tile-sub{font-family:var(--sans);font-weight:500;font-size:.44rem;letter-spacing:.28em;
+  text-transform:uppercase;color:rgba(255,255,255,.94);margin-top:8px}
+
+.flags{display:flex;gap:8px;margin-left:22px}
+.flags span{width:22px;height:15px;border-radius:2px;display:block;background-size:cover;opacity:.9}
+.burger{display:none;width:42px;height:42px;position:relative}
+.burger span{position:absolute;left:9px;right:9px;height:2px;background:#fff;transition:.3s}
+.burger span:nth-child(1){top:14px}.burger span:nth-child(2){top:20px}.burger span:nth-child(3){top:26px}
+.burger.on span:nth-child(1){top:20px;transform:rotate(45deg)}
+.burger.on span:nth-child(2){opacity:0}
+.burger.on span:nth-child(3){top:20px;transform:rotate(-45deg)}
+
+.drawer{position:fixed;inset:var(--bar-h) 0 0;background:var(--bar);z-index:390;overflow-y:auto;
+  padding:12px var(--pad) 60px;transform:translateX(102%);transition:transform .34s cubic-bezier(.5,0,.2,1)}
+.drawer.on{transform:none}
+.drawer-row{display:flex;justify-content:space-between;align-items:center;width:100%;text-align:left;
+  padding:18px 0;border-bottom:1px solid rgba(255,255,255,.14);color:#fff;
+  font-family:var(--sans);font-weight:400;font-size:.95rem;letter-spacing:.07em;text-transform:uppercase}
+.drawer-sub{max-height:0;overflow:hidden;transition:max-height .34s ease;background:rgba(0,0,0,.22)}
+.drawer-sub.on{max-height:340px}
+.drawer-sub a{display:block;padding:13px 20px;color:rgba(255,255,255,.75);font-size:.9rem;
+  border-bottom:1px solid rgba(255,255,255,.08)}
+.plus{color:var(--accent);font-size:1.3rem;transition:transform .3s}
+.plus.on{transform:rotate(45deg)}
+
+/* ══════ HERO ══════ */
+.hero{position:relative;height:100svh;min-height:600px;display:flex;align-items:center;
+  justify-content:center;overflow:hidden;text-align:center}
+#wave,.hero-vid{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+.hero-vid{display:none}
+.hero-vid.on{display:block}
+.hero::after{content:"";position:absolute;inset:0;z-index:1;
+  background:linear-gradient(180deg,rgba(22,32,61,.62),rgba(22,32,61,.34) 45%,rgba(22,32,61,.7))}
+.hero .wrap{position:relative;z-index:2;color:#fff;padding-top:var(--bar-h)}
+.hero h1{font-family:var(--serif);font-weight:400;color:#fff;
+  font-size:clamp(2.3rem,6.4vw,5rem);line-height:1.12;letter-spacing:-.005em;
+  text-shadow:0 2px 26px rgba(0,0,0,.34)}
+.hero .tagline{font-family:var(--serif);font-weight:400;font-size:clamp(1.5rem,3.6vw,2.7rem);
+  margin:26px 0 26px;color:#fff}
+.hero .hero-sub{font-family:var(--sans);font-weight:300;font-size:clamp(.96rem,1.4vw,1.12rem);
+  color:rgba(255,255,255,.92);max-width:52ch;margin:0 auto 40px;line-height:1.7}
+.down{position:absolute;left:50%;bottom:26px;transform:translateX(-50%);z-index:3;
+  width:40px;height:40px;border:1px solid rgba(255,255,255,.6);border-radius:50%;
+  display:grid;place-items:center;color:#fff;animation:bob 2.2s ease-in-out infinite}
+.down::before{content:"";width:9px;height:9px;border-right:1.6px solid;border-bottom:1.6px solid;
+  transform:translateY(-2px) rotate(45deg)}
+@keyframes bob{0%,100%{transform:translate(-50%,0)}50%{transform:translate(-50%,8px)}}
+
+/* ══════ PAGES ══════ */
+.page{display:none}
+.page.on{display:block}
+.page-banner{background:var(--bar);color:#fff;text-align:center;
+  padding:calc(var(--bar-h) + clamp(52px,7vw,96px)) 0 clamp(52px,7vw,96px)}
+.page-banner h1{color:#fff}
+.page-banner .sub{color:rgba(255,255,255,.74);margin:16px auto 0}
+
+/* ══════ GRIDS / CARDS ══════ */
+.grid{display:grid;gap:clamp(18px,2.4vw,30px)}
+.g2{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+.g3{grid-template-columns:repeat(auto-fit,minmax(285px,1fr))}
+.g4{grid-template-columns:repeat(auto-fit,minmax(215px,1fr))}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,5vw,76px);align-items:center}
+
+.box{background:#fff;border:1px solid var(--line);display:flex;flex-direction:column;overflow:hidden;
+  transition:box-shadow .3s,transform .3s}
+.box:hover{box-shadow:0 18px 42px rgba(27,34,51,.14);transform:translateY(-4px)}
+.box-img{aspect-ratio:16/9;position:relative;overflow:hidden;background:var(--sand)}
+.box-img svg,.box-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .55s}
+.box:hover .box-img svg,.box:hover .box-img img{transform:scale(1.06)}
+.box-body{padding:26px 26px 30px;display:flex;flex-direction:column;flex:1}
+.box-body h3{margin-bottom:12px}
+.box-body p{color:var(--soft);font-size:.92rem;flex:1}
+.box-body .more{margin-top:16px;align-self:flex-start}
+
+.case{position:relative;aspect-ratio:1;overflow:hidden;display:block;background:var(--sand)}
+.case svg,.case img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .55s}
+.case:hover svg,.case:hover img{transform:scale(1.07)}
+.case-label{position:absolute;inset:auto 0 0;z-index:2;padding:22px 20px;color:#fff;
+  background:linear-gradient(transparent,rgba(15,22,42,.9))}
+.case-label small{font-family:var(--sans);font-weight:500;font-size:.64rem;letter-spacing:.18em;
+  text-transform:uppercase;opacity:.86;display:block}
+.case-label strong{font-family:var(--serif);font-weight:500;font-size:1.1rem;display:block;margin-top:4px}
+
+.ba{display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,3vw,44px)}
+.ba-col h4{font-size:.74rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--accent);margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid var(--line)}
+.ba-col ul{list-style:none;margin:0;padding:0}
+.ba-col li{padding:13px 0;border-bottom:1px solid var(--line);font-size:.92rem;color:var(--soft);
+  display:flex;gap:11px;align-items:center}
+.ba-col li::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--accent);flex-shrink:0}
+
+.logos{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:1px;
+  background:var(--line);border:1px solid var(--line)}
+.logo-cell{background:#fff;aspect-ratio:3/2;display:grid;place-items:center;font-size:.66rem;
+  font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:#BDB8AF;transition:.25s}
+.logo-cell:hover{color:var(--accent);background:var(--sand)}
+
+.tools{display:flex;flex-wrap:wrap;justify-content:center;gap:11px}
+.tool{padding:10px 22px;border:1px solid var(--line);background:#fff;font-size:.78rem;
+  font-weight:400;color:var(--soft)}
+
+.quote{background:#fff;border:1px solid var(--line);padding:30px 28px;position:relative}
+.quote::before{content:"”";position:absolute;top:2px;right:20px;font-family:var(--serif);
+  font-size:5rem;color:var(--accent);opacity:.17;line-height:1}
+.quote h4{font-size:.88rem;font-weight:600;color:var(--accent);margin-bottom:12px}
+.quote p{font-family:var(--serif);font-size:1rem;color:var(--soft);font-style:italic;line-height:1.65}
+.quote cite{font-style:normal;font-weight:500;font-size:.82rem;display:block;margin-top:14px}
+.quote cite span{display:block;font-weight:300;font-size:.76rem;color:var(--soft)}
+
+.checks{list-style:none;padding:0;margin:0}
+.checks li{position:relative;padding:14px 0 14px 34px;border-bottom:1px solid var(--line);
+  color:var(--soft);font-size:.94rem}
+.checks li::before{content:"";position:absolute;left:2px;top:22px;width:13px;height:7px;
+  border-left:2px solid var(--accent);border-bottom:2px solid var(--accent);transform:rotate(-45deg)}
+.checks li strong{color:var(--ink);font-weight:500}
+
+/* ══════ PORTFOLIO ══════ */
+.filters{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-bottom:clamp(28px,4vw,46px)}
+.filter{padding:10px 22px;border:1px solid var(--line);background:#fff;font-size:.72rem;
+  font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--soft);transition:.2s}
+.filter:hover{border-color:var(--accent);color:var(--accent)}
+.filter.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.pf{display:grid;grid-template-columns:repeat(auto-fill,minmax(clamp(240px,27vw,310px),1fr));gap:clamp(10px,1.4vw,18px)}
+.pf-cell{position:relative;aspect-ratio:4/3;overflow:hidden;display:block;background:var(--sand)}
+.pf-cell.hide{display:none}
+.pf-cell svg,.pf-cell img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .55s}
+.pf-cell:hover svg,.pf-cell:hover img{transform:scale(1.07)}
+.pf-veil{position:absolute;inset:0;z-index:2;display:flex;flex-direction:column;align-items:center;
+  justify-content:center;text-align:center;padding:20px;background:rgba(22,32,61,.86);color:#fff;
+  opacity:0;transition:opacity .3s}
+.pf-cell:hover .pf-veil,.pf-cell:focus-visible .pf-veil{opacity:1}
+.pf-veil small{font-size:.64rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--accent)}
+.pf-veil strong{font-family:var(--serif);font-weight:500;font-size:1.2rem;margin-top:6px}
+
+/* ══════ FAQ / FORM ══════ */
+.faq{border-bottom:1px solid var(--line)}
+.faq-q{display:flex;justify-content:space-between;align-items:center;gap:18px;width:100%;
+  text-align:left;padding:22px 0;font-family:var(--serif);font-weight:500;font-size:1.08rem}
+.faq-q span:last-child{color:var(--accent);font-size:1.4rem;transition:transform .3s;flex-shrink:0;font-family:var(--sans)}
+.faq-q.on span:last-child{transform:rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .38s ease}
+.faq-a.on{max-height:320px}
+.faq-a p{color:var(--soft);font-size:.93rem;padding-bottom:20px;margin:0}
+
+.form{display:grid;gap:16px}
+.f-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.field label{display:block;font-size:.68rem;font-weight:500;letter-spacing:.15em;
+  text-transform:uppercase;color:var(--soft);margin-bottom:7px}
+.field input,.field textarea,.field select{width:100%;border:1px solid var(--line);background:#fff;
+  padding:13px 15px;font:inherit;font-size:.93rem;color:var(--ink);transition:border-color .2s}
+.field input:focus,.field textarea:focus,.field select:focus{border-color:var(--accent);outline:none}
+.field textarea{min-height:140px;resize:vertical}
+.ok{display:none;padding:14px 16px;background:var(--accent);color:#fff;font-size:.82rem;font-weight:500}
+.ok.on{display:block}
+.note{font-size:.79rem;color:var(--soft)}
+.dl{margin:0}
+.dl div{display:flex;gap:16px;padding:16px 0;border-bottom:1px solid var(--line)}
+.dl dt{font-size:.67rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;
+  color:var(--accent);width:92px;flex-shrink:0;padding-top:3px}
+.dl dd{margin:0;color:var(--soft);font-size:.93rem}
+.dl dd a:hover{color:var(--accent)}
+
+/* ══════ FOOTER ══════ */
+.footer{background:var(--bar);color:rgba(255,255,255,.7);padding-top:clamp(50px,6vw,84px);font-size:.9rem;font-weight:300}
+.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.3fr;gap:clamp(26px,3.6vw,48px);padding-bottom:44px}
+.footer h5{font-family:var(--sans);font-weight:600;font-size:.74rem;letter-spacing:.18em;
+  text-transform:uppercase;color:#fff;margin-bottom:18px}
+.footer a:hover{color:var(--accent)}
+.f-links{list-style:none;padding:0;margin:0;display:grid;gap:9px}
+.f-links a{transition:padding-left .2s,color .2s}
+.f-links a:hover{padding-left:5px}
+.f-tile{width:96px;height:110px;background:var(--accent);display:flex;flex-direction:column;
+  align-items:center;justify-content:center;margin-bottom:20px}
+.f-tile .tile-script{font-size:2.5rem}
+.f-tile .tile-sub{font-size:.36rem;margin-top:6px}
+.socials{display:flex;gap:9px;margin-top:20px}
+.socials a{width:36px;height:36px;border:1px solid rgba(255,255,255,.24);border-radius:50%;
+  display:grid;place-items:center;transition:.25s}
+.socials a:hover{background:var(--accent);border-color:var(--accent);color:#fff}
+.socials svg{width:14px;height:14px;fill:currentColor}
+.footer-bar{border-top:1px solid rgba(255,255,255,.13);padding-block:22px;display:flex;
+  justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:.77rem}
+.footer-bar p{margin:0}
+
+.rv{opacity:0;transform:translateY(22px);transition:opacity .65s ease,transform .65s ease}
+.rv.in{opacity:1;transform:none}
+
+@media(max-width:1180px){
+  .nav,.flags{display:none}
+  .burger{display:block}
+  .bar-in{justify-content:space-between}
+  .bar-in .spacer{flex:1}
+  .footer-grid{grid-template-columns:1fr 1fr}
 }
-.cta-banner h2 { font-size: clamp(1.75rem, 4vw, 2.5rem); margin-bottom: var(--space-2); }
-.cta-banner p { color: rgba(255,255,255,0.85); margin-bottom: var(--space-4); }
-
-.footer { background: var(--color-primary); color: rgba(255,255,255,0.8); padding: var(--space-6) 0 var(--space-4); }
-.footer-grid { display: flex; flex-wrap: wrap; justify-content: space-between; gap: var(--space-4); margin-bottom: var(--space-4); }
-.footer-brand { font-family: var(--font-display); font-weight: 700; font-size: 1.25rem; color: #fff; margin-bottom: var(--space-1); }
-.footer-contact a { display: block; margin-bottom: var(--space-1); color: rgba(255,255,255,0.85); }
-.footer-contact a:hover { color: var(--color-accent); }
-.footer-bottom { text-align: center; font-size: 0.85rem; color: rgba(255,255,255,0.6); border-top: 1px solid rgba(255,255,255,0.15); padding-top: var(--space-3); }
-
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0,0,0,0);
-  white-space: nowrap;
-  border: 0;
+@media(max-width:760px){
+  :root{--bar-h:70px;--tile-w:96px;--tile-h:108px}
+  .tile-script{font-size:2.5rem}
+  .tile-sub{font-size:.36rem;letter-spacing:.22em}
+  .split,.ba{grid-template-columns:1fr}
+  .f-row{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr;gap:34px}
+  .dl div{flex-direction:column;gap:5px}
+  .btn{padding:16px 30px;font-size:.76rem}
 }
-
-/* Scroll-reveal: kept last so its transition/transform wins over
-   component-specific transition/transform rules declared earlier. */
-.reveal { opacity: 1; transform: none; }
-.reveal-hidden { opacity: 0; transform: translateY(24px); }
-.reveal-visible { opacity: 1; transform: none; transition: opacity 0.6s ease, transform 0.6s ease; }
+@media(prefers-reduced-motion:reduce){
+  *{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+  .rv{opacity:1;transform:none}
+}
 </style>
 </head>
 <body>
-<nav class="nav">
-  <div class="container">
-    <a href="#top" class="nav-logo">Pacific<span>Web</span>Design</a>
-    <input type="checkbox" id="nav-toggle" class="nav-toggle">
-    <label for="nav-toggle" class="nav-toggle-label" aria-label="Toggle menu"><span></span><span></span><span></span></label>
-    <ul class="nav-links">
-      <li><a href="#services">Services</a></li>
-      <li><a href="#process">Process</a></li>
-      <li><a href="#pricing">Pricing</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#faq">FAQ</a></li>
-      <li><a class="btn btn-primary" href="mailto:laakeasalvani@gmail.com?subject=Quote%20Request%20-%20Pacific%20Web%20Design">Get a Quote</a></li>
-    </ul>
-  </div>
-</nav>
 
-<header class="hero" id="top">
-  <div class="container">
-    <span class="hero-eyebrow">Beaverton, Oregon &middot; Pacific Northwest</span>
-    <h1>Websites that make people trust you before they even call.</h1>
-    <p>I design and build custom websites for small businesses that are ready to look as good online as they are in person. Let's talk about yours.</p>
-    <div class="hero-ctas">
-      <a class="btn btn-primary" href="mailto:laakeasalvani@gmail.com?subject=Consultation%20Request%20-%20Pacific%20Web%20Design">Book a Free Consultation</a>
-      <a class="btn btn-secondary" href="mailto:laakeasalvani@gmail.com?subject=Quote%20Request%20-%20Pacific%20Web%20Design">Get a Quote</a>
-    </div>
+<!-- ══════════ HEADER BAR ══════════ -->
+<header class="bar">
+  <div class="bar-in">
+    <nav class="nav" aria-label="Main left">
+      <div class="nav-item"><a class="nav-link" href="#/home">Home</a></div>
+      <div class="nav-item">
+        <a class="nav-link" href="#/services">Services <i class="caret"></i></a>
+        <div class="dropdown">
+          <a href="#/branding">Branding</a>
+          <a href="#/online-presence">Elevate Your Online Presence</a>
+          <a href="#/web-design">Website Design &amp; Development</a>
+          <a href="#/app-building">App Building</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a class="nav-link" href="#/about">About Me <i class="caret"></i></a>
+        <div class="dropdown">
+          <a href="#/consult">Book a Private Consultation</a>
+          <a href="#/about">Kea Web Creations</a>
+          <a href="#/faq">FAQ</a>
+          <a href="#/policy">Our Policy</a>
+        </div>
+      </div>
+    </nav>
+
+    <a class="tile" href="#/home" aria-label="Kea Web Creations home">
+      <span class="tile-script">Kea.</span>
+      <span class="tile-sub">Web Creations</span>
+    </a>
+
+    <nav class="nav nav--r" aria-label="Main right">
+      <div class="nav-item"><a class="nav-link" href="#/portfolio">Portfolio</a></div>
+      <div class="nav-item"><a class="nav-link" href="#/contact">Contact</a></div>
+    </nav>
+
+    <div class="spacer" style="display:none"></div>
+    <button class="burger" id="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
 </header>
 
+<div class="drawer" id="drawer">
+  <a class="drawer-row" href="#/home">Home</a>
+  <button class="drawer-row" data-t="d1">Services <span class="plus">+</span></button>
+  <div class="drawer-sub" id="d1">
+    <a href="#/branding">Branding</a>
+    <a href="#/online-presence">Elevate Your Online Presence</a>
+    <a href="#/web-design">Website Design &amp; Development</a>
+    <a href="#/app-building">App Building</a>
+  </div>
+  <button class="drawer-row" data-t="d2">About Me <span class="plus">+</span></button>
+  <div class="drawer-sub" id="d2">
+    <a href="#/consult">Book a Private Consultation</a>
+    <a href="#/about">Kea Web Creations</a>
+    <a href="#/faq">FAQ</a>
+    <a href="#/policy">Our Policy</a>
+  </div>
+  <a class="drawer-row" href="#/portfolio">Portfolio</a>
+  <a class="drawer-row" href="#/contact">Contact</a>
+  <a class="btn btn--fill" href="#/contact" style="margin-top:28px">Let's Get Started Today</a>
+</div>
+
 <main>
-<section class="section" id="services">
-  <div class="container">
-    <div class="section-header reveal">
-      <h2 class="section-title">What I Can Build For You</h2>
-      <p class="section-subtitle" style="margin-left:auto;margin-right:auto;">Whether you're starting from scratch or need a fresh start, here's how I help.</p>
+
+<!-- ══════════ HOME ══════════ -->
+<section class="page on" id="p-home">
+
+  <div class="hero">
+    <!-- ▼ ADD YOUR WAVE VIDEO: put src="waves.mp4" below and it replaces the animation -->
+    <video class="hero-vid" id="heroVid" autoplay muted loop playsinline preload="none"></video>
+    <canvas id="wave" aria-hidden="true"></canvas>
+    <div class="wrap">
+      <h1>We Make Your Business<br>Impossible to Overlook<span class="dot">.</span></h1>
+      <p class="tagline">Design<span class="dot">.</span> Build<span class="dot">.</span> Grow<span class="dot">.</span></p>
+      <p class="hero-sub">Modern websites, branding, online visibility and custom apps — designed to grow your business and make waves.</p>
+      <a class="btn btn--fill" href="#/contact">Let's Get Started Today</a>
     </div>
-    <div class="card-grid">
-      <div class="card reveal">
-        <div class="card-icon" aria-hidden="true">&#128187;</div>
-        <h3>Custom Business Websites</h3>
-        <p>A site built around your business, not a generic template &mdash; designed to turn visitors into customers.</p>
+    <a class="down" href="#intro" aria-label="Scroll down"></a>
+  </div>
+
+  <div class="sec" id="intro">
+    <div class="wrap split">
+      <div class="rv">
+        <span class="kicker">Who we are</span>
+        <h2>A Creative, Personalized Web-Design Studio</h2>
+        <p class="sub" style="margin-top:18px">Kea Web Creations was built on a passion for design and the creative process, with a clear focus on helping businesses <strong>elevate their online presence</strong> through refined, high-impact brand, website and app solutions.</p>
+        <p class="sub">Based in Beaverton, Oregon and working with clients across the Pacific Northwest and beyond, we combine strategy, design, development and search visibility to position businesses to stand out, get found, and grow with intention.</p>
+        <p class="sub">Every detail — from brand identity to site structure to the tools running behind the scenes — contributes to stronger visibility, credibility and long-term growth.</p>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:26px">
+          <a class="btn btn--fill" href="#/contact">Let's Get Started Today</a>
+          <a class="btn btn--out" href="#/services">Our Services</a>
+        </div>
       </div>
-      <div class="card reveal">
-        <div class="card-icon" aria-hidden="true">&#10024;</div>
-        <h3>Website Redesigns</h3>
-        <p>Outdated or hard to use? I'll rebuild it with modern design, faster load times, and mobile-friendly layouts.</p>
+      <div class="rv" id="introArt" style="aspect-ratio:4/5;position:relative;overflow:hidden;background:var(--sand)"></div>
+    </div>
+  </div>
+
+  <div class="sec sec--bar center">
+    <div class="wrap">
+      <span class="kicker">Portfolio</span>
+      <h2>Check Our Latest Work</h2>
+      <p class="sub" style="margin:16px auto 30px">A selection of brands, websites and apps built from the ground up.</p>
+      <a class="btn btn--white" href="#/portfolio">Find Out More</a>
+    </div>
+  </div>
+
+  <div class="sec sec--sand">
+    <div class="wrap">
+      <div class="sec-head center rv">
+        <span class="kicker">Results</span>
+        <h2>Before &amp; After</h2>
+        <p class="sub">Our clients are at the core of everything we do. Here's a selection of before-and-after results that show the impact of the work.</p>
       </div>
-      <div class="card reveal">
-        <div class="card-icon" aria-hidden="true">&#128736;&#65039;</div>
-        <h3>Ongoing Maintenance &amp; Support</h3>
-        <p>Updates, fixes, and hosting help after launch, so your site keeps working while you run your business.</p>
+      <h3 class="center rv" style="margin-bottom:26px">Samples of elevated brands &amp; websites</h3>
+      <div class="ba rv">
+        <div class="ba-col"><h4>Before</h4><ul>
+          <li>Outdated template, slow on mobile</li>
+          <li>No consistent logo or color system</li>
+          <li>Invisible in local search results</li>
+          <li>Bookings handled by phone and text</li>
+          <li>No way to update content in-house</li>
+        </ul></div>
+        <div class="ba-col"><h4>After</h4><ul>
+          <li>Custom build, loads in under two seconds</li>
+          <li>Full identity system, applied everywhere</li>
+          <li>Ranking on page one for local terms</li>
+          <li>Online booking with automatic reminders</li>
+          <li>Simple editor the owner actually uses</li>
+        </ul></div>
       </div>
+      <div class="center" style="margin-top:36px"><a class="btn btn--fill" href="#/portfolio">View The Portfolio</a></div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="wrap">
+      <div class="sec-head center rv">
+        <span class="kicker">What we do</span>
+        <h2>Our Services</h2>
+        <p class="sub">Every project at Kea Web Creations starts with a friendly chat. The end goal is a unique, professional result built around your company and your customers.</p>
+      </div>
+      <div class="grid g2" id="svcBoxes"></div>
+    </div>
+  </div>
+
+  <div class="sec sec--sand">
+    <div class="wrap">
+      <div class="sec-head center rv">
+        <span class="kicker">Selected projects</span>
+        <h2>Case Studies</h2>
+        <p class="sub">Nothing matters more here than the people we build for. A few projects worth a closer look.</p>
+      </div>
+      <div class="grid g4" id="caseGrid"></div>
+    </div>
+  </div>
+
+  <div class="sec center">
+    <div class="wrap">
+      <div class="sec-head rv"><span class="kicker">Under the hood</span><h2>Tech Tools We Use</h2></div>
+      <div class="tools rv">
+        <span class="tool">WordPress</span><span class="tool">Webflow</span><span class="tool">Shopify</span>
+        <span class="tool">React</span><span class="tool">Next.js</span><span class="tool">Tailwind</span>
+        <span class="tool">Figma</span><span class="tool">Adobe CC</span><span class="tool">Supabase</span>
+        <span class="tool">Stripe</span><span class="tool">Google Analytics</span><span class="tool">Ahrefs</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec sec--sand">
+    <div class="wrap">
+      <div class="sec-head center rv">
+        <span class="kicker">Ongoing support</span>
+        <h2>Monthly Retainers</h2>
+        <p class="sub">If you're growing or revamping the business, a monthly design and development retainer is often the better option.</p>
+      </div>
+      <div class="grid g3" id="retGrid"></div>
+      <div class="center" style="margin-top:36px"><a class="btn btn--fill" href="#/contact">Learn More</a></div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="wrap">
+      <div class="sec-head center rv"><h3>Clients We Have Served</h3></div>
+      <!-- Replace each cell with <img src="logos/client.png" alt="Client name"> -->
+      <div class="logos rv" id="logoGrid"></div>
+    </div>
+  </div>
+
+  <div class="sec sec--sand">
+    <div class="wrap">
+      <div class="sec-head center rv"><span class="kicker">Kind words</span><h2>Testimonials</h2></div>
+      <!-- ⚠ PLACEHOLDERS — replace with real client quotes before launch -->
+      <div class="grid g2">
+        <div class="quote rv"><h4>Brand identity &amp; website</h4>
+          <p>"Replace this with a real quote from a client. Two or three sentences about what changed for their business works best."</p>
+          <cite>[Client name]<span>[Business name]</span></cite></div>
+        <div class="quote rv"><h4>Logo, signage &amp; web design</h4>
+          <p>"Replace this with a real quote. Specific results — more calls, faster site, easier updates — land harder than general praise."</p>
+          <cite>[Client name]<span>[Business name]</span></cite></div>
+        <div class="quote rv"><h4>Custom booking app</h4>
+          <p>"Replace this with a real quote. Mentioning the problem they had before you started makes it far more persuasive."</p>
+          <cite>[Client name]<span>[Business name]</span></cite></div>
+        <div class="quote rv"><h4>SEO &amp; online presence</h4>
+          <p>"Replace this with a real quote. If they gave you a number, use the number."</p>
+          <cite>[Client name]<span>[Business name]</span></cite></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec sec--bar center">
+    <div class="wrap">
+      <h2>Ready to elevate your brand<span class="dot">?</span></h2>
+      <p class="sub" style="margin:16px auto 30px">Every project starts with a thirty-minute conversation. No obligation, no sales script.</p>
+      <a class="btn btn--fill" href="#/contact">Get Started Today</a>
     </div>
   </div>
 </section>
 
-<section class="section section-alt" id="process">
-  <div class="container">
-    <div class="section-header reveal">
-      <h2 class="section-title">How It Works</h2>
-      <p class="section-subtitle" style="margin-left:auto;margin-right:auto;">A simple, low-stress process from first email to launch day.</p>
-    </div>
-    <div class="steps">
-      <div class="step reveal">
-        <h3>Discover</h3>
-        <p>We talk through your goals, your customers, and what your current site is missing.</p>
-      </div>
-      <div class="step reveal">
-        <h3>Design</h3>
-        <p>You'll see a real design of your site before any heavy building begins &mdash; no surprises.</p>
-      </div>
-      <div class="step reveal">
-        <h3>Build</h3>
-        <p>I build the site to be fast, responsive, and easy for you to update later.</p>
-      </div>
-      <div class="step reveal">
-        <h3>Launch &amp; Support</h3>
-        <p>We launch together, and I stay available for updates and questions after.</p>
-      </div>
-    </div>
-  </div>
+<!-- ══════════ SERVICES ══════════ -->
+<section class="page" id="p-services">
+  <div class="page-banner"><div class="wrap"><h1>Services</h1>
+    <p class="sub">Four capabilities that stack. Start anywhere — most people start with the website and work backwards into the brand.</p></div></div>
+  <div class="sec"><div class="wrap"><div class="grid g2" id="svcBoxes2"></div></div></div>
+  <div class="sec sec--bar center"><div class="wrap"><h2>Not sure which one you need<span class="dot">?</span></h2>
+    <p class="sub" style="margin:16px auto 30px">Describe the problem and I'll tell you which of these actually solves it — including when the answer is "none of them yet."</p>
+    <a class="btn btn--fill" href="#/consult">Book A Consultation</a></div></div>
 </section>
 
-<section class="section" id="pricing">
-  <div class="container">
-    <div class="section-header reveal">
-      <h2 class="section-title">Simple, Transparent Pricing</h2>
-      <p class="section-subtitle" style="margin-left:auto;margin-right:auto;">Every project is a little different &mdash; these are starting points. You'll get an exact quote after we talk.</p>
-    </div>
-    <div class="card-grid">
-      <div class="card price-card reveal">
-        <h3>Starter</h3>
-        <!-- PLACEHOLDER: replace with your real pricing -->
-        <p class="price">$1,200<span>/ site</span></p>
-        <!-- END PLACEHOLDER -->
-        <ul class="price-features">
-          <li>Up to 5 pages</li>
-          <li>Mobile-friendly design</li>
-          <li>Contact form &amp; map</li>
-          <li>2 rounds of revisions</li>
-        </ul>
-        <a class="btn btn-primary" href="mailto:laakeasalvani@gmail.com?subject=Quote%20Request%20-%20Starter%20Package">Get a Quote</a>
-      </div>
-      <div class="card price-card featured reveal">
-        <span class="badge">Most Popular</span>
-        <h3>Business</h3>
-        <!-- PLACEHOLDER: replace with your real pricing -->
-        <p class="price">$2,800<span>/ site</span></p>
-        <!-- END PLACEHOLDER -->
-        <ul class="price-features">
-          <li>Up to 12 pages</li>
-          <li>Custom design &amp; branding</li>
-          <li>Booking / quote request tools</li>
-          <li>Basic SEO setup</li>
-          <li>3 rounds of revisions</li>
-        </ul>
-        <a class="btn btn-primary" href="mailto:laakeasalvani@gmail.com?subject=Quote%20Request%20-%20Business%20Package">Get a Quote</a>
-      </div>
-      <div class="card price-card reveal">
-        <h3>Ongoing Maintenance</h3>
-        <!-- PLACEHOLDER: replace with your real pricing -->
-        <p class="price">$150<span>/ month</span></p>
-        <!-- END PLACEHOLDER -->
-        <ul class="price-features">
-          <li>Content updates</li>
-          <li>Security &amp; software updates</li>
-          <li>Uptime monitoring</li>
-          <li>Priority email support</li>
-        </ul>
-        <a class="btn btn-primary" href="mailto:laakeasalvani@gmail.com?subject=Quote%20Request%20-%20Maintenance%20Plan">Get a Quote</a>
-      </div>
-    </div>
-  </div>
+<section class="page" id="p-branding">
+  <div class="page-banner"><div class="wrap"><h1>Branding</h1>
+    <p class="sub">A strong brand is the foundation of your business's identity and long-term success. However good the product is, if people can't relate to you, you're just another company competing for their attention.</p></div></div>
+  <div class="sec"><div class="wrap split">
+    <div class="rv"><span class="kicker">What's included</span><h2>An identity system, not just a logo</h2>
+      <p class="sub" style="margin-top:18px">You get working files plus a guide that explains how to use them — so the brand survives contact with your printer, your sign shop and whoever runs your Instagram.</p>
+      <a class="btn btn--fill" href="#/contact" style="margin-top:12px">Start A Brand Project</a></div>
+    <ul class="checks rv">
+      <li><strong>Primary logo &amp; variations</strong> — horizontal, stacked, icon-only, one-color</li>
+      <li><strong>Type system</strong> — display and body faces with a full scale</li>
+      <li><strong>Color palette</strong> — print and screen values, contrast checked</li>
+      <li><strong>Brand voice guide</strong> — how you sound in writing, with examples</li>
+      <li><strong>Stationery &amp; business cards</strong> — print-ready</li>
+      <li><strong>Social profile kit</strong> — avatars, banners, post templates</li>
+      <li><strong>Usage guidelines</strong> — a PDF that answers questions before they're asked</li>
+      <li><strong>All source files</strong> — vector originals, yours to keep</li>
+    </ul>
+  </div></div>
 </section>
 
-<section class="section" id="about">
-  <div class="container">
-    <div class="about-grid reveal">
-      <div class="about-photo">PWD</div>
-      <div class="about-copy">
-        <h2 class="section-title">Hi, I'm the person who'll actually build your site.</h2>
-        <!-- PLACEHOLDER: replace with real bio -->
-        <p>I'm a web designer and developer based in Beaverton, Oregon, focused on helping small businesses in the Pacific Northwest get a website they're proud to send people to. No outsourcing, no templates pretending to be custom &mdash; you work directly with me from the first email to launch day and beyond.</p>
-        <p>I care about the same things you do: your site loading fast, looking great on a phone, and actually bringing you customers.</p>
-        <!-- END PLACEHOLDER -->
-      </div>
-    </div>
-  </div>
+<section class="page" id="p-online-presence">
+  <div class="page-banner"><div class="wrap"><h1>Elevate Your Online Presence</h1>
+    <p class="sub">A beautiful site nobody finds is an expensive business card. This is the work that puts you in front of people already looking for what you sell.</p></div></div>
+  <div class="sec"><div class="wrap split">
+    <div class="rv"><span class="kicker">What's included</span><h2>Get found, then get chosen</h2>
+      <p class="sub" style="margin-top:18px">An audit of where you show up now, a prioritized fix list, and the execution. Reported monthly in plain English — rankings, traffic, and what people actually did when they arrived.</p>
+      <a class="btn btn--fill" href="#/contact" style="margin-top:12px">Request An Audit</a></div>
+    <ul class="checks rv">
+      <li><strong>Technical SEO audit</strong> — speed, structure, crawlability, mobile</li>
+      <li><strong>Keyword &amp; competitor research</strong> — what you can realistically win</li>
+      <li><strong>Local search setup</strong> — maps, listings, reviews, consistent details</li>
+      <li><strong>On-page optimization</strong> — titles, headings, schema, internal links</li>
+      <li><strong>Content plan</strong> — what to publish and in what order</li>
+      <li><strong>Social profile alignment</strong> — same brand everywhere</li>
+      <li><strong>Analytics &amp; goal tracking</strong> — set up so the numbers mean something</li>
+      <li><strong>Monthly reporting</strong> — one page, no jargon</li>
+    </ul>
+  </div></div>
 </section>
 
-<section class="section section-alt" id="testimonials">
-  <div class="container">
-    <div class="section-header reveal">
-      <h2 class="section-title">What Clients Say</h2>
-    </div>
-    <div class="card-grid">
-      <!-- PLACEHOLDER: replace with real testimonial -->
-      <div class="card testimonial-card reveal">
-        <div class="stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <span class="sr-only">5 out of 5 stars</span>
-        <p>"Our new site brought in more inquiries in the first month than the old one did all year. The whole process was easy and fast."</p>
-        <p class="attribution">&mdash; Sample Client, Local Business Owner</p>
-      </div>
-      <!-- END PLACEHOLDER -->
-      <!-- PLACEHOLDER: replace with real testimonial -->
-      <div class="card testimonial-card reveal">
-        <div class="stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <span class="sr-only">5 out of 5 stars</span>
-        <p>"I finally have a site that looks as professional as my business actually is. Communication was great the whole way through."</p>
-        <p class="attribution">&mdash; Sample Client, Service Provider</p>
-      </div>
-      <!-- END PLACEHOLDER -->
-      <!-- PLACEHOLDER: replace with real testimonial -->
-      <div class="card testimonial-card reveal">
-        <div class="stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <span class="sr-only">5 out of 5 stars</span>
-        <p>"Quick responses, fair pricing, and the site works perfectly on mobile, which is most of our traffic."</p>
-        <p class="attribution">&mdash; Sample Client, Retail Shop Owner</p>
-      </div>
-      <!-- END PLACEHOLDER -->
-    </div>
-  </div>
+<section class="page" id="p-web-design">
+  <div class="page-banner"><div class="wrap"><h1>Website Design &amp; Development</h1>
+    <p class="sub">Your web presence is the backbone of the business. The site needs to be informative, easy to navigate, fast — and it needs to look like you meant it.</p></div></div>
+  <div class="sec"><div class="wrap split">
+    <div class="rv"><span class="kicker">What's included</span><h2>Designed from scratch, coded by hand</h2>
+      <p class="sub" style="margin-top:18px">Not a theme with your logo dropped in — which is why it loads faster and doesn't look like four other businesses in town. And the editor is simple enough that you'll actually keep it current.</p>
+      <a class="btn btn--fill" href="#/contact" style="margin-top:12px">Start A Website</a></div>
+    <ul class="checks rv">
+      <li><strong>Custom design</strong> — every page laid out for your content</li>
+      <li><strong>Responsive build</strong> — phone first, then everything else</li>
+      <li><strong>Content management</strong> — edit text and images without code</li>
+      <li><strong>Performance tuning</strong> — image optimization, lazy loading, lean scripts</li>
+      <li><strong>Accessibility</strong> — keyboard navigation, contrast, semantic markup</li>
+      <li><strong>Forms &amp; integrations</strong> — booking, payments, email, CRM</li>
+      <li><strong>Hosting &amp; domain setup</strong> — SSL, backups, the boring essentials</li>
+      <li><strong>Training &amp; handoff</strong> — a recorded walkthrough you can rewatch</li>
+    </ul>
+  </div></div>
 </section>
 
-<section class="section" id="faq">
-  <div class="container">
-    <div class="section-header reveal">
-      <h2 class="section-title">Common Questions</h2>
-    </div>
-    <div class="faq-list reveal">
-      <details class="faq-item">
-        <summary>How long does a project usually take?</summary>
-        <p>Most business websites take 2&ndash;4 weeks from our first conversation to launch, depending on scope and how quickly I get content and feedback from you.</p>
-      </details>
-      <details class="faq-item">
-        <summary>What does a project actually cost?</summary>
-        <p>Most sites fall between the Starter and Business packages above. After we talk about what you need, I'll give you one clear, upfront price &mdash; no surprise invoices.</p>
-      </details>
-      <details class="faq-item">
-        <summary>What do you need from me to get started?</summary>
-        <p>Just a rough idea of your business, any existing branding (logo, colors, photos), and 20&ndash;30 minutes for an initial call. I'll guide you through the rest.</p>
-      </details>
-      <details class="faq-item">
-        <summary>Do I own the website after it's built?</summary>
-        <p>Yes. Once the project is paid in full, the site and its content are yours. Ongoing maintenance is optional, not required.</p>
-      </details>
-    </div>
-  </div>
+<section class="page" id="p-app-building">
+  <div class="page-banner"><div class="wrap"><h1>App Building</h1>
+    <p class="sub">For the moment you outgrow spreadsheets and group texts. Custom tools that do one job — the one your business actually runs on.</p></div></div>
+  <div class="sec"><div class="wrap split">
+    <div class="rv"><span class="kicker">What's included</span><h2>Software shaped around how you work</h2>
+      <p class="sub" style="margin-top:18px">Web apps that run on any device with a browser — no app store approval, no separate builds. Scoped tight and shipped in stages, so you're using something useful long before it's finished.</p>
+      <a class="btn btn--fill" href="#/contact" style="margin-top:12px">Scope An App</a></div>
+    <ul class="checks rv">
+      <li><strong>Discovery &amp; scoping</strong> — mapping how the work happens now</li>
+      <li><strong>Booking &amp; scheduling</strong> — with reminders and payments</li>
+      <li><strong>Customer portals</strong> — accounts, documents, order history</li>
+      <li><strong>Internal dashboards</strong> — inventory, jobs, staff, reporting</li>
+      <li><strong>Database design</strong> — structured to still work at 10× the data</li>
+      <li><strong>Integrations</strong> — payments, calendars, accounting</li>
+      <li><strong>Staged releases</strong> — usable version first, features after</li>
+      <li><strong>Maintenance plan</strong> — updates, monitoring, and a person to call</li>
+    </ul>
+  </div></div>
 </section>
+
+<!-- ══════════ ABOUT ══════════ -->
+<section class="page" id="p-about">
+  <div class="page-banner"><div class="wrap"><h1>Kea Web Creations</h1>
+    <p class="sub">A one-person studio. You talk to the person who does the work, every time, from the first email to the last invoice.</p></div></div>
+  <div class="sec"><div class="wrap split">
+    <div class="rv"><span class="kicker">About me</span><h2>Why one person</h2>
+      <p class="sub" style="margin-top:18px">Agencies sell you the senior team and staff the project with juniors. I can't do that — there's only me. What you see in the pitch is what gets built, and if something's wrong you know exactly whose inbox to use.</p>
+      <p class="sub">It also means I take a small number of projects at a time. If I'm booked, I'll say so, and I'll tell you who else is good.</p>
+      <a class="btn btn--fill" href="#/consult" style="margin-top:12px">Book A Consultation</a></div>
+    <ul class="checks rv">
+      <li><strong>Straight pricing</strong> — fixed scope, fixed number, agreed before anything starts</li>
+      <li><strong>You own everything</strong> — source files, domain, hosting, all in your name</li>
+      <li><strong>Built to be handed over</strong> — documentation and training come standard</li>
+      <li><strong>Local, and awake</strong> — based in Beaverton, Oregon, same time zone, actual replies</li>
+    </ul>
+  </div></div>
+  <div class="sec sec--bar center"><div class="wrap"><h2>Thirty minutes, no pitch<span class="dot">.</span></h2>
+    <p class="sub" style="margin:16px auto 30px">Bring the messy version of the idea. That's the useful conversation.</p>
+    <a class="btn btn--fill" href="#/consult">Book A Private Consultation</a></div></div>
+</section>
+
+<section class="page" id="p-consult">
+  <div class="page-banner"><div class="wrap"><h1>Book a Private Consultation</h1>
+    <p class="sub">Thirty minutes, free, no obligation. We'll work out what you actually need — which is occasionally less than you came in thinking.</p></div></div>
+  <div class="sec"><div class="wrap split" style="align-items:start">
+    <div class="rv"><span class="kicker">The call</span><h2>What we'll cover</h2>
+      <ul class="checks" style="margin-top:20px">
+        <li>Where you are now — site, brand, and what's underperforming</li>
+        <li>What the business needs more of: leads, bookings, credibility, time back</li>
+        <li>A realistic budget range and timeline</li>
+        <li>Whether I'm the right fit, honestly assessed</li>
+      </ul>
+      <p class="note" style="margin-top:22px">Weekdays. Video call, or in person in the Beaverton/Portland area.</p></div>
+    <div class="rv" style="background:var(--sand);padding:clamp(24px,3vw,36px);border:1px solid var(--line)">
+      <h3 style="margin-bottom:20px">Request a time</h3>
+      <form class="form" data-form>
+        <div class="f-row">
+          <div class="field"><label for="c1">Your name</label><input id="c1" required></div>
+          <div class="field"><label for="c2">Business</label><input id="c2"></div>
+        </div>
+        <div class="field"><label for="c3">Email</label><input id="c3" type="email" required></div>
+        <div class="field"><label for="c4">Preferred time</label>
+          <select id="c4"><option>Weekday mornings</option><option>Weekday afternoons</option><option>Evenings</option><option>Whenever works</option></select></div>
+        <div class="field"><label for="c5">What would you like to talk through?</label><textarea id="c5"></textarea></div>
+        <button class="btn btn--fill" type="submit">Request Consultation</button>
+        <div class="ok" data-ok>Thanks — request received. I'll reply within one business day.</div>
+      </form>
+    </div>
+  </div></div>
+</section>
+
+<section class="page" id="p-faq">
+  <div class="page-banner"><div class="wrap"><h1>FAQ</h1><p class="sub">The questions that come up in nearly every first call.</p></div></div>
+  <div class="sec"><div class="wrap" style="max-width:880px">
+    <div class="faq"><button class="faq-q">What does a website cost? <span>+</span></button>
+      <div class="faq-a"><p>Most small-business sites land in a range rather than at a single number, because the work scales with page count, integrations and how much content already exists. You get a fixed quote after the first call — and it doesn't move unless you add scope.</p></div></div>
+    <div class="faq"><button class="faq-q">How long does it take? <span>+</span></button>
+      <div class="faq-a"><p>A focused marketing site is typically a few weeks. Branding adds time at the front. Apps depend entirely on scope, which is why they're staged — you get something usable early rather than everything at the end.</p></div></div>
+    <div class="faq"><button class="faq-q">Can I update the site myself? <span>+</span></button>
+      <div class="faq-a"><p>Yes, and you should. Every build ships with an editor for text and images plus a recorded walkthrough. If you'd rather not, there's a maintenance plan.</p></div></div>
+    <div class="faq"><button class="faq-q">Do I own everything at the end? <span>+</span></button>
+      <div class="faq-a"><p>Completely. Source files, domain, hosting and every account are registered in your name from day one. Nothing is held hostage.</p></div></div>
+    <div class="faq"><button class="faq-q">Do you work with clients outside Oregon? <span>+</span></button>
+      <div class="faq-a"><p>Often. Most of the work happens over video calls and shared links regardless of where you are — just be aware of the time difference when scheduling.</p></div></div>
+    <div class="faq"><button class="faq-q">What if I already have a brand? <span>+</span></button>
+      <div class="faq-a"><p>Then we use it. I'll work inside your existing guidelines and flag anything that will cause problems on screen — usually contrast, or a logo that doesn't hold up small.</p></div></div>
+    <div class="faq"><button class="faq-q">What happens after launch? <span>+</span></button>
+      <div class="faq-a"><p>Thirty days of support is included for anything misbehaving. After that, an optional monthly plan covers updates, backups, monitoring and a set number of change requests.</p></div></div>
+  </div></div>
+</section>
+
+<section class="page" id="p-policy">
+  <div class="page-banner"><div class="wrap"><h1>Our Policy</h1><p class="sub">How projects run, what's expected on both sides, and what happens with your information.</p></div></div>
+  <div class="sec"><div class="wrap" style="max-width:820px">
+    <div class="rv" style="margin-bottom:38px"><h3 style="margin-bottom:12px">Project terms</h3>
+      <p class="sub">Work begins once a proposal is signed and a deposit is received. The balance is due at launch. Scope is fixed in writing; anything added mid-project is quoted separately before it's started, never after.</p></div>
+    <div class="rv" style="margin-bottom:38px"><h3 style="margin-bottom:12px">Revisions</h3>
+      <p class="sub">Two rounds are included at each stage. Beyond that, additional rounds are billed at the hourly rate quoted in your proposal. Consolidated feedback in one pass keeps projects on schedule and costs down.</p></div>
+    <div class="rv" style="margin-bottom:38px"><h3 style="margin-bottom:12px">Ownership</h3>
+      <p class="sub">On final payment, all rights to the delivered work transfer to you, including source files. Third-party assets — fonts, stock imagery, plugins — remain under their own licenses, listed in your handoff document.</p></div>
+    <div class="rv" style="margin-bottom:38px"><h3 style="margin-bottom:12px">Privacy</h3>
+      <p class="sub">Information submitted through this site is used only to respond to your enquiry. It isn't sold, rented or shared with third parties. Ask at any time and it's deleted.</p></div>
+    <div class="rv"><h3 style="margin-bottom:12px">Cancellation</h3>
+      <p class="sub">Either side can end a project in writing. You're billed for work completed to that point and receive every file produced so far. Deposits cover work already begun and aren't refundable.</p></div>
+  </div></div>
+</section>
+
+<!-- ══════════ PORTFOLIO ══════════ -->
+<section class="page" id="p-portfolio">
+  <div class="page-banner"><div class="wrap"><h1>Portfolio</h1></div></div>
+  <div class="sec"><div class="wrap">
+    <div class="filters" id="filters"></div>
+    <div class="pf" id="pfGrid"></div>
+  </div></div>
+  <div class="sec sec--bar center"><div class="wrap"><h2>Let's make something worth showing<span class="dot">.</span></h2>
+    <p class="sub" style="margin:16px auto 30px">Tell me what you're working on and I'll tell you what it takes.</p>
+    <a class="btn btn--fill" href="#/contact">Get Started Today</a></div></div>
+</section>
+
+<!-- ══════════ CONTACT ══════════ -->
+<section class="page" id="p-contact">
+  <div class="page-banner"><div class="wrap"><h1>Contact</h1><p class="sub">Tell me a bit about the project. Every message gets a reply within one business day.</p></div></div>
+  <div class="sec"><div class="wrap split" style="align-items:start">
+    <div class="rv"><span class="kicker">Get in touch</span><h2>Kea Web Creations</h2>
+      <dl class="dl" style="margin-top:22px">
+        <div><dt>Email</dt><dd><a href="mailto:laakeasalvani@gmail.com">laakeasalvani@gmail.com</a></dd></div>
+        <div><dt>Phone</dt><dd><a href="tel:+18083068792">+1 (808) 306-8792</a></dd></div>
+        <div><dt>Based in</dt><dd>Beaverton, Oregon<br>Serving the Pacific Northwest &amp; clients nationwide</dd></div>
+        <div><dt>Hours</dt><dd>Monday–Friday, 9am–5pm PT</dd></div>
+      </dl>
+      <p class="note" style="margin-top:24px">Prefer to talk it through live? <a href="#/consult" style="color:var(--accent)">Book a free consultation →</a></p></div>
+    <div class="rv" style="background:var(--sand);padding:clamp(24px,3vw,36px);border:1px solid var(--line)">
+      <h3 style="margin-bottom:20px">Send a message</h3>
+      <form class="form" data-form>
+        <div class="f-row">
+          <div class="field"><label for="f1">Your name</label><input id="f1" required></div>
+          <div class="field"><label for="f2">Phone</label><input id="f2" type="tel"></div>
+        </div>
+        <div class="f-row">
+          <div class="field"><label for="f3">Email</label><input id="f3" type="email" required></div>
+          <div class="field"><label for="f4">Current website</label><input id="f4" placeholder="optional"></div>
+        </div>
+        <div class="field"><label for="f5">I'm interested in</label>
+          <select id="f5"><option>Branding</option><option>Elevating my online presence</option>
+          <option>Website design &amp; development</option><option>App building</option>
+          <option>A private consultation</option><option>Something else</option></select></div>
+        <div class="field"><label for="f6">Your message</label><textarea id="f6" placeholder="What are you trying to build, and by when?"></textarea></div>
+        <button class="btn btn--fill" type="submit">Let's Get Started Today</button>
+        <div class="ok" data-ok>Thanks — message received. I'll be in touch within one business day.</div>
+        <p class="note">This form doesn't send yet — connect it to a form service or email endpoint before launch.</p>
+      </form>
+    </div>
+  </div></div>
+</section>
+
 </main>
 
-<section class="cta-banner">
-  <div class="container">
-    <h2>Ready to see what your business could look like online?</h2>
-    <p>Let's talk about your project &mdash; no pressure, no obligation.</p>
-    <div class="hero-ctas">
-      <a class="btn btn-primary" href="mailto:laakeasalvani@gmail.com?subject=Consultation%20Request%20-%20Pacific%20Web%20Design">Book a Free Consultation</a>
-      <a class="btn btn-secondary" href="mailto:laakeasalvani@gmail.com?subject=Quote%20Request%20-%20Pacific%20Web%20Design">Get a Quote</a>
-    </div>
-  </div>
-</section>
-
+<!-- ══════════ FOOTER ══════════ -->
 <footer class="footer">
-  <div class="container">
+  <div class="wrap">
     <div class="footer-grid">
       <div>
-        <div class="footer-brand">Pacific Web Design</div>
-        <p>Beaverton, Oregon &middot; Serving the Pacific Northwest</p>
+        <a class="f-tile" href="#/home" aria-label="Kea Web Creations home">
+          <span class="tile-script">Kea.</span><span class="tile-sub">Web Creations</span>
+        </a>
+        <p>Beaverton, Oregon<br>Serving the Pacific Northwest<br>and clients nationwide</p>
+        <p>Phone: <a href="tel:+18083068792">+1 (808) 306-8792</a><br><a href="mailto:laakeasalvani@gmail.com">laakeasalvani@gmail.com</a></p>
+        <a class="btn btn--fill" href="#/contact" style="margin-top:8px">Get Started Today</a>
+        <div class="socials">
+          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M13.5 21v-8h2.7l.4-3.1h-3.1V7.9c0-.9.25-1.5 1.55-1.5H16.7V3.63C16.4 3.59 15.4 3.5 14.25 3.5c-2.4 0-4.05 1.47-4.05 4.17V9.9H7.5V13h2.7v8h3.3z"/></svg></a>
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.25.07 1.63.07 4.81s0 3.56-.07 4.81c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.25.06-1.63.07-4.85.07s-3.6 0-4.85-.07c-1.17-.05-1.8-.25-2.23-.41-.56-.22-.96-.48-1.38-.9-.42-.42-.68-.82-.9-1.38-.16-.42-.36-1.06-.41-2.23C2.21 15.56 2.2 15.18 2.2 12s0-3.56.07-4.81c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.44 2.21 8.82 2.2 12 2.2zm0 1.98c-3.13 0-3.5.01-4.73.07-.9.04-1.39.19-1.71.32-.43.17-.74.37-1.06.69-.32.32-.52.63-.69 1.06-.13.32-.28.81-.32 1.71-.06 1.23-.07 1.6-.07 4.73s.01 3.5.07 4.73c.04.9.19 1.39.32 1.71.17.43.37.74.69 1.06.32.32.63.52 1.06.69.32.13.81.28 1.71.32 1.23.06 1.6.07 4.73.07s3.5-.01 4.73-.07c.9-.04 1.39-.19 1.71-.32.43-.17.74-.37 1.06-.69.32-.32.52-.63.69-1.06.13-.32.28-.81.32-1.71.06-1.23.07-1.6.07-4.73s-.01-3.5-.07-4.73c-.04-.9-.19-1.39-.32-1.71a2.86 2.86 0 0 0-.69-1.06 2.86 2.86 0 0 0-1.06-.69c-.32-.13-.81-.28-1.71-.32-1.23-.06-1.6-.07-4.73-.07zm0 3.37a4.45 4.45 0 1 1 0 8.9 4.45 4.45 0 0 1 0-8.9zm0 7.34a2.89 2.89 0 1 0 0-5.78 2.89 2.89 0 0 0 0 5.78zm5.67-7.54a1.04 1.04 0 1 1-2.08 0 1.04 1.04 0 0 1 2.08 0z"/></svg></a>
+          <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M6.94 5.5a2 2 0 1 1-4 0 2 2 0 0 1 4 0zM3.2 20h3.5V8.9H3.2V20zM9.3 8.9V20h3.5v-6.1c0-1.6 1-2.2 1.95-2.2.9 0 1.75.7 1.75 2.2V20h3.5v-6.6c0-3.4-1.9-4.8-4-4.8-1.75 0-2.75.95-3.2 1.65V8.9H9.3z"/></svg></a>
+        </div>
       </div>
-      <div class="footer-contact">
-        <a href="mailto:laakeasalvani@gmail.com">laakeasalvani@gmail.com</a>
-        <a href="tel:8083068792">(808) 306-8792</a>
-      </div>
+      <div><h5>Main</h5><ul class="f-links">
+        <li><a href="#/home">Home Page</a></li><li><a href="#/about">About Me</a></li>
+        <li><a href="#/consult">Book a Consult</a></li><li><a href="#/faq">FAQ</a></li>
+        <li><a href="#/policy">Policy</a></li><li><a href="#/contact">Contact</a></li></ul></div>
+      <div><h5>Services</h5><ul class="f-links">
+        <li><a href="#/branding">Branding</a></li><li><a href="#/online-presence">Online Presence</a></li>
+        <li><a href="#/web-design">Website Development</a></li><li><a href="#/app-building">App Building</a></li></ul></div>
+      <div><h5>Portfolio</h5>
+        <p>Helping brands &amp; businesses elevate their online presence through professional design and development.</p>
+        <a class="more" href="#/portfolio">View Our Works →</a></div>
     </div>
-    <div class="footer-bottom">&copy; 2026 Pacific Web Design. All rights reserved.</div>
+    <div class="footer-bar">
+      <p>Kea Web Creations © <span id="yr"></span> All rights reserved</p>
+      <p>Beaverton, Oregon</p>
+    </div>
   </div>
 </footer>
 
 <script>
-  (function () {
-    var targets = document.querySelectorAll('.reveal');
-    if (!('IntersectionObserver' in window) || targets.length === 0) return;
-
-    targets.forEach(function (el) { el.classList.add('reveal-hidden'); });
-
-    var observer = new IntersectionObserver(
-      function (entries) {
-        entries.forEach(function (entry) {
-          if (entry.isIntersecting) {
-            entry.target.classList.remove('reveal-hidden');
-            entry.target.classList.add('reveal-visible');
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.15 }
-    );
-
-    targets.forEach(function (el) { observer.observe(el); });
-  })();
-
-  document.querySelectorAll('.nav-links a[href^="#"]').forEach(function (a) {
-    a.addEventListener('click', function () {
-      var toggle = document.getElementById('nav-toggle');
-      if (toggle) toggle.checked = false;
+/* ══════ WAVE HERO ══════ */
+(function(){
+  var cv=document.getElementById('wave'); if(!cv) return;
+  var ctx=cv.getContext('2d'), reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var vid=document.getElementById('heroVid');
+  if(vid&&vid.getAttribute('src')) vid.classList.add('on');
+  var w,h,dpr;
+  function size(){dpr=Math.min(devicePixelRatio||1,2);w=cv.offsetWidth;h=cv.offsetHeight;
+    cv.width=w*dpr;cv.height=h*dpr;ctx.setTransform(dpr,0,0,dpr,0,0);}
+  size(); addEventListener('resize',size);
+  var L=[
+    {a:.055,l:.0016,s:.00022,y:.58,c:'22,32,61',o:.9,h:.4},
+    {a:.048,l:.0022,s:.00034,y:.66,c:'29,43,79',o:.9,h:.55},
+    {a:.040,l:.0030,s:.00048,y:.74,c:'38,72,92',o:.8,h:.7},
+    {a:.030,l:.0042,s:.00068,y:.83,c:'62,142,135',o:.6,h:.9},
+    {a:.020,l:.0058,s:.00094,y:.91,c:'88,176,168',o:.35,h:1.1}
+  ];
+  function draw(t){
+    ctx.clearRect(0,0,w,h);
+    var g=ctx.createLinearGradient(0,0,0,h);
+    g.addColorStop(0,'#101833');g.addColorStop(.5,'#1B2C4A');g.addColorStop(1,'#2E6A6B');
+    ctx.fillStyle=g;ctx.fillRect(0,0,w,h);
+    L.forEach(function(v,i){
+      function yAt(x){return h*v.y+Math.sin(x*v.l+t*v.s)*(h*v.a)
+        +Math.sin(x*v.l*2.3+t*v.s*1.7)*(h*v.a*v.h*.38)
+        +Math.sin(x*v.l*.55-t*v.s*.8)*(h*v.a*.3);}
+      ctx.beginPath();ctx.moveTo(0,h);
+      for(var x=0;x<=w;x+=4)ctx.lineTo(x,yAt(x));
+      ctx.lineTo(w,h);ctx.closePath();
+      ctx.fillStyle='rgba('+v.c+','+v.o+')';ctx.fill();
+      if(i>=3){ctx.beginPath();
+        for(var x2=0;x2<=w;x2+=4){x2===0?ctx.moveTo(x2,yAt(x2)):ctx.lineTo(x2,yAt(x2));}
+        ctx.strokeStyle='rgba(224,248,244,'+(i===4?.4:.18)+')';ctx.lineWidth=1.2;ctx.stroke();}
     });
-  });
-</script>
+  }
+  if(reduce){draw(0);}
+  else{var r;(function loop(n){draw(n);r=requestAnimationFrame(loop);})(0);
+    document.addEventListener('visibilitychange',function(){
+      if(document.hidden)cancelAnimationFrame(r);
+      else (function loop(n){draw(n);r=requestAnimationFrame(loop);})(performance.now());});}
+})();
 
+/* ══════ PLACEHOLDER ARTWORK ══════ */
+function art(i,r){
+  var p=[['#1B2C4A','#3E8E87'],['#22355A','#58B0A8'],['#16203D','#2E6A6B'],['#2A3E63','#6BC3BA']][i%4];
+  var o=(i*37)%100, W=400, H=r==='sq'?400:300;
+  return '<svg viewBox="0 0 '+W+' '+H+'" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">'
+   +'<defs><linearGradient id="a'+i+r+'" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="'+p[0]+'"/><stop offset="100%" stop-color="'+p[1]+'"/></linearGradient></defs>'
+   +'<rect width="'+W+'" height="'+H+'" fill="url(#a'+i+r+')"/>'
+   +'<path d="M0 '+(H*.62+o*.3)+' C '+(W*.2)+' '+(H*.52+o*.4)+', '+(W*.35)+' '+(H*.76-o*.3)+', '+(W*.53)+' '+(H*.65+o*.2)+' S '+(W*.85)+' '+(H*.5+o*.35)+', '+W+' '+(H*.6+o*.25)+' L'+W+' '+H+' L0 '+H+'Z" fill="#fff" opacity=".12"/>'
+   +'<path d="M0 '+(H*.75+o*.2)+' C '+(W*.22)+' '+(H*.66+o*.3)+', '+(W*.38)+' '+(H*.87-o*.2)+', '+(W*.55)+' '+(H*.77+o*.15)+' S '+(W*.88)+' '+(H*.65+o*.3)+', '+W+' '+(H*.73+o*.2)+' L'+W+' '+H+' L0 '+H+'Z" fill="#fff" opacity=".2"/>'
+   +'<circle cx="'+(W*.18+o*2)+'" cy="'+(H*.25+o*.4)+'" r="'+(W*.07+o*.25)+'" fill="none" stroke="#fff" stroke-width="1.4" opacity=".28"/></svg>';
+}
+document.getElementById('introArt').innerHTML=
+ '<svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0;width:100%;height:100%">'
++'<defs><linearGradient id="ia" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#16203D"/><stop offset="100%" stop-color="#3E8E87"/></linearGradient></defs>'
++'<rect width="400" height="500" fill="url(#ia)"/>'
++'<path d="M0 330 C90 300,150 370,220 340 S350 300,400 325 L400 500 L0 500Z" fill="#fff" opacity=".13"/>'
++'<path d="M0 385 C90 358,150 424,220 396 S350 358,400 382 L400 500 L0 500Z" fill="#fff" opacity=".21"/>'
++'<circle cx="105" cy="140" r="46" fill="none" stroke="#fff" stroke-width="2" opacity=".28"/></svg>';
+
+/* ══════ SERVICES / CASES / RETAINERS ══════ */
+var SERVICES=[
+ {t:'Branding',h:'#/branding',d:"A strong brand is the foundation of your business's identity and long-term success. No matter how good the product is, if your audience can't relate to you emotionally, you're just another company competing for their time."},
+ {t:'Elevate Your Online Presence',h:'#/online-presence',d:"Search, local listings, content and social — the work that decides whether anyone finds you at all. A beautiful site nobody sees is an expensive business card."},
+ {t:'Website Design &amp; Development',h:'#/web-design',d:"In today's connected market your web presence is the backbone of the business. It needs to be informative, easy to navigate, fast — and pleasing to look at."},
+ {t:'App Building',h:'#/app-building',d:"Booking systems, customer portals, inventory tools, internal dashboards. Custom software shaped around how your business already works, not the other way round."}
+];
+function svcHTML(s,i){return '<a class="box rv" href="'+s.h+'"><div class="box-img">'+art(i,'wide')+'</div>'
+ +'<div class="box-body"><h3>'+s.t+'</h3><p>'+s.d+'</p><span class="more">Learn More →</span></div></a>';}
+document.getElementById('svcBoxes').innerHTML=SERVICES.map(svcHTML).join('');
+document.getElementById('svcBoxes2').innerHTML=SERVICES.map(svcHTML).join('');
+
+document.getElementById('caseGrid').innerHTML=[1,2,3,4].map(function(n,i){
+ return '<a class="case rv" href="#/portfolio">'+art(i+1,'sq')
+  +'<span class="case-label"><small>Case Study</small><strong>Project '+n+'</strong></span></a>';}).join('');
+
+document.getElementById('retGrid').innerHTML=[
+ {t:'Online Presence',d:'Ongoing SEO, listings and content so you keep climbing instead of plateauing after launch.'},
+ {t:'Design + Content',d:'A steady stream of on-brand graphics, posts and print pieces without hiring in-house.'},
+ {t:'Website Care',d:'Updates, backups, monitoring and a set number of change requests every month.'}
+].map(function(r,i){return '<a class="box rv" href="#/contact"><div class="box-img">'+art(i,'wide')+'</div>'
+ +'<div class="box-body"><h3>'+r.t+'</h3><p>'+r.d+'</p><span class="more">Learn More →</span></div></a>';}).join('');
+
+document.getElementById('logoGrid').innerHTML=
+ Array.from({length:12},function(){return '<div class="logo-cell">Your Client</div>';}).join('');
+
+/* ══════ PORTFOLIO ══════
+   ▼▼ REPLACE WITH YOUR OWN PROJECTS ▼▼
+   Add img:'shots/name.jpg' to any item to use a real screenshot. */
+var CATS=['All','Branding','Logo &amp; Identity','Website Development','App Development','Online Presence','Photography','Video'];
+var WORK=[
+ {n:'Project One',c:'Website Development'},{n:'Project Two',c:'Branding'},
+ {n:'Project Three',c:'App Development'},{n:'Project Four',c:'Logo &amp; Identity'},
+ {n:'Project Five',c:'Website Development'},{n:'Project Six',c:'Online Presence'},
+ {n:'Project Seven',c:'Branding'},{n:'Project Eight',c:'Photography'},
+ {n:'Project Nine',c:'Website Development'},{n:'Project Ten',c:'Video'},
+ {n:'Project Eleven',c:'App Development'},{n:'Project Twelve',c:'Logo &amp; Identity'},
+ {n:'Project Thirteen',c:'Branding'},{n:'Project Fourteen',c:'Website Development'},
+ {n:'Project Fifteen',c:'Online Presence'},{n:'Project Sixteen',c:'Photography'}
+];
+(function(){
+ var g=document.getElementById('pfGrid'),f=document.getElementById('filters');
+ g.innerHTML=WORK.map(function(p,i){
+  var m=p.img?'<img src="'+p.img+'" alt="'+p.n+'">':art(i,'wide');
+  return '<a class="pf-cell" href="#/contact" data-c="'+p.c+'">'+m
+   +'<span class="pf-veil"><small>'+p.c+'</small><strong>'+p.n+'</strong></span></a>';}).join('');
+ f.innerHTML=CATS.map(function(c,i){return '<button class="filter'+(i?'':' on')+'" data-f="'+c+'">'+c+'</button>';}).join('');
+ f.addEventListener('click',function(e){
+  var b=e.target.closest('.filter'); if(!b)return;
+  f.querySelectorAll('.filter').forEach(function(x){x.classList.remove('on');});
+  b.classList.add('on');
+  g.querySelectorAll('.pf-cell').forEach(function(c){
+   c.classList.toggle('hide',b.dataset.f!=='All'&&c.dataset.c!==b.dataset.f);});});
+})();
+
+/* ══════ ROUTER / UI ══════ */
+(function(){
+ var pages=document.querySelectorAll('.page'),
+     links=document.querySelectorAll('.nav-link'),
+     burger=document.getElementById('burger'),
+     drawer=document.getElementById('drawer');
+ function shut(){drawer.classList.remove('on');burger.classList.remove('on');
+  burger.setAttribute('aria-expanded','false');document.body.style.overflow='';}
+ function route(){
+  var id=location.hash.replace('#/','')||'home';
+  var t=document.getElementById('p-'+id)||document.getElementById('p-home');
+  pages.forEach(function(p){p.classList.toggle('on',p===t);});
+  links.forEach(function(l){l.classList.toggle('on',l.getAttribute('href')==='#/'+id);});
+  shut(); scrollTo(0,0); scan();
+ }
+ addEventListener('hashchange',route);
+ if(!location.hash)location.hash='#/home';
+ route();
+ burger.addEventListener('click',function(){
+  var o=drawer.classList.toggle('on');
+  burger.classList.toggle('on',o);
+  burger.setAttribute('aria-expanded',o?'true':'false');
+  document.body.style.overflow=o?'hidden':'';});
+ drawer.querySelectorAll('[data-t]').forEach(function(b){
+  b.addEventListener('click',function(){
+   document.getElementById(b.dataset.t).classList.toggle('on');
+   b.querySelector('.plus').classList.toggle('on');});});
+ drawer.querySelectorAll('a').forEach(function(a){a.addEventListener('click',shut);});
+ var io=new IntersectionObserver(function(es){es.forEach(function(e){
+  if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.1});
+ function scan(){document.querySelectorAll('.page.on .rv:not(.in)').forEach(function(el){io.observe(el);});}
+})();
+
+document.querySelectorAll('.faq-q').forEach(function(q){
+ q.addEventListener('click',function(){q.classList.toggle('on');q.nextElementSibling.classList.toggle('on');});});
+document.querySelectorAll('[data-form]').forEach(function(f){
+ f.addEventListener('submit',function(e){e.preventDefault();
+  f.querySelector('[data-ok]').classList.add('on');f.reset();});});
+document.getElementById('yr').textContent=new Date().getFullYear();
+</script>
 </body>
 </html>

@@ -1,6 +1,6 @@
-# Pacific Web Design — Landing Page
+# Kea Web Creations
 
-Single-file landing page for Pacific Web Design (`index.html`, CSS embedded, no build step).
+Single-file website for Kea Web Creations (`index.html`, CSS and JS embedded, no build step).
 
 ## Preview locally
 
@@ -14,18 +14,13 @@ Then visit `http://localhost:8000`.
 
 ## Publish with GitHub Pages
 
-1. Create a new repository on GitHub (e.g. `pacific-web-design`), do **not** initialize it with a README.
-2. Push this repo:
-
-```bash
-git remote add origin https://github.com/<your-username>/pacific-web-design.git
-git branch -M main
-git push -u origin main
-```
-
-3. On GitHub: **Settings → Pages → Source: Deploy from a branch → Branch: `main` / `root`**.
-4. The site will be live at `https://<your-username>.github.io/pacific-web-design/`.
+1. On GitHub: **Settings → Pages → Source: Deploy from a branch → Branch: `main` / `root`**.
+2. The site will be live at `https://laasalvani.github.io/kea-web-creations/`.
 
 ## Content to replace before launch
 
-Search for `PLACEHOLDER` in `index.html` — this marks the bio, testimonial, and pricing content that should be swapped for real content.
+- Testimonials on the home page (`[Client name]` / `[Business name]`)
+- Case studies and portfolio projects (currently `Project One`–`Project Sixteen`)
+- Client logos (currently placeholder `Your Client` tiles)
+
+`docs/` contains planning notes from an earlier iteration of this site and can be removed once no longer useful.
