@@ -247,6 +247,34 @@ a { color: inherit; text-decoration: none; }
 .price-features li { padding: 0.4rem 0; color: var(--color-text-muted); }
 .price-features li::before { content: "\2713"; color: var(--color-secondary); font-weight: 700; margin-right: 0.5rem; }
 .price-card .btn { width: 100%; }
+.about-grid {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: var(--space-5);
+  align-items: center;
+}
+.about-photo {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: var(--radius);
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-family: var(--font-display);
+  font-size: 3rem;
+  font-weight: 700;
+}
+.about-copy h2 { margin-bottom: var(--space-2); }
+.about-copy p { color: var(--color-text-muted); margin-bottom: var(--space-2); }
+@media (max-width: 640px) {
+  .about-grid { grid-template-columns: 1fr; text-align: center; }
+  .about-photo { max-width: 180px; margin: 0 auto; }
+}
+.testimonial-card { font-style: italic; color: var(--color-text); }
+.testimonial-card .stars { color: var(--color-accent); margin-bottom: var(--space-2); font-style: normal; }
+.testimonial-card .attribution { margin-top: var(--space-3); font-style: normal; font-weight: 600; color: var(--color-text-muted); }
 </style>
 </head>
 <body>
@@ -374,6 +402,52 @@ a { color: inherit; text-decoration: none; }
         </ul>
         <a class="btn btn-primary" href="mailto:laakeasalvani@gmail.com?subject=Quote%20Request%20-%20Maintenance%20Plan">Get a Quote</a>
       </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="about">
+  <div class="container">
+    <div class="about-grid reveal">
+      <div class="about-photo">PWD</div>
+      <div class="about-copy">
+        <h2 class="section-title">Hi, I'm the person who'll actually build your site.</h2>
+        <!-- PLACEHOLDER: replace with real bio -->
+        <p>I'm a web designer and developer based in Beaverton, Oregon, focused on helping small businesses in the Pacific Northwest get a website they're proud to send people to. No outsourcing, no templates pretending to be custom &mdash; you work directly with me from the first email to launch day and beyond.</p>
+        <p>I care about the same things you do: your site loading fast, looking great on a phone, and actually bringing you customers.</p>
+        <!-- END PLACEHOLDER -->
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt" id="testimonials">
+  <div class="container">
+    <div class="section-header reveal">
+      <h2 class="section-title">What Clients Say</h2>
+    </div>
+    <div class="card-grid">
+      <!-- PLACEHOLDER: replace with real testimonial -->
+      <div class="card testimonial-card reveal">
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>"Our new site brought in more inquiries in the first month than the old one did all year. The whole process was easy and fast."</p>
+        <p class="attribution">&mdash; Sample Client, Local Business Owner</p>
+      </div>
+      <!-- END PLACEHOLDER -->
+      <!-- PLACEHOLDER: replace with real testimonial -->
+      <div class="card testimonial-card reveal">
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>"I finally have a site that looks as professional as my business actually is. Communication was great the whole way through."</p>
+        <p class="attribution">&mdash; Sample Client, Service Provider</p>
+      </div>
+      <!-- END PLACEHOLDER -->
+      <!-- PLACEHOLDER: replace with real testimonial -->
+      <div class="card testimonial-card reveal">
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>"Quick responses, fair pricing, and the site works perfectly on mobile, which is most of our traffic."</p>
+        <p class="attribution">&mdash; Sample Client, Retail Shop Owner</p>
+      </div>
+      <!-- END PLACEHOLDER -->
     </div>
   </div>
 </section>
