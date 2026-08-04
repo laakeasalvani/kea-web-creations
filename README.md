@@ -28,4 +28,4 @@ git push -u origin main
 
 ## Content to replace before launch
 
-Search for `PLACEHOLDER` in `index.html` — this marks the bio and testimonial content that should be swapped for real content.
+Search for `PLACEHOLDER` in `index.html` — this marks the bio, testimonial, and pricing content that should be swapped for real content.
