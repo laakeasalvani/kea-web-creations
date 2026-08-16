@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Kea Web Creations — Brand &amp; Website Design</title>
-<meta name="description" content="Modern websites, branding, online visibility and custom apps — built to grow your business and make waves.">
+<title>Kea Web Creations — Website Design &amp; Development</title>
+<meta name="description" content="Website design and development for small businesses in Beaverton, Oregon. Three clear packages, fixed prices, built and maintained by one person.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&family=Sacramento&display=swap" rel="stylesheet">
@@ -262,6 +262,27 @@ p{margin:0 0 1.15em}
 .svc-item h3{font-size:1.06rem;margin-bottom:10px}
 .svc-item p{color:var(--soft);font-size:.88rem;line-height:1.65;margin-bottom:14px}
 
+/* ══════ PRICING TIERS ══════ */
+.tiers{display:grid;gap:clamp(18px,2.4vw,28px);
+  grid-template-columns:repeat(auto-fit,minmax(270px,1fr))}
+.tier{background:#fff;border:1px solid var(--line);padding:34px 30px 36px;
+  display:flex;flex-direction:column}
+.tier-name{font-family:var(--sans);font-weight:600;font-size:.72rem;letter-spacing:.22em;
+  text-transform:uppercase;color:var(--accent);margin-bottom:16px}
+.tier-price{font-family:var(--serif);font-weight:500;font-size:clamp(1.9rem,3vw,2.4rem);
+  line-height:1.1;color:var(--ink)}
+.tier-mo{font-family:var(--sans);font-size:.86rem;color:var(--soft);margin-top:6px}
+.tier-line{color:var(--soft);font-size:.92rem;line-height:1.6;margin:18px 0 22px;
+  padding-bottom:22px;border-bottom:1px solid var(--line)}
+.tier ul{list-style:none;padding:0;margin:0 0 26px;flex:1}
+.tier li{position:relative;padding:0 0 12px 26px;color:var(--soft);font-size:.9rem;line-height:1.6}
+.tier li::before{content:"";position:absolute;left:2px;top:8px;width:11px;height:6px;
+  border-left:1.8px solid var(--accent);border-bottom:1.8px solid var(--accent);
+  transform:rotate(-45deg)}
+.tier .btn{align-self:flex-start}
+.fineprint{margin-top:clamp(24px,3vw,36px);text-align:center;color:var(--soft);
+  font-size:.88rem;font-style:italic}
+
 /* ══════ FAQ / FORM ══════ */
 .faq{border-bottom:1px solid var(--line)}
 .faq-q{display:flex;justify-content:space-between;align-items:center;gap:18px;width:100%;
@@ -345,15 +366,7 @@ p{margin:0 0 1.15em}
   <div class="bar-in">
     <nav class="nav" aria-label="Main left">
       <div class="nav-item"><a class="nav-link" href="#/home">Home</a></div>
-      <div class="nav-item">
-        <a class="nav-link" href="#/services">Services <i class="caret"></i></a>
-        <div class="dropdown">
-          <a href="#/branding">Branding</a>
-          <a href="#/online-presence">Elevate Your Online Presence</a>
-          <a href="#/web-design">Website Design &amp; Development</a>
-          <a href="#/app-building">App Building</a>
-        </div>
-      </div>
+      <div class="nav-item"><a class="nav-link" href="#/services">Services</a></div>
       <div class="nav-item">
         <a class="nav-link" href="#/about">About Me <i class="caret"></i></a>
         <div class="dropdown">
@@ -382,13 +395,7 @@ p{margin:0 0 1.15em}
 
 <div class="drawer" id="drawer">
   <a class="drawer-row" href="#/home">Home</a>
-  <button class="drawer-row" data-t="d1">Services <span class="plus">+</span></button>
-  <div class="drawer-sub" id="d1">
-    <a href="#/branding">Branding</a>
-    <a href="#/online-presence">Elevate Your Online Presence</a>
-    <a href="#/web-design">Website Design &amp; Development</a>
-    <a href="#/app-building">App Building</a>
-  </div>
+  <a class="drawer-row" href="#/services">Services</a>
   <button class="drawer-row" data-t="d2">About Me <span class="plus">+</span></button>
   <div class="drawer-sub" id="d2">
     <a href="#/consult">Book a Private Consultation</a>
@@ -411,7 +418,7 @@ p{margin:0 0 1.15em}
     <canvas id="wave" aria-hidden="true"></canvas>
     <div class="wrap">
       <h1>Websites That Make Waves<span class="dot">.</span></h1>
-      <p class="hero-sub">Branding, websites, online visibility and custom apps for small businesses in Beaverton and across the Pacific Northwest.</p>
+      <p class="hero-sub">Websites for small businesses in Beaverton and across the Pacific Northwest — built, launched and looked after by one person.</p>
       <a class="btn btn--fill" href="#work" data-scroll="work">See the Work</a>
     </div>
     <a class="down" href="#work" data-scroll="work" aria-label="Scroll down"></a>
@@ -440,7 +447,7 @@ p{margin:0 0 1.15em}
         <p class="sub">Agencies sell you the senior team and staff the project with juniors. I can't do that — there's only me. What you see in the pitch is what gets built, and if something's wrong you know exactly whose inbox to use.</p>
         <ul class="checks" style="margin-top:26px">
           <li><strong>Straight pricing</strong> — fixed scope, fixed number, agreed before anything starts</li>
-          <li><strong>You own everything</strong> — source files, domain, hosting, all in your name</li>
+          <li><strong>You own what matters</strong> — your domain and all source files are in your name; I host and maintain the site so you never have to</li>
           <li><strong>Built to be handed over</strong> — documentation and training come standard</li>
           <li><strong>Local, and awake</strong> — based in Beaverton, Oregon, same time zone, actual replies</li>
         </ul>
@@ -450,14 +457,16 @@ p{margin:0 0 1.15em}
     </div>
   </div>
 
-  <!-- ══════ 4. WHAT I DO ══════ -->
+  <!-- ══════ 4. WHAT IT COSTS ══════ -->
   <div class="sec">
     <div class="wrap">
       <div class="sec-head center rv">
-        <span class="kicker">What I do</span>
-        <h2>Four Ways I Can Help</h2>
+        <span class="kicker">What it costs</span>
+        <h2>Three Packages, No Surprises</h2>
+        <p class="sub">Every price agreed in writing before any work starts. The monthly keeps your site online, backed up and patched.</p>
       </div>
-      <div class="svc-row rv" id="svcRow"></div>
+      <div class="tiers" id="tierGridHome"></div>
+      <div class="center" style="margin-top:40px"><a class="btn btn--out" href="#/services">See What's Included</a></div>
     </div>
   </div>
 
@@ -473,92 +482,52 @@ p{margin:0 0 1.15em}
 
 <!-- ══════════ SERVICES ══════════ -->
 <section class="page" id="p-services">
-  <div class="page-banner"><div class="wrap"><h1>Services</h1>
-    <p class="sub">Four capabilities that stack. Start anywhere — most people start with the website and work backwards into the brand.</p></div></div>
-  <div class="sec"><div class="wrap"><div class="grid g2" id="svcBoxes2"></div></div></div>
-  <div class="sec sec--bar center"><div class="wrap"><h2>Not sure which one you need<span class="dot">?</span></h2>
-    <p class="sub" style="margin:16px auto 30px">Describe the problem and I'll tell you which of these actually solves it — including when the answer is "none of them yet."</p>
-    <a class="btn btn--fill" href="#/consult">Book A Consultation</a></div></div>
-</section>
-
-<section class="page" id="p-branding">
-  <div class="page-banner"><div class="wrap"><h1>Branding</h1>
-    <p class="sub">A strong brand is the foundation of your business's identity and long-term success. However good the product is, if people can't relate to you, you're just another company competing for their attention.</p></div></div>
-  <div class="sec"><div class="wrap split">
-    <div class="rv"><span class="kicker">What's included</span><h2>An identity system, not just a logo</h2>
-      <p class="sub" style="margin-top:18px">You get working files plus a guide that explains how to use them — so the brand survives contact with your printer, your sign shop and whoever runs your Instagram.</p>
-      <a class="btn btn--fill" href="#/contact" style="margin-top:12px">Start A Brand Project</a></div>
-    <ul class="checks rv">
-      <li><strong>Primary logo &amp; variations</strong> — horizontal, stacked, icon-only, one-color</li>
-      <li><strong>Type system</strong> — display and body faces with a full scale</li>
-      <li><strong>Color palette</strong> — print and screen values, contrast checked</li>
-      <li><strong>Brand voice guide</strong> — how you sound in writing, with examples</li>
-      <li><strong>Stationery &amp; business cards</strong> — print-ready</li>
-      <li><strong>Social profile kit</strong> — avatars, banners, post templates</li>
-      <li><strong>Usage guidelines</strong> — a PDF that answers questions before they're asked</li>
-      <li><strong>All source files</strong> — vector originals, yours to keep</li>
-    </ul>
-  </div></div>
-</section>
-
-<section class="page" id="p-online-presence">
-  <div class="page-banner"><div class="wrap"><h1>Elevate Your Online Presence</h1>
-    <p class="sub">A beautiful site nobody finds is an expensive business card. This is the work that puts you in front of people already looking for what you sell.</p></div></div>
-  <div class="sec"><div class="wrap split">
-    <div class="rv"><span class="kicker">What's included</span><h2>Get found, then get chosen</h2>
-      <p class="sub" style="margin-top:18px">An audit of where you show up now, a prioritized fix list, and the execution. Reported monthly in plain English — rankings, traffic, and what people actually did when they arrived.</p>
-      <a class="btn btn--fill" href="#/contact" style="margin-top:12px">Request An Audit</a></div>
-    <ul class="checks rv">
-      <li><strong>Technical SEO audit</strong> — speed, structure, crawlability, mobile</li>
-      <li><strong>Keyword &amp; competitor research</strong> — what you can realistically win</li>
-      <li><strong>Local search setup</strong> — maps, listings, reviews, consistent details</li>
-      <li><strong>On-page optimization</strong> — titles, headings, schema, internal links</li>
-      <li><strong>Content plan</strong> — what to publish and in what order</li>
-      <li><strong>Social profile alignment</strong> — same brand everywhere</li>
-      <li><strong>Analytics &amp; goal tracking</strong> — set up so the numbers mean something</li>
-      <li><strong>Monthly reporting</strong> — one page, no jargon</li>
-    </ul>
-  </div></div>
-</section>
-
-<section class="page" id="p-web-design">
   <div class="page-banner"><div class="wrap"><h1>Website Design &amp; Development</h1>
-    <p class="sub">Your web presence is the backbone of the business. The site needs to be informative, easy to navigate, fast — and it needs to look like you meant it.</p></div></div>
-  <div class="sec"><div class="wrap split">
-    <div class="rv"><span class="kicker">What's included</span><h2>Designed from scratch, coded by hand</h2>
-      <p class="sub" style="margin-top:18px">Not a theme with your logo dropped in — which is why it loads faster and doesn't look like four other businesses in town. And the editor is simple enough that you'll actually keep it current.</p>
-      <a class="btn btn--fill" href="#/contact" style="margin-top:12px">Start A Website</a></div>
-    <ul class="checks rv">
-      <li><strong>Custom design</strong> — every page laid out for your content</li>
-      <li><strong>Responsive build</strong> — phone first, then everything else</li>
-      <li><strong>Content management</strong> — edit text and images without code</li>
-      <li><strong>Performance tuning</strong> — image optimization, lazy loading, lean scripts</li>
-      <li><strong>Accessibility</strong> — keyboard navigation, contrast, semantic markup</li>
-      <li><strong>Forms &amp; integrations</strong> — booking, payments, email, CRM</li>
-      <li><strong>Hosting &amp; domain setup</strong> — SSL, backups, the boring essentials</li>
-      <li><strong>Training &amp; handoff</strong> — a recorded walkthrough you can rewatch</li>
-    </ul>
-  </div></div>
-</section>
+    <p class="sub">One thing, done properly. Three packages, depending on how much of it you want to run yourself.</p></div></div>
 
-<section class="page" id="p-app-building">
-  <div class="page-banner"><div class="wrap"><h1>App Building</h1>
-    <p class="sub">For the moment you outgrow spreadsheets and group texts. Custom tools that do one job — the one your business actually runs on.</p></div></div>
-  <div class="sec"><div class="wrap split">
-    <div class="rv"><span class="kicker">What's included</span><h2>Software shaped around how you work</h2>
-      <p class="sub" style="margin-top:18px">Web apps that run on any device with a browser — no app store approval, no separate builds. Scoped tight and shipped in stages, so you're using something useful long before it's finished.</p>
-      <a class="btn btn--fill" href="#/contact" style="margin-top:12px">Scope An App</a></div>
+  <div class="sec"><div class="wrap">
+    <div class="tiers" id="tierGrid"></div>
+    <p class="fineprint rv">Logo and brand basics are available alongside any package, quoted separately.</p>
+  </div></div>
+
+  <div class="sec sec--sand"><div class="wrap">
+    <div class="sec-head center rv">
+      <span class="kicker">The monthly</span>
+      <h2>What $50 a Month Covers</h2>
+      <p class="sub">Every package includes it. It is what keeps the site online and working.</p>
+    </div>
+    <div class="split">
+      <ul class="checks rv">
+        <li><strong>Hosting and uptime</strong> — the site stays up, and I am the one who fixes it if it doesn't</li>
+        <li><strong>Daily backups</strong> — a bad day never becomes a lost website</li>
+        <li><strong>Security patches</strong> — applied as they're released, without you asking</li>
+        <li><strong>Domain renewal handled</strong> — in your name, but I make sure it never lapses</li>
+      </ul>
+      <div class="rv">
+        <p class="sub">Your domain and all source files stay in your name. I hold the hosting so that keeping the site running is my job rather than yours.</p>
+        <p class="sub">Fair use covers 25&nbsp;GB stored and 100&nbsp;GB downloaded a month — far more than a normal business site uses. Anything past that is billed at what it costs me, never marked up.</p>
+        <p class="sub">If you ever want to leave: thirty days' notice, I hand over the files, and the site moves with you.</p>
+      </div>
+    </div>
+  </div></div>
+
+  <div class="sec"><div class="wrap">
+    <div class="sec-head center rv">
+      <span class="kicker">How it works</span>
+      <h2>Before You Sign Anything</h2>
+    </div>
     <ul class="checks rv">
-      <li><strong>Discovery &amp; scoping</strong> — mapping how the work happens now</li>
-      <li><strong>Booking &amp; scheduling</strong> — with reminders and payments</li>
-      <li><strong>Customer portals</strong> — accounts, documents, order history</li>
-      <li><strong>Internal dashboards</strong> — inventory, jobs, staff, reporting</li>
-      <li><strong>Database design</strong> — structured to still work at 10× the data</li>
-      <li><strong>Integrations</strong> — payments, calendars, accounting</li>
-      <li><strong>Staged releases</strong> — usable version first, features after</li>
-      <li><strong>Maintenance plan</strong> — updates, monitoring, and a person to call</li>
+      <li><strong>Half to start, half before launch</strong> — the price is agreed in writing before any work begins</li>
+      <li><strong>The clock starts when your content arrives</strong> — not when you pay, so a slow week on your side never becomes a missed deadline on mine</li>
+      <li><strong>You supply the words and photos</strong> — writing is available as a paid add-on if you'd rather not</li>
+      <li><strong>Extra rounds of changes</strong> — beyond those included, billed at $30 an hour</li>
+      <li><strong>Not included</strong> — ongoing marketing, paid ads, photography, printed material</li>
     </ul>
   </div></div>
+
+  <div class="sec sec--bar center"><div class="wrap"><h2>Not sure which tier you need<span class="dot">?</span></h2>
+    <p class="sub" style="margin:16px auto 30px">Describe the business and I'll tell you which one actually fits — including when the honest answer is the cheapest one.</p>
+    <a class="btn btn--fill" href="#/consult">Book A Consultation</a></div></div>
 </section>
 
 <!-- ══════════ ABOUT ══════════ -->
@@ -572,7 +541,7 @@ p{margin:0 0 1.15em}
       <a class="btn btn--fill" href="#/consult" style="margin-top:12px">Book A Consultation</a></div>
     <ul class="checks rv">
       <li><strong>Straight pricing</strong> — fixed scope, fixed number, agreed before anything starts</li>
-      <li><strong>You own everything</strong> — source files, domain, hosting, all in your name</li>
+      <li><strong>You own what matters</strong> — your domain and all source files are in your name; I host and maintain the site so you never have to</li>
       <li><strong>Built to be handed over</strong> — documentation and training come standard</li>
       <li><strong>Local, and awake</strong> — based in Beaverton, Oregon, same time zone, actual replies</li>
     </ul>
@@ -618,7 +587,7 @@ p{margin:0 0 1.15em}
     <div class="faq"><button class="faq-q">What does a website cost? <span>+</span></button>
       <div class="faq-a"><p>Most small-business sites land in a range rather than at a single number, because the work scales with page count, integrations and how much content already exists. You get a fixed quote after the first call — and it doesn't move unless you add scope.</p></div></div>
     <div class="faq"><button class="faq-q">How long does it take? <span>+</span></button>
-      <div class="faq-a"><p>A focused marketing site is typically a few weeks. Branding adds time at the front. Apps depend entirely on scope, which is why they're staged — you get something usable early rather than everything at the end.</p></div></div>
+      <div class="faq-a"><p>Tier 1 is about two weeks, Tier 2 three to four, Tier 3 six to eight. The clock starts when your words and photos arrive, not when you pay — so a slow week on your side never turns into a missed deadline on mine.</p></div></div>
     <div class="faq"><button class="faq-q">Can I update the site myself? <span>+</span></button>
       <div class="faq-a"><p>Yes, and you should. Every build ships with an editor for text and images plus a recorded walkthrough. If you'd rather not, there's a maintenance plan.</p></div></div>
     <div class="faq"><button class="faq-q">Do I own everything at the end? <span>+</span></button>
@@ -684,8 +653,9 @@ p{margin:0 0 1.15em}
           <div class="field"><label for="f4">Current website</label><input id="f4" placeholder="optional"></div>
         </div>
         <div class="field"><label for="f5">I'm interested in</label>
-          <select id="f5"><option>Branding</option><option>Elevating my online presence</option>
-          <option>Website design &amp; development</option><option>App building</option>
+          <select id="f5"><option>Tier 1 — website only</option><option>Tier 2 — website + editor login</option>
+          <option>Tier 3 — website + dashboard and customer accounts</option>
+          <option>Not sure which tier</option>
           <option>A private consultation</option><option>Something else</option></select></div>
         <div class="field"><label for="f6">Your message</label><textarea id="f6" placeholder="What are you trying to build, and by when?"></textarea></div>
         <button class="btn btn--fill" type="submit">Let's Get Started Today</button>
@@ -720,8 +690,9 @@ p{margin:0 0 1.15em}
         <li><a href="#/consult">Book a Consult</a></li><li><a href="#/faq">FAQ</a></li>
         <li><a href="#/policy">Policy</a></li><li><a href="#/contact">Contact</a></li></ul></div>
       <div><h5>Services</h5><ul class="f-links">
-        <li><a href="#/branding">Branding</a></li><li><a href="#/online-presence">Online Presence</a></li>
-        <li><a href="#/web-design">Website Development</a></li><li><a href="#/app-building">App Building</a></li></ul></div>
+        <li><a href="#/services">Website Design &amp; Development</a></li>
+        <li><a href="#/services">Packages &amp; Pricing</a></li>
+        <li><a href="#/consult">Book a Consultation</a></li></ul></div>
       <div><h5>Portfolio</h5>
         <p>Helping brands &amp; businesses elevate their online presence through professional design and development.</p>
         <a class="more" href="#/portfolio">View Our Works →</a></div>
@@ -800,29 +771,35 @@ document.getElementById('mePhoto').innerHTML = ME_PHOTO
   +'<path d="M0 385 C90 358,150 424,220 396 S350 358,400 382 L400 500 L0 500Z" fill="#fff" opacity=".21"/>'
   +'<circle cx="105" cy="140" r="46" fill="none" stroke="#fff" stroke-width="2" opacity=".28"/></svg>';
 
-/* ══════ SERVICES ══════ */
-var SERVICES=[
- {t:'Branding',h:'#/branding',
-  s:"Logo, colours, type and the rules that keep them consistent everywhere.",
-  d:"A strong brand is the foundation of your business's identity and long-term success. No matter how good the product is, if your audience can't relate to you emotionally, you're just another company competing for their time."},
- {t:'Elevate Your Online Presence',h:'#/online-presence',
-  s:"Search, local listings and content — the work that decides whether anyone finds you.",
-  d:"Search, local listings, content and social — the work that decides whether anyone finds you at all. A beautiful site nobody sees is an expensive business card."},
- {t:'Website Design &amp; Development',h:'#/web-design',
-  s:"Fast, custom-built sites that are easy to navigate and easy to keep updated.",
-  d:"In today's connected market your web presence is the backbone of the business. It needs to be informative, easy to navigate, fast — and pleasing to look at."},
- {t:'App Building',h:'#/app-building',
-  s:"Booking systems, customer portals and internal tools shaped around how you already work.",
-  d:"Booking systems, customer portals, inventory tools, internal dashboards. Custom software shaped around how your business already works, not the other way round."}
+/* ══════ PACKAGES ══════
+   ▼▼ YOUR PRICES LIVE HERE ▼▼  Change them once and both the home page
+   and the Services page update together. */
+var TIERS=[
+ {n:'Tier 1', p:'$500', m:'+ $50 a month',
+  s:"A professional website, built and looked after. Changes come through me.",
+  inc:['Up to 5 pages','Works properly on phones','Contact form',
+       'Basic Google setup so people can find you','2 rounds of changes while I build it',
+       'About 2 weeks','Edits after launch billed at $30 an hour']},
+ {n:'Tier 2', p:'$700–$1,000', m:'+ $50 a month',
+  s:"Everything in Tier 1, and you can edit the site yourself.",
+  inc:['Up to 8 pages','Log in and change your own words and pictures',
+       'Private login, required to reach the editor','A training session and a written guide',
+       '2 rounds of changes while I build it','About 3–4 weeks']},
+ {n:'Tier 3', p:'$1,500–$2,000', m:'+ $50 a month',
+  s:"Everything in Tier 2, plus a working system behind the website.",
+  inc:['A dashboard for you — bookings, orders and enquiries in one place',
+       'Accounts for your own customers, so each one sees only their material',
+       '3 rounds of changes while I build it','About 6–8 weeks',
+       'Priced per project, because this varies the most']}
 ];
-/* Full boxes — used on the Services page */
-function svcHTML(s,i){return '<a class="box rv" href="'+s.h+'"><div class="box-img">'+art(i,'wide')+'</div>'
- +'<div class="box-body"><h3>'+s.t+'</h3><p>'+s.d+'</p><span class="more">Learn More →</span></div></a>';}
-document.getElementById('svcBoxes2').innerHTML=SERVICES.map(svcHTML).join('');
-/* Compact row — used on the home page */
-document.getElementById('svcRow').innerHTML=SERVICES.map(function(s){
- return '<div class="svc-item"><h3>'+s.t+'</h3><p>'+s.s+'</p>'
-  +'<a class="more" href="'+s.h+'">Learn More →</a></div>';}).join('');
+function tierHTML(t){
+ return '<div class="tier rv"><div class="tier-name">'+t.n+'</div>'
+  +'<div class="tier-price">'+t.p+'</div><div class="tier-mo">'+t.m+'</div>'
+  +'<p class="tier-line">'+t.s+'</p><ul>'
+  +t.inc.map(function(i){return '<li>'+i+'</li>';}).join('')
+  +'</ul><a class="btn btn--out" href="#/consult">Start Here</a></div>';}
+document.getElementById('tierGrid').innerHTML=TIERS.map(tierHTML).join('');
+document.getElementById('tierGridHome').innerHTML=TIERS.map(tierHTML).join('');
 
 /* ══════ FEATURED WORK (home page) ══════
    ▼▼ ADD YOUR PROJECTS HERE ▼▼
@@ -844,7 +821,7 @@ document.getElementById('workGrid').innerHTML=FEATURED.map(function(p,i){
    n = business name, c = what YOU did (must match one of the CATS below),
    u = the live web address, img = a screenshot such as 'shots/name.jpg'.
    A project can appear more than once if you did more than one kind of work on it. */
-var CATS=['All','Branding','Logo &amp; Identity','Website Development','App Development','Online Presence'];
+var CATS=['All','Website Development','App Development'];
 var WORK=[
  {n:'CaptureWithKi',c:'Website Development',u:'https://capturewithki.com',img:''},
  {n:'CaptureWithKi',c:'App Development',u:'https://capturewithki.com',img:''}
