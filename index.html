@@ -254,6 +254,16 @@ p{margin:0 0 1.15em}
 .pf-veil small{font-size:.64rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--accent)}
 .pf-veil strong{font-family:var(--serif);font-weight:500;font-size:1.2rem;margin-top:6px}
 
+/* ══════ HOME: FEATURED WORK + COMPACT SERVICES ══════ */
+.work-grid{display:grid;gap:clamp(18px,2.4vw,30px);justify-content:center;
+  grid-template-columns:repeat(auto-fit,minmax(290px,380px))}
+#mePhoto img,#mePhoto svg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.svc-row{display:grid;gap:clamp(16px,2.4vw,30px);
+  grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+.svc-item{border-top:2px solid var(--accent);padding-top:20px}
+.svc-item h3{font-size:1.06rem;margin-bottom:10px}
+.svc-item p{color:var(--soft);font-size:.88rem;line-height:1.65;margin-bottom:14px}
+
 /* ══════ FAQ / FORM ══════ */
 .faq{border-bottom:1px solid var(--line)}
 .faq-q{display:flex;justify-content:space-between;align-items:center;gap:18px;width:100%;
@@ -402,148 +412,64 @@ p{margin:0 0 1.15em}
     <video class="hero-vid" id="heroVid" autoplay muted loop playsinline preload="auto" src="waves.mp4"></video>
     <canvas id="wave" aria-hidden="true"></canvas>
     <div class="wrap">
-      <h1>We Make Your Business<br>Impossible to Overlook<span class="dot">.</span></h1>
+      <h1>Websites That Make Waves<span class="dot">.</span></h1>
       <p class="tagline">Design<span class="dot">.</span> Build<span class="dot">.</span> Grow<span class="dot">.</span></p>
-      <p class="hero-sub">Modern websites, branding, online visibility and custom apps — designed to grow your business and make waves.</p>
-      <a class="btn btn--fill" href="#/contact">Let's Get Started Today</a>
+      <p class="hero-sub">Branding, websites, online visibility and custom apps for small businesses in Beaverton and across the Pacific Northwest.</p>
+      <a class="btn btn--fill" href="#work" data-scroll="work">See the Work</a>
     </div>
-    <a class="down" href="#intro" aria-label="Scroll down"></a>
+    <a class="down" href="#work" data-scroll="work" aria-label="Scroll down"></a>
   </div>
 
-  <div class="sec" id="intro">
+  <!-- ══════ 2. THE WORK ══════ -->
+  <div class="sec" id="work">
+    <div class="wrap">
+      <div class="sec-head center rv">
+        <span class="kicker">The work</span>
+        <h2>Real Projects, Live Right Now</h2>
+        <p class="sub">Every one of these is a working site you can open and use for yourself.</p>
+      </div>
+      <div class="work-grid" id="workGrid"></div>
+      <div class="center" style="margin-top:40px"><a class="btn btn--out" href="#/portfolio">See All Work</a></div>
+    </div>
+  </div>
+
+  <!-- ══════ 3. WHO I AM ══════ -->
+  <div class="sec sec--sand">
     <div class="wrap split">
       <div class="rv">
-        <span class="kicker">Who we are</span>
-        <h2>A Creative, Personalized Web-Design Studio</h2>
-        <p class="sub" style="margin-top:18px">Kea Web Creations was built on a passion for design and the creative process, with a clear focus on helping businesses <strong>elevate their online presence</strong> through refined, high-impact brand, website and app solutions.</p>
-        <p class="sub">Based in Beaverton, Oregon and working with clients across the Pacific Northwest and beyond, we combine strategy, design, development and search visibility to position businesses to stand out, get found, and grow with intention.</p>
-        <p class="sub">Every detail — from brand identity to site structure to the tools running behind the scenes — contributes to stronger visibility, credibility and long-term growth.</p>
-        <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:26px">
-          <a class="btn btn--fill" href="#/contact">Let's Get Started Today</a>
-          <a class="btn btn--out" href="#/services">Our Services</a>
-        </div>
+        <span class="kicker">Who I am</span>
+        <h2>A One-Person Studio</h2>
+        <p class="sub" style="margin-top:18px">You talk to the person who does the work, every time, from the first email to the last invoice.</p>
+        <p class="sub">Agencies sell you the senior team and staff the project with juniors. I can't do that — there's only me. What you see in the pitch is what gets built, and if something's wrong you know exactly whose inbox to use.</p>
+        <ul class="checks" style="margin-top:26px">
+          <li><strong>Straight pricing</strong> — fixed scope, fixed number, agreed before anything starts</li>
+          <li><strong>You own everything</strong> — source files, domain, hosting, all in your name</li>
+          <li><strong>Built to be handed over</strong> — documentation and training come standard</li>
+          <li><strong>Local, and awake</strong> — based in Beaverton, Oregon, same time zone, actual replies</li>
+        </ul>
+        <a class="btn btn--out" href="#/about" style="margin-top:28px">More About How I Work</a>
       </div>
-      <div class="rv" id="introArt" style="aspect-ratio:4/5;position:relative;overflow:hidden;background:var(--sand)"></div>
+      <div class="rv" id="mePhoto" style="aspect-ratio:4/5;position:relative;overflow:hidden;background:var(--sand)"></div>
     </div>
   </div>
 
-  <div class="sec sec--bar center">
-    <div class="wrap">
-      <span class="kicker">Portfolio</span>
-      <h2>Check Our Latest Work</h2>
-      <p class="sub" style="margin:16px auto 30px">A selection of brands, websites and apps built from the ground up.</p>
-      <a class="btn btn--white" href="#/portfolio">Find Out More</a>
-    </div>
-  </div>
-
-  <div class="sec sec--sand">
-    <div class="wrap">
-      <div class="sec-head center rv">
-        <span class="kicker">Results</span>
-        <h2>Before &amp; After</h2>
-        <p class="sub">Our clients are at the core of everything we do. Here's a selection of before-and-after results that show the impact of the work.</p>
-      </div>
-      <h3 class="center rv" style="margin-bottom:26px">Samples of elevated brands &amp; websites</h3>
-      <div class="ba rv">
-        <div class="ba-col"><h4>Before</h4><ul>
-          <li>Outdated template, slow on mobile</li>
-          <li>No consistent logo or color system</li>
-          <li>Invisible in local search results</li>
-          <li>Bookings handled by phone and text</li>
-          <li>No way to update content in-house</li>
-        </ul></div>
-        <div class="ba-col"><h4>After</h4><ul>
-          <li>Custom build, loads in under two seconds</li>
-          <li>Full identity system, applied everywhere</li>
-          <li>Ranking on page one for local terms</li>
-          <li>Online booking with automatic reminders</li>
-          <li>Simple editor the owner actually uses</li>
-        </ul></div>
-      </div>
-      <div class="center" style="margin-top:36px"><a class="btn btn--fill" href="#/portfolio">View The Portfolio</a></div>
-    </div>
-  </div>
-
+  <!-- ══════ 4. WHAT I DO ══════ -->
   <div class="sec">
     <div class="wrap">
       <div class="sec-head center rv">
-        <span class="kicker">What we do</span>
-        <h2>Our Services</h2>
-        <p class="sub">Every project at Kea Web Creations starts with a friendly chat. The end goal is a unique, professional result built around your company and your customers.</p>
+        <span class="kicker">What I do</span>
+        <h2>Four Ways I Can Help</h2>
       </div>
-      <div class="grid g2" id="svcBoxes"></div>
+      <div class="svc-row rv" id="svcRow"></div>
     </div>
   </div>
 
-  <div class="sec sec--sand">
-    <div class="wrap">
-      <div class="sec-head center rv">
-        <span class="kicker">Selected projects</span>
-        <h2>Case Studies</h2>
-        <p class="sub">Nothing matters more here than the people we build for. A few projects worth a closer look.</p>
-      </div>
-      <div class="grid g4" id="caseGrid"></div>
-    </div>
-  </div>
-
-  <div class="sec center">
-    <div class="wrap">
-      <div class="sec-head rv"><span class="kicker">Under the hood</span><h2>Tech Tools We Use</h2></div>
-      <div class="tools rv">
-        <span class="tool">WordPress</span><span class="tool">Webflow</span><span class="tool">Shopify</span>
-        <span class="tool">React</span><span class="tool">Next.js</span><span class="tool">Tailwind</span>
-        <span class="tool">Figma</span><span class="tool">Adobe CC</span><span class="tool">Supabase</span>
-        <span class="tool">Stripe</span><span class="tool">Google Analytics</span><span class="tool">Ahrefs</span>
-      </div>
-    </div>
-  </div>
-
-  <div class="sec sec--sand">
-    <div class="wrap">
-      <div class="sec-head center rv">
-        <span class="kicker">Ongoing support</span>
-        <h2>Monthly Retainers</h2>
-        <p class="sub">If you're growing or revamping the business, a monthly design and development retainer is often the better option.</p>
-      </div>
-      <div class="grid g3" id="retGrid"></div>
-      <div class="center" style="margin-top:36px"><a class="btn btn--fill" href="#/contact">Learn More</a></div>
-    </div>
-  </div>
-
-  <div class="sec">
-    <div class="wrap">
-      <div class="sec-head center rv"><h3>Clients We Have Served</h3></div>
-      <!-- Replace each cell with <img src="logos/client.png" alt="Client name"> -->
-      <div class="logos rv" id="logoGrid"></div>
-    </div>
-  </div>
-
-  <div class="sec sec--sand">
-    <div class="wrap">
-      <div class="sec-head center rv"><span class="kicker">Kind words</span><h2>Testimonials</h2></div>
-      <!-- ⚠ SAMPLE QUOTES — replace with real client testimonials before launch -->
-      <div class="grid g2">
-        <div class="quote rv"><h4>Brand identity &amp; website</h4>
-          <p>"Our old site looked like it was built in 2010 — the new brand and website actually feel like us now. Customers comment on it."</p>
-          <cite>Sample review<span>Local bakery owner</span></cite></div>
-        <div class="quote rv"><h4>Logo, signage &amp; web design</h4>
-          <p>"We went from no consistent look across our storefront, van and social pages to one clean identity everywhere. Easy process, fast turnaround."</p>
-          <cite>Sample review<span>Landscaping company owner</span></cite></div>
-        <div class="quote rv"><h4>Custom booking app</h4>
-          <p>"We were juggling phone calls and a paper calendar. The booking app cut our no-shows in half and gave us our evenings back."</p>
-          <cite>Sample review<span>Fitness studio owner</span></cite></div>
-        <div class="quote rv"><h4>SEO &amp; online presence</h4>
-          <p>"We went from page three of search results to showing up first for the searches that actually bring in customers."</p>
-          <cite>Sample review<span>Boutique retail owner</span></cite></div>
-      </div>
-    </div>
-  </div>
-
+  <!-- ══════ 5. LET'S TALK ══════ -->
   <div class="sec sec--bar center">
     <div class="wrap">
-      <h2>Ready to elevate your brand<span class="dot">?</span></h2>
-      <p class="sub" style="margin:16px auto 30px">Every project starts with a thirty-minute conversation. No obligation, no sales script.</p>
-      <a class="btn btn--fill" href="#/contact">Get Started Today</a>
+      <h2>Thirty minutes, no pitch<span class="dot">.</span></h2>
+      <p class="sub" style="margin:16px auto 30px">Bring the messy version of the idea. That's the useful conversation.</p>
+      <a class="btn btn--fill" href="#/consult">Book A Consultation</a>
     </div>
   </div>
 </section>
@@ -864,62 +790,74 @@ function art(i,r){
    +'<path d="M0 '+(H*.75+o*.2)+' C '+(W*.22)+' '+(H*.66+o*.3)+', '+(W*.38)+' '+(H*.87-o*.2)+', '+(W*.55)+' '+(H*.77+o*.15)+' S '+(W*.88)+' '+(H*.65+o*.3)+', '+W+' '+(H*.73+o*.2)+' L'+W+' '+H+' L0 '+H+'Z" fill="#fff" opacity=".2"/>'
    +'<circle cx="'+(W*.18+o*2)+'" cy="'+(H*.25+o*.4)+'" r="'+(W*.07+o*.25)+'" fill="none" stroke="#fff" stroke-width="1.4" opacity=".28"/></svg>';
 }
-document.getElementById('introArt').innerHTML=
- '<svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0;width:100%;height:100%">'
-+'<defs><linearGradient id="ia" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#16203D"/><stop offset="100%" stop-color="#3E8E87"/></linearGradient></defs>'
-+'<rect width="400" height="500" fill="url(#ia)"/>'
-+'<path d="M0 330 C90 300,150 370,220 340 S350 300,400 325 L400 500 L0 500Z" fill="#fff" opacity=".13"/>'
-+'<path d="M0 385 C90 358,150 424,220 396 S350 358,400 382 L400 500 L0 500Z" fill="#fff" opacity=".21"/>'
-+'<circle cx="105" cy="140" r="46" fill="none" stroke="#fff" stroke-width="2" opacity=".28"/></svg>';
+/* ══════ WHO I AM — PHOTO ══════
+   ▼▼ ADD YOUR PHOTO ▼▼  Put the file in this folder as  images/laakea.jpg
+   then change the empty quotes below to  'images/laakea.jpg'  */
+var ME_PHOTO='';
+document.getElementById('mePhoto').innerHTML = ME_PHOTO
+ ? '<img src="'+ME_PHOTO+'" alt="La\'akea Salvani, Kea Web Creations">'
+ : '<svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0;width:100%;height:100%">'
+  +'<defs><linearGradient id="ia" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#16203D"/><stop offset="100%" stop-color="#3E8E87"/></linearGradient></defs>'
+  +'<rect width="400" height="500" fill="url(#ia)"/>'
+  +'<path d="M0 330 C90 300,150 370,220 340 S350 300,400 325 L400 500 L0 500Z" fill="#fff" opacity=".13"/>'
+  +'<path d="M0 385 C90 358,150 424,220 396 S350 358,400 382 L400 500 L0 500Z" fill="#fff" opacity=".21"/>'
+  +'<circle cx="105" cy="140" r="46" fill="none" stroke="#fff" stroke-width="2" opacity=".28"/></svg>';
 
-/* ══════ SERVICES / CASES / RETAINERS ══════ */
+/* ══════ SERVICES ══════ */
 var SERVICES=[
- {t:'Branding',h:'#/branding',d:"A strong brand is the foundation of your business's identity and long-term success. No matter how good the product is, if your audience can't relate to you emotionally, you're just another company competing for their time."},
- {t:'Elevate Your Online Presence',h:'#/online-presence',d:"Search, local listings, content and social — the work that decides whether anyone finds you at all. A beautiful site nobody sees is an expensive business card."},
- {t:'Website Design &amp; Development',h:'#/web-design',d:"In today's connected market your web presence is the backbone of the business. It needs to be informative, easy to navigate, fast — and pleasing to look at."},
- {t:'App Building',h:'#/app-building',d:"Booking systems, customer portals, inventory tools, internal dashboards. Custom software shaped around how your business already works, not the other way round."}
+ {t:'Branding',h:'#/branding',
+  s:"Logo, colours, type and the rules that keep them consistent everywhere.",
+  d:"A strong brand is the foundation of your business's identity and long-term success. No matter how good the product is, if your audience can't relate to you emotionally, you're just another company competing for their time."},
+ {t:'Elevate Your Online Presence',h:'#/online-presence',
+  s:"Search, local listings and content — the work that decides whether anyone finds you.",
+  d:"Search, local listings, content and social — the work that decides whether anyone finds you at all. A beautiful site nobody sees is an expensive business card."},
+ {t:'Website Design &amp; Development',h:'#/web-design',
+  s:"Fast, custom-built sites that are easy to navigate and easy to keep updated.",
+  d:"In today's connected market your web presence is the backbone of the business. It needs to be informative, easy to navigate, fast — and pleasing to look at."},
+ {t:'App Building',h:'#/app-building',
+  s:"Booking systems, customer portals and internal tools shaped around how you already work.",
+  d:"Booking systems, customer portals, inventory tools, internal dashboards. Custom software shaped around how your business already works, not the other way round."}
 ];
+/* Full boxes — used on the Services page */
 function svcHTML(s,i){return '<a class="box rv" href="'+s.h+'"><div class="box-img">'+art(i,'wide')+'</div>'
  +'<div class="box-body"><h3>'+s.t+'</h3><p>'+s.d+'</p><span class="more">Learn More →</span></div></a>';}
-document.getElementById('svcBoxes').innerHTML=SERVICES.map(svcHTML).join('');
 document.getElementById('svcBoxes2').innerHTML=SERVICES.map(svcHTML).join('');
+/* Compact row — used on the home page */
+document.getElementById('svcRow').innerHTML=SERVICES.map(function(s){
+ return '<div class="svc-item"><h3>'+s.t+'</h3><p>'+s.s+'</p>'
+  +'<a class="more" href="'+s.h+'">Learn More →</a></div>';}).join('');
 
-var CASES=['Bakery Rebrand & Site','Fitness Studio Booking App','Boutique Retail SEO Turnaround','Landscaping Co. Identity'];
-document.getElementById('caseGrid').innerHTML=CASES.map(function(n,i){
- return '<a class="case rv" href="#/portfolio">'+art(i+1,'sq')
-  +'<span class="case-label"><small>Case Study</small><strong>'+n+'</strong></span></a>';}).join('');
-
-document.getElementById('retGrid').innerHTML=[
- {t:'Online Presence',d:'Ongoing SEO, listings and content so you keep climbing instead of plateauing after launch.'},
- {t:'Design + Content',d:'A steady stream of on-brand graphics, posts and print pieces without hiring in-house.'},
- {t:'Website Care',d:'Updates, backups, monitoring and a set number of change requests every month.'}
-].map(function(r,i){return '<a class="box rv" href="#/contact"><div class="box-img">'+art(i,'wide')+'</div>'
- +'<div class="box-body"><h3>'+r.t+'</h3><p>'+r.d+'</p><span class="more">Learn More →</span></div></a>';}).join('');
-
-var LOGOS=['Coffee Roaster','Dental Practice','Boutique Hotel','Yoga Studio','Law Firm','Bakery',
- 'Landscaping Co.','Auto Shop','Hair Salon','Nonprofit','Retail Boutique','Tech Startup'];
-document.getElementById('logoGrid').innerHTML=
- LOGOS.map(function(l){return '<div class="logo-cell">'+l+'</div>';}).join('');
+/* ══════ FEATURED WORK (home page) ══════
+   ▼▼ ADD YOUR PROJECTS HERE ▼▼
+   n = business name, u = the live web address, d = one sentence on what you built.
+   img = a screenshot, e.g. 'shots/capturewithki.jpg'. Leave img:'' to show artwork instead. */
+var FEATURED=[
+ {n:'CaptureWithKi', u:'https://capturewithki.com', img:'',
+  d:"A photography site with a custom client-gallery system — private galleries, self-serve delivery, and galleries that tidy themselves up after each shoot."}
+];
+document.getElementById('workGrid').innerHTML=FEATURED.map(function(p,i){
+ var m=p.img?'<img src="'+p.img+'" alt="'+p.n+'">':art(i+1,'wide');
+ return '<a class="box rv" href="'+p.u+'" target="_blank" rel="noopener">'
+  +'<div class="box-img">'+m+'</div>'
+  +'<div class="box-body"><h3>'+p.n+'</h3><p>'+p.d+'</p>'
+  +'<span class="more">Visit The Site →</span></div></a>';}).join('');
 
 /* ══════ PORTFOLIO ══════
-   ▼▼ REPLACE WITH YOUR OWN PROJECTS ▼▼
-   Add img:'shots/name.jpg' to any item to use a real screenshot. */
-var CATS=['All','Branding','Logo &amp; Identity','Website Development','App Development','Online Presence','Photography','Video'];
+   ▼▼ ADD YOUR PROJECTS HERE ▼▼
+   n = business name, c = what YOU did (must match one of the CATS below),
+   u = the live web address, img = a screenshot such as 'shots/name.jpg'.
+   A project can appear more than once if you did more than one kind of work on it. */
+var CATS=['All','Branding','Logo &amp; Identity','Website Development','App Development','Online Presence'];
 var WORK=[
- {n:'Coffee Roaster Website',c:'Website Development'},{n:'Bakery Brand Refresh',c:'Branding'},
- {n:'Fitness Studio Booking App',c:'App Development'},{n:'Dental Practice Logo',c:'Logo &amp; Identity'},
- {n:'Boutique Hotel Site',c:'Website Development'},{n:'Retail Boutique SEO',c:'Online Presence'},
- {n:'Landscaping Co. Identity',c:'Branding'},{n:'Product Photography Set',c:'Photography'},
- {n:'Law Firm Website',c:'Website Development'},{n:'Brand Story Video',c:'Video'},
- {n:'Salon Booking App',c:'App Development'},{n:'Nonprofit Logo &amp; Icon Set',c:'Logo &amp; Identity'},
- {n:'Auto Shop Rebrand',c:'Branding'},{n:'Yoga Studio Website',c:'Website Development'},
- {n:'Local Search Turnaround',c:'Online Presence'},{n:'Storefront Photography',c:'Photography'}
+ {n:'CaptureWithKi',c:'Website Development',u:'https://capturewithki.com',img:''},
+ {n:'CaptureWithKi',c:'App Development',u:'https://capturewithki.com',img:''}
 ];
 (function(){
  var g=document.getElementById('pfGrid'),f=document.getElementById('filters');
  g.innerHTML=WORK.map(function(p,i){
   var m=p.img?'<img src="'+p.img+'" alt="'+p.n+'">':art(i,'wide');
-  return '<a class="pf-cell" href="#/contact" data-c="'+p.c+'">'+m
+  var link=p.u?'href="'+p.u+'" target="_blank" rel="noopener"':'href="#/contact"';
+  return '<a class="pf-cell" '+link+' data-c="'+p.c+'">'+m
    +'<span class="pf-veil"><small>'+p.c+'</small><strong>'+p.n+'</strong></span></a>';}).join('');
  f.innerHTML=CATS.map(function(c,i){return '<button class="filter'+(i?'':' on')+'" data-f="'+c+'">'+c+'</button>';}).join('');
  f.addEventListener('click',function(e){
@@ -929,6 +867,14 @@ var WORK=[
   g.querySelectorAll('.pf-cell').forEach(function(c){
    c.classList.toggle('hide',b.dataset.f!=='All'&&c.dataset.c!==b.dataset.f);});});
 })();
+
+/* ══════ SMOOTH SCROLL for in-page links (the router owns #/ links) ══════ */
+document.addEventListener('click',function(e){
+ var a=e.target.closest('[data-scroll]'); if(!a)return;
+ e.preventDefault();
+ var t=document.getElementById(a.dataset.scroll);
+ if(t)t.scrollIntoView({behavior:'smooth',block:'start'});
+});
 
 /* ══════ ROUTER / UI ══════ */
 (function(){
