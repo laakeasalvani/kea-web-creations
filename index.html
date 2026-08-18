@@ -808,6 +808,9 @@ document.getElementById('tierGridHome').innerHTML=TIERS.map(tierHTML).join('');
 var FEATURED=[
  {n:'CaptureWithKi', u:'https://capturewithki.com', img:'',
   d:"A photography site with a custom client-gallery system — private galleries, self-serve delivery, and galleries that tidy themselves up after each shoot."}
+,
+ {n:'LDAH Hawaiʻi', u:'https://rosie-rowe.mykajabi.com/', img:'',
+  d:"Leadership in Disabilities and Achievement of Hawaiʻi — an official certification program training IEP advocates through Bronze, Silver and Gold tiers, with a built-in accessibility toolbar for read-aloud, contrast and text sizing."}
 ];
 document.getElementById('workGrid').innerHTML=FEATURED.map(function(p,i){
  var m=p.img?'<img src="'+p.img+'" alt="'+p.n+'">':art(i+1,'wide');
@@ -824,7 +827,8 @@ document.getElementById('workGrid').innerHTML=FEATURED.map(function(p,i){
 var CATS=['All','Website Development','App Development'];
 var WORK=[
  {n:'CaptureWithKi',c:'Website Development',u:'https://capturewithki.com',img:''},
- {n:'CaptureWithKi',c:'App Development',u:'https://capturewithki.com',img:''}
+ {n:'CaptureWithKi',c:'App Development',u:'https://capturewithki.com',img:''},
+ {n:'LDAH Hawaiʻi',c:'Website Development',u:'https://rosie-rowe.mykajabi.com/',img:''}
 ];
 (function(){
  var g=document.getElementById('pfGrid'),f=document.getElementById('filters');
