@@ -857,7 +857,7 @@ function modalAttrs(p){return ' data-modal-url="'+p.u+'" data-modal-name="'+p.n+
    n = business name, u = the live web address, d = one sentence on what you built.
    img = a screenshot, e.g. 'shots/capturewithki.jpg'. Leave img:'' to show artwork instead. */
 var FEATURED=[
- {n:'CaptureWithKi', u:'https://capturewithki.com', img:'shots/capturewithki.jpg', frame:1,
+ {n:'CaptureWithKi', u:'https://capturewithki.com', img:'shots/capturewithki.jpg', frame:0,
   d:"A photography site with a custom client-gallery system — private galleries, self-serve delivery, and galleries that tidy themselves up after each shoot."}
 ,
  {n:'LDAH Hawaiʻi', u:'https://rosie-rowe.mykajabi.com/', img:'shots/ldah.jpg', frame:0,
@@ -881,7 +881,7 @@ document.getElementById('workGrid').innerHTML=FEATURED.map(function(p,i){
    A project can appear more than once if you did more than one kind of work on it. */
 var CATS=['All','Website Development','App Development'];
 var WORK=[
- {n:'CaptureWithKi',c:'App Development',u:'https://capturewithki.com',img:'shots/capturewithki.jpg',frame:1},
+ {n:'CaptureWithKi',c:'App Development',u:'https://capturewithki.com',img:'shots/capturewithki.jpg',frame:0},
  {n:'LDAH Hawaiʻi',c:'Website Development',u:'https://rosie-rowe.mykajabi.com/',img:'shots/ldah.jpg',frame:0},
  {n:'madebyhaaans',c:'Website Development',u:'https://laakeasalvani.github.io/madebyhaaans/',img:'shots/madebyhaaans.jpg',frame:1}
 ];
@@ -968,7 +968,7 @@ document.querySelectorAll('[data-form]').forEach(function(f){
   out.href=d.modalUrl;
   if(d.modalFrame==='1'){
    body.innerHTML='<iframe src="'+d.modalUrl+'" title="'+d.modalName+
-     '" loading="lazy" referrerpolicy="no-referrer"></iframe>';
+     '" referrerpolicy="no-referrer"></iframe>';
   }else{
    /* Kajabi and friends forbid embedding, so show the screenshot instead
       of letting the browser render a refused-to-connect box. */
