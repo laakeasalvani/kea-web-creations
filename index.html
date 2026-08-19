@@ -290,7 +290,7 @@ p{margin:0 0 1.15em}
 .modal-body iframe{position:absolute;inset:0;width:100%;height:100%;border:0;background:#fff}
 .modal-note{position:absolute;inset:0;overflow-y:auto;overflow-x:hidden;background:#fff;
   overscroll-behavior:contain}
-.modal-note img{display:block;width:100%;height:auto}
+.modal-note img{display:block;width:100%;max-width:1440px;margin:0 auto;height:auto}
 .modal-cap{padding:clamp(24px,3.5vw,44px);text-align:center;border-top:1px solid var(--line);
   background:var(--sand)}
 .modal-cap p{color:var(--soft);font-size:.95rem;max-width:60ch;margin:0 auto 22px}
@@ -859,7 +859,7 @@ function modalAttrs(p){return ' data-modal-url="'+p.u+'" data-modal-name="'+p.n+
    n = business name, u = the live web address, d = one sentence on what you built.
    img = a screenshot, e.g. 'shots/capturewithki.jpg'. Leave img:'' to show artwork instead. */
 var FEATURED=[
- {n:'CaptureWithKi', u:'https://capturewithki.com', img:'shots/capturewithki.jpg', full:'shots/capturewithki-full.jpg', frame:0,
+ {n:'CaptureWithKi', u:'https://capturewithki.com', img:'shots/capturewithki.jpg', frame:0,
   d:"A photography site with a custom client-gallery system — private galleries, self-serve delivery, and galleries that tidy themselves up after each shoot."}
 ,
  {n:'LDAH Hawaiʻi', u:'https://rosie-rowe.mykajabi.com/', img:'shots/ldah.jpg', full:'shots/ldah-full.jpg', frame:0,
@@ -883,7 +883,7 @@ document.getElementById('workGrid').innerHTML=FEATURED.map(function(p,i){
    A project can appear more than once if you did more than one kind of work on it. */
 var CATS=['All','Website Development','App Development'];
 var WORK=[
- {n:'CaptureWithKi',c:'App Development',u:'https://capturewithki.com',img:'shots/capturewithki.jpg',full:'shots/capturewithki-full.jpg',frame:0},
+ {n:'CaptureWithKi',c:'App Development',u:'https://capturewithki.com',img:'shots/capturewithki.jpg',frame:0},
  {n:'LDAH Hawaiʻi',c:'Website Development',u:'https://rosie-rowe.mykajabi.com/',img:'shots/ldah.jpg',full:'shots/ldah-full.jpg',frame:0},
  {n:'madebyhaaans',c:'Website Development',u:'https://laakeasalvani.github.io/madebyhaaans/',img:'shots/madebyhaaans.jpg',frame:1}
 ];
