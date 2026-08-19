@@ -277,12 +277,21 @@ p{margin:0 0 1.15em}
 
 /* ══════ FAQ / FORM ══════ */
 .faq{border-bottom:1px solid var(--line)}
+/* filled variant — used for the What I Do accordion on the home page */
+.svc-split{display:grid;gap:clamp(30px,5vw,68px);align-items:start;
+  grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr)}
+@media(max-width:900px){.svc-split{grid-template-columns:1fr}}
+.faq--fill{border-bottom:0;background:#fff;margin-bottom:10px;padding:0 clamp(16px,2vw,24px);
+  transition:box-shadow .25s}
+.faq--fill:hover{box-shadow:0 6px 18px rgba(27,34,51,.07)}
+.faq--fill .faq-q{padding:20px 0}
+.faq--fill .faq-a p{padding-bottom:22px}
 .faq-q{display:flex;justify-content:space-between;align-items:center;gap:18px;width:100%;
   text-align:left;padding:22px 0;font-family:var(--serif);font-weight:500;font-size:1.08rem}
 .faq-q span:last-child{color:var(--accent);font-size:1.4rem;transition:transform .3s;flex-shrink:0;font-family:var(--sans)}
 .faq-q.on span:last-child{transform:rotate(45deg)}
 .faq-a{max-height:0;overflow:hidden;transition:max-height .38s ease}
-.faq-a.on{max-height:320px}
+.faq-a.on{max-height:460px}
 .faq-a p{color:var(--soft);font-size:.93rem;padding-bottom:20px;margin:0}
 
 .form{display:grid;gap:16px}
@@ -431,25 +440,26 @@ p{margin:0 0 1.15em}
   <!-- ══════ 3. WHAT I DO ══════ -->
   <div class="sec sec--sand">
     <div class="wrap">
-      <div class="sec-head center rv">
-        <span class="kicker">What I do</span>
-        <h2>Three Things, Done Properly</h2>
-      </div>
-      <div class="svc-row rv">
-        <div class="svc-item">
-          <h3>Front-End Development</h3>
-          <p>Our front-end development ensures that approved designs are translated accurately into clean, functional interfaces. We focus on performance, consistency, and accessibility so your website works smoothly across browsers and devices.</p>
-          <p>Design and development are closely coordinated to maintain visual integrity and usability.</p>
+      <div class="svc-split">
+        <div class="rv">
+          <span class="kicker">What I do</span>
+          <h2>What Goes Into Your Website</h2>
+          <p class="sub" style="margin-top:18px">I handle the whole build — the part you see, the part running underneath it, and the parts that keep it working after launch.</p>
+          <p class="sub">Because there is only me, none of it gets handed between people or passed to a subcontractor. Open any one to see what it involves.</p>
         </div>
-        <div class="svc-item">
-          <h3>Backend &amp; Content Management</h3>
-          <p>We build websites with reliable backend functionality, including content management systems, databases, and dynamic features when needed. This allows your site to be updated easily and expanded over time.</p>
-          <p>Whether you need a simple CMS-driven site or more complex functionality, we build with scalability and maintainability in mind.</p>
-        </div>
-        <div class="svc-item">
-          <h3>E-Commerce &amp; Scheduling</h3>
-          <p>For businesses that sell products or accept bookings online, we offer e-commerce and scheduling integrations tailored to your needs. This can include product catalogs, secure checkout, booking calendars, and form-based workflows.</p>
-          <p>Our goal is to make online transactions and scheduling straightforward for both you and your customers.</p>
+        <div class="rv">
+          <div class="faq faq--fill"><button class="faq-q">Front-End Development <span>+</span></button>
+            <div class="faq-a"><p>My front-end development ensures that approved designs are translated accurately into clean, functional interfaces. I focus on performance, consistency, and accessibility so your website works smoothly across browsers and devices.</p><p style="margin-top:12px">Design and development are closely coordinated to maintain visual integrity and usability.</p></div></div>
+          <div class="faq faq--fill"><button class="faq-q">Backend &amp; Content Management <span>+</span></button>
+            <div class="faq-a"><p>I build websites with reliable backend functionality, including content management systems, databases, and dynamic features when needed. This allows your site to be updated easily and expanded over time.</p><p style="margin-top:12px">Whether you need a simple CMS-driven site or more complex functionality, I build with scalability and maintainability in mind.</p></div></div>
+          <div class="faq faq--fill"><button class="faq-q">E-Commerce &amp; Scheduling <span>+</span></button>
+            <div class="faq-a"><p>For businesses that sell products or accept bookings online, I offer e-commerce and scheduling integrations tailored to your needs. This can include product catalogs, secure checkout, booking calendars, and form-based workflows.</p><p style="margin-top:12px">My goal is to make online transactions and scheduling straightforward for both you and your customers.</p></div></div>
+          <div class="faq faq--fill"><button class="faq-q">Hosting &amp; Maintenance <span>+</span></button>
+            <div class="faq-a"><p>Every site I build stays on my hosting for $30 a month. That covers uptime, daily backups, security patches, and making sure your domain never lapses.</p><p style="margin-top:12px">Your domain and source files stay in your name — I hold the hosting so that keeping the site running is my job rather than yours.</p></div></div>
+          <div class="faq faq--fill"><button class="faq-q">Search &amp; Visibility <span>+</span></button>
+            <div class="faq-a"><p>Every build includes the groundwork that lets people find you: a clear page title and description, sensible headings, and your business set up so it turns up when someone searches your name.</p><p style="margin-top:12px">This is the foundation rather than an ongoing marketing campaign — it makes sure you are findable, not that you outrank everyone.</p></div></div>
+          <div class="faq faq--fill"><button class="faq-q">Training &amp; Handover <span>+</span></button>
+            <div class="faq-a"><p>Nothing I build is a black box. Tier 2 and Tier 3 come with a training session and a written guide for editing your own content, and every project ships with documentation.</p><p style="margin-top:12px">If you ever decide to move on, you take the files with you and the site goes with you.</p></div></div>
         </div>
       </div>
     </div>
