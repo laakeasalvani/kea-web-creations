@@ -455,20 +455,7 @@ p{margin:0 0 1.15em}
     </div>
   </div>
 
-  <!-- ══════ 4. WHAT IT COSTS ══════ -->
-  <div class="sec">
-    <div class="wrap">
-      <div class="sec-head center rv">
-        <span class="kicker">What it costs</span>
-        <h2>Three Packages, No Surprises</h2>
-        <p class="sub">Every price agreed in writing before any work starts. The monthly keeps your site online, backed up and patched.</p>
-      </div>
-      <div class="tiers" id="tierGridHome"></div>
-      <div class="center" style="margin-top:40px"><a class="btn btn--out" href="#/services">See What's Included</a></div>
-    </div>
-  </div>
-
-  <!-- ══════ 5. LET'S TALK ══════ -->
+  <!-- ══════ 4. LET'S TALK ══════ -->
   <div class="sec sec--bar center">
     <div class="wrap">
       <h2>Thirty minutes, no pitch<span class="dot">.</span></h2>
@@ -772,7 +759,6 @@ function tierHTML(t){
   +t.inc.map(function(i){return '<li>'+i+'</li>';}).join('')
   +'</ul><a class="btn btn--out" href="#/contact">Start Here</a></div>';}
 document.getElementById('tierGrid').innerHTML=TIERS.map(tierHTML).join('');
-document.getElementById('tierGridHome').innerHTML=TIERS.map(tierHTML).join('');
 
 /* ══════ FEATURED WORK (home page) ══════
    ▼▼ ADD YOUR PROJECTS HERE ▼▼
