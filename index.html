@@ -288,11 +288,12 @@ p{margin:0 0 1.15em}
 .modal-x:hover{color:var(--ink);border-color:var(--soft)}
 .modal-body{flex:1;position:relative;overflow:hidden;background:var(--sand)}
 .modal-body iframe{position:absolute;inset:0;width:100%;height:100%;border:0;background:#fff}
-.modal-note{position:absolute;inset:0;overflow:auto;padding:clamp(20px,4vw,46px);
-  display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:20px}
-.modal-note img{max-width:min(100%,860px);border:1px solid var(--line);
-  box-shadow:0 14px 40px rgba(27,34,51,.16)}
-.modal-note p{color:var(--soft);font-size:.95rem;max-width:60ch;margin:0}
+.modal-note{position:absolute;inset:0;overflow-y:auto;overflow-x:hidden;background:#fff;
+  overscroll-behavior:contain}
+.modal-note img{display:block;width:100%;height:auto}
+.modal-cap{padding:clamp(24px,3.5vw,44px);text-align:center;border-top:1px solid var(--line);
+  background:var(--sand)}
+.modal-cap p{color:var(--soft);font-size:.95rem;max-width:60ch;margin:0 auto 22px}
 
 /* ══════ PRICING TIERS ══════ */
 .tiers{display:grid;gap:clamp(18px,2.4vw,28px);
@@ -849,7 +850,8 @@ document.getElementById('tierGrid').innerHTML=TIERS.map(tierHTML).join('');
 document.getElementById('tierGridHome').innerHTML=TIERS.map(tierHTML).join('');
 
 function modalAttrs(p){return ' data-modal-url="'+p.u+'" data-modal-name="'+p.n+'"'
- +' data-modal-img="'+(p.img||'')+'" data-modal-frame="'+(p.frame?1:0)+'"'
+ +' data-modal-img="'+(p.img||'')+'" data-modal-full="'+(p.full||'')+'"'
+ +' data-modal-frame="'+(p.frame?1:0)+'"'
  +' data-modal-desc="'+String(p.d||'').replace(/"/g,'&quot;')+'"';}
 
 /* ══════ FEATURED WORK (home page) ══════
@@ -857,10 +859,10 @@ function modalAttrs(p){return ' data-modal-url="'+p.u+'" data-modal-name="'+p.n+
    n = business name, u = the live web address, d = one sentence on what you built.
    img = a screenshot, e.g. 'shots/capturewithki.jpg'. Leave img:'' to show artwork instead. */
 var FEATURED=[
- {n:'CaptureWithKi', u:'https://capturewithki.com', img:'shots/capturewithki.jpg', frame:0,
+ {n:'CaptureWithKi', u:'https://capturewithki.com', img:'shots/capturewithki.jpg', full:'shots/capturewithki-full.jpg', frame:0,
   d:"A photography site with a custom client-gallery system — private galleries, self-serve delivery, and galleries that tidy themselves up after each shoot."}
 ,
- {n:'LDAH Hawaiʻi', u:'https://rosie-rowe.mykajabi.com/', img:'shots/ldah.jpg', frame:0,
+ {n:'LDAH Hawaiʻi', u:'https://rosie-rowe.mykajabi.com/', img:'shots/ldah.jpg', full:'shots/ldah-full.jpg', frame:0,
   d:"Leadership in Disabilities and Achievement of Hawaiʻi — an official certification program training IEP advocates through Bronze, Silver and Gold tiers, with a built-in accessibility toolbar for read-aloud, contrast and text sizing."}
 ,
  {n:'madebyhaaans', u:'https://laakeasalvani.github.io/madebyhaaans/', img:'shots/madebyhaaans.jpg', frame:1,
@@ -881,8 +883,8 @@ document.getElementById('workGrid').innerHTML=FEATURED.map(function(p,i){
    A project can appear more than once if you did more than one kind of work on it. */
 var CATS=['All','Website Development','App Development'];
 var WORK=[
- {n:'CaptureWithKi',c:'App Development',u:'https://capturewithki.com',img:'shots/capturewithki.jpg',frame:0},
- {n:'LDAH Hawaiʻi',c:'Website Development',u:'https://rosie-rowe.mykajabi.com/',img:'shots/ldah.jpg',frame:0},
+ {n:'CaptureWithKi',c:'App Development',u:'https://capturewithki.com',img:'shots/capturewithki.jpg',full:'shots/capturewithki-full.jpg',frame:0},
+ {n:'LDAH Hawaiʻi',c:'Website Development',u:'https://rosie-rowe.mykajabi.com/',img:'shots/ldah.jpg',full:'shots/ldah-full.jpg',frame:0},
  {n:'madebyhaaans',c:'Website Development',u:'https://laakeasalvani.github.io/madebyhaaans/',img:'shots/madebyhaaans.jpg',frame:1}
 ];
 (function(){
@@ -972,11 +974,12 @@ document.querySelectorAll('[data-form]').forEach(function(f){
   }else{
    /* Kajabi and friends forbid embedding, so show the screenshot instead
       of letting the browser render a refused-to-connect box. */
+   var shot=d.modalFull||d.modalImg;
    body.innerHTML='<div class="modal-note">'
-    +(d.modalImg?'<img src="'+d.modalImg+'" alt="Homepage of '+d.modalName+'">':'')
-    +'<p>'+d.modalDesc+'</p>'
+    +(shot?'<img src="'+shot+'" alt="Homepage of '+d.modalName+'">':'')
+    +'<div class="modal-cap"><p>'+d.modalDesc+'</p>'
     +'<a class="btn btn--fill" href="'+d.modalUrl+'" target="_blank" rel="noopener">Open The Live Site</a>'
-    +'</div>';
+    +'</div></div>';
   }
   m.hidden=false; m.classList.add('on');
   document.body.style.overflow='hidden';
