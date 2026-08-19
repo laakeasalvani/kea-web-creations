@@ -261,8 +261,6 @@ p{margin:0 0 1.15em}
   grid-template-columns:repeat(auto-fit,minmax(270px,1fr))}
 .tier{background:#fff;border:1px solid var(--line);padding:34px 30px 36px;
   display:flex;flex-direction:column}
-.tier-name{font-family:var(--sans);font-weight:600;font-size:.72rem;letter-spacing:.22em;
-  text-transform:uppercase;color:var(--accent);margin-bottom:16px}
 .tier-price{font-family:var(--serif);font-weight:500;font-size:clamp(1.9rem,3vw,2.4rem);
   line-height:1.1;color:var(--ink)}
 .tier-mo{font-family:var(--sans);font-size:.86rem;color:var(--soft);margin-top:6px}
@@ -486,7 +484,7 @@ p{margin:0 0 1.15em}
   <div class="sec sec--sand"><div class="wrap">
     <div class="sec-head center rv">
       <span class="kicker">The monthly</span>
-      <h2>What $50 a Month Covers</h2>
+      <h2>What $30 a Month Covers</h2>
       <p class="sub">Every package includes it. It is what keeps the site online and working.</p>
     </div>
     <div class="split">
@@ -513,7 +511,7 @@ p{margin:0 0 1.15em}
       <li><strong>Half to start, half before launch</strong> — the price is agreed in writing before any work begins</li>
       <li><strong>The clock starts when your content arrives</strong> — not when you pay, so a slow week on your side never becomes a missed deadline on mine</li>
       <li><strong>You supply the words and photos</strong> — writing is available as a paid add-on if you'd rather not</li>
-      <li><strong>Extra rounds of changes</strong> — beyond those included, billed at $30 an hour</li>
+      <li><strong>Extra rounds of changes</strong> — beyond those included, billed at $40 an hour</li>
       <li><strong>Not included</strong> — ongoing marketing, paid ads, photography, printed material</li>
     </ul>
   </div></div>
@@ -768,17 +766,17 @@ document.getElementById('mePhoto').innerHTML = ME_PHOTO
    ▼▼ YOUR PRICES LIVE HERE ▼▼  Change them once and both the home page
    and the Services page update together. */
 var TIERS=[
- {n:'Tier 1', p:'$500', m:'+ $50 a month',
+ {n:'Tier 1', m:'Hosting &amp; care — $30 a month',
   s:"A professional website, built and looked after. Changes come through me.",
   inc:['Up to 5 pages','Works properly on phones','Contact form',
        'Basic Google setup so people can find you','2 rounds of changes while I build it',
-       'About 2 weeks','Edits after launch billed at $30 an hour']},
- {n:'Tier 2', p:'$700–$1,000', m:'+ $50 a month',
+       'About 2 weeks','Edits after launch billed at $40 an hour']},
+ {n:'Tier 2', m:'Hosting &amp; care — $30 a month',
   s:"Everything in Tier 1, and you can edit the site yourself.",
   inc:['Up to 8 pages','Log in and change your own words and pictures',
        'Private login, required to reach the editor','A training session and a written guide',
        '2 rounds of changes while I build it','About 3–4 weeks']},
- {n:'Tier 3', p:'$1,500–$2,000', m:'+ $50 a month',
+ {n:'Tier 3', m:'Hosting &amp; care — $30 a month',
   s:"Everything in Tier 2, plus a working system behind the website.",
   inc:['A dashboard for you — bookings, orders and enquiries in one place',
        'Accounts for your own customers, so each one sees only their material',
@@ -786,8 +784,8 @@ var TIERS=[
        'Priced per project, because this varies the most']}
 ];
 function tierHTML(t){
- return '<div class="tier rv"><div class="tier-name">'+t.n+'</div>'
-  +'<div class="tier-price">'+t.p+'</div><div class="tier-mo">'+t.m+'</div>'
+ return '<div class="tier rv">'
+  +'<div class="tier-price">'+t.n+'</div><div class="tier-mo">'+t.m+'</div>'
   +'<p class="tier-line">'+t.s+'</p><ul>'
   +t.inc.map(function(i){return '<li>'+i+'</li>';}).join('')
   +'</ul><a class="btn btn--out" href="#/consult">Start Here</a></div>';}
