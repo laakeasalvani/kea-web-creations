@@ -254,7 +254,7 @@ p{margin:0 0 1.15em}
 
 /* ══════ HOME: FEATURED WORK + COMPACT SERVICES ══════ */
 .work-grid{display:grid;gap:clamp(18px,2.4vw,30px);justify-content:center;
-  grid-template-columns:repeat(auto-fit,minmax(290px,380px))}
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
 #mePhoto img,#mePhoto svg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .svc-row{display:grid;gap:clamp(16px,2.4vw,30px);
   grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
@@ -811,6 +811,9 @@ var FEATURED=[
 ,
  {n:'LDAH Hawaiʻi', u:'https://rosie-rowe.mykajabi.com/', img:'',
   d:"Leadership in Disabilities and Achievement of Hawaiʻi — an official certification program training IEP advocates through Bronze, Silver and Gold tiers, with a built-in accessibility toolbar for read-aloud, contrast and text sizing."}
+,
+ {n:'madebyhaaans', u:'https://laakeasalvani.github.io/madebyhaaans/', img:'',
+  d:"A one-page site for a home baker in Kakaʻako, Honolulu — a scrolling flavour picker, take-and-bake instructions for frozen pans, and ordering that hands straight off to Instagram."}
 ];
 document.getElementById('workGrid').innerHTML=FEATURED.map(function(p,i){
  var m=p.img?'<img src="'+p.img+'" alt="'+p.n+'">':art(i+1,'wide');
@@ -829,6 +832,8 @@ var WORK=[
  {n:'CaptureWithKi',c:'Website Development',u:'https://capturewithki.com',img:''},
  {n:'CaptureWithKi',c:'App Development',u:'https://capturewithki.com',img:''},
  {n:'LDAH Hawaiʻi',c:'Website Development',u:'https://rosie-rowe.mykajabi.com/',img:''}
+,
+ {n:'madebyhaaans',c:'Website Development',u:'https://laakeasalvani.github.io/madebyhaaans/',img:''}
 ];
 (function(){
  var g=document.getElementById('pfGrid'),f=document.getElementById('filters');
