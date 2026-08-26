@@ -15,7 +15,9 @@ Then visit `http://localhost:8000`.
 ## Publish with GitHub Pages
 
 1. On GitHub: **Settings → Pages → Source: Deploy from a branch → Branch: `main` / `root`**.
-2. The site will be live at `https://laakeasalvani.github.io/kea-web-creations/`.
+2. The site is live at `https://keawebcreations.com` (custom domain, set by the
+   `CNAME` file in the repo root). The old `https://laakeasalvani.github.io/kea-web-creations/`
+   address still works and redirects there.
 
 ## Contact form
 
@@ -41,9 +43,11 @@ Two things to know:
   "Kea Web Creations", because that is the only domain verified in Resend.
   Once a Kea domain is bought and verified, change `KEA_FROM` in
   `capturewithki/functions/lib/kea.js` and redeploy. That is the only edit.
-- A new site origin (a custom domain) must be added to `KEA_ORIGINS` in
+- A new site origin must be added to `KEA_ORIGINS` in
   `capturewithki/functions/index.js`, or the browser blocks the request with a
-  CORS error that never reaches the function logs.
+  CORS error that never reaches the function logs — the form just appears to
+  do nothing. `keawebcreations.com`, `www.keawebcreations.com` and the
+  original `laakeasalvani.github.io` are all allowed today.
 
 Redeploy after either change:
 
