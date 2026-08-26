@@ -304,6 +304,13 @@ p{margin:0 0 1.15em}
 .field textarea{min-height:140px;resize:vertical}
 .ok{display:none;padding:14px 16px;background:var(--accent);color:#fff;font-size:.82rem;font-weight:500}
 .ok.on{display:block}
+.err{display:none;padding:14px 16px;background:#FCE9E6;border-left:2px solid #C0392B;
+  color:#8E2C22;font-size:.82rem;font-weight:500;line-height:1.6}
+.err.on{display:block}
+/* The honeypot must be invisible to people but present for scripts, so it is
+   moved off-screen rather than display:none — some bots skip hidden fields. */
+.hp{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
+.form button[disabled]{opacity:.55;cursor:progress}
 .note{font-size:.79rem;color:var(--soft)}
 .dl{margin:0}
 .dl div{display:flex;gap:16px;padding:16px 0;border-bottom:1px solid var(--line)}
@@ -612,7 +619,7 @@ p{margin:0 0 1.15em}
   <div class="sec"><div class="wrap split" style="align-items:start">
     <div class="rv"><span class="kicker">Get in touch</span><h2>Kea Web Creations</h2>
       <dl class="dl" style="margin-top:22px">
-        <div><dt>Email</dt><dd><a href="mailto:laakeasalvani@gmail.com">laakeasalvani@gmail.com</a></dd></div>
+        <div><dt>Email</dt><dd><a href="mailto:keawebcreations@gmail.com">keawebcreations@gmail.com</a></dd></div>
         <div><dt>Phone</dt><dd><a href="tel:+18083068792">+1 (808) 306-8792</a></dd></div>
         <div><dt>Based in</dt><dd>Beaverton, Oregon<br>Serving the Pacific Northwest &amp; clients nationwide</dd></div>
         <div><dt>Hours</dt><dd>Monday–Friday, 9am–5pm PT</dd></div>
@@ -622,22 +629,25 @@ p{margin:0 0 1.15em}
       <h3 style="margin-bottom:20px">Send a message</h3>
       <form class="form" data-form>
         <div class="f-row">
-          <div class="field"><label for="f1">Your name</label><input id="f1" required></div>
-          <div class="field"><label for="f2">Phone</label><input id="f2" type="tel"></div>
+          <div class="field"><label for="f1">Your name</label><input id="f1" name="name" autocomplete="name" required></div>
+          <div class="field"><label for="f2">Phone</label><input id="f2" name="phone" type="tel" autocomplete="tel"></div>
         </div>
         <div class="f-row">
-          <div class="field"><label for="f3">Email</label><input id="f3" type="email" required></div>
-          <div class="field"><label for="f4">Current website</label><input id="f4" placeholder="optional"></div>
+          <div class="field"><label for="f3">Email</label><input id="f3" name="email" type="email" autocomplete="email" required></div>
+          <div class="field"><label for="f4">Current website</label><input id="f4" name="website" placeholder="optional"></div>
         </div>
         <div class="field"><label for="f5">I'm interested in</label>
-          <select id="f5"><option>Tier 1 — website only</option><option>Tier 2 — website + editor login</option>
+          <select id="f5" name="interest"><option>Tier 1 — website only</option><option>Tier 2 — website + editor login</option>
           <option>Tier 3 — website + dashboard and customer accounts</option>
           <option>Not sure which tier</option>
           <option>A private consultation</option><option>Something else</option></select></div>
-        <div class="field"><label for="f6">Your message</label><textarea id="f6" placeholder="What are you trying to build, and by when?"></textarea></div>
+        <div class="field"><label for="f6">Your message</label><textarea id="f6" name="message" placeholder="What are you trying to build, and by when?"></textarea></div>
+        <!-- Honeypot. Invisible to people, irresistible to scrapers: anything
+             that arrives with this filled in is discarded server-side. -->
+        <div class="hp" aria-hidden="true"><label for="f7">Company</label><input id="f7" name="company" type="text" tabindex="-1" autocomplete="off"></div>
         <button class="btn btn--fill" type="submit">Let's Get Started Today</button>
         <div class="ok" data-ok>Thanks — message received. I'll be in touch within one business day.</div>
-        <p class="note">This form doesn't send yet — connect it to a form service or email endpoint before launch.</p>
+        <div class="err" data-err role="alert"></div>
       </form>
     </div>
   </div></div>
@@ -654,7 +664,7 @@ p{margin:0 0 1.15em}
           <span class="tile-script">Kea.</span><span class="tile-sub">Web Creations</span>
         </a>
         <p>Beaverton, Oregon<br>Serving the Pacific Northwest<br>and clients nationwide</p>
-        <p>Phone: <a href="tel:+18083068792">+1 (808) 306-8792</a><br><a href="mailto:laakeasalvani@gmail.com">laakeasalvani@gmail.com</a></p>
+        <p>Phone: <a href="tel:+18083068792">+1 (808) 306-8792</a><br><a href="mailto:keawebcreations@gmail.com">keawebcreations@gmail.com</a></p>
         <a class="btn btn--fill" href="#/contact" style="margin-top:8px">Get Started Today</a>
         <div class="socials">
           <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M13.5 21v-8h2.7l.4-3.1h-3.1V7.9c0-.9.25-1.5 1.55-1.5H16.7V3.63C16.4 3.59 15.4 3.5 14.25 3.5c-2.4 0-4.05 1.47-4.05 4.17V9.9H7.5V13h2.7v8h3.3z"/></svg></a>
@@ -858,9 +868,59 @@ document.addEventListener('click',function(e){
 
 document.querySelectorAll('.faq-q').forEach(function(q){
  q.addEventListener('click',function(){q.classList.toggle('on');q.nextElementSibling.classList.toggle('on');});});
-document.querySelectorAll('[data-form]').forEach(function(f){
- f.addEventListener('submit',function(e){e.preventDefault();
-  f.querySelector('[data-ok]').classList.add('on');f.reset();});});
+/* ── Contact form ─────────────────────────────────────────────────────────
+   Posts to a Cloud Function that holds the Resend API key. The key can never
+   live in this file: the site is static and public, so anything written here
+   is readable by anyone who opens View Source. The function validates the
+   submission, records it, emails the owner and auto-replies to the sender. */
+(function(){
+ var ENDPOINT='https://us-west1-capturewithki-69dd3.cloudfunctions.net/keaInquiry';
+ var FIELDS=['name','phone','email','website','interest','message'];
+
+ document.querySelectorAll('[data-form]').forEach(function(f){
+  var ok=f.querySelector('[data-ok]'), err=f.querySelector('[data-err]'),
+      btn=f.querySelector('[type=submit]'), label=btn.textContent;
+  /* When this form became fillable. Anything completed in under three seconds
+     was completed by a script, and the function bins it without a word. Reset
+     after each send so a second genuine message is not judged by the first. */
+  var renderedAt=Date.now();
+
+  f.addEventListener('submit',function(e){
+   e.preventDefault();
+   ok.classList.remove('on'); err.classList.remove('on');
+   btn.disabled=true; btn.textContent='Sending…';
+
+   var d=new FormData(f), payload={renderedAt:renderedAt, honeypot:d.get('company')||''};
+   FIELDS.forEach(function(k){payload[k]=d.get(k)||'';});
+
+   fetch(ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json'},
+                   body:JSON.stringify(payload)})
+    .then(function(r){
+      /* A 500 from the platform itself has no JSON body, so parsing must not
+         be what decides whether this failed. */
+      return r.json().catch(function(){return {ok:false};});
+    })
+    .then(function(j){
+      if(!j||!j.ok){
+        /* Only the server writes sentences meant for a visitor. A failure that
+           did not come from it carries browser jargon — "Failed to fetch",
+           "NetworkError when attempting to fetch resource" — which tells a
+           stranger nothing, so it is flagged here and swapped out below. */
+        var e2=new Error(j&&j.error?j.error:''); e2.fromServer=!!(j&&j.error); throw e2;
+      }
+      ok.classList.add('on'); f.reset(); renderedAt=Date.now();
+    })
+    .catch(function(ex){
+      /* Never leave someone with no way through. The address below is the one
+         the messages land in anyway, so the fallback costs nothing. */
+      var msg=(ex&&ex.fromServer&&ex.message)?ex.message:'Something went wrong sending that.';
+      err.textContent=msg+' You can also email keawebcreations@gmail.com or call (808) 306-8792.';
+      err.classList.add('on');
+    })
+    .then(function(){btn.disabled=false; btn.textContent=label;});
+  });
+ });
+})();
 
 document.getElementById('yr').textContent=new Date().getFullYear();
 </script>
