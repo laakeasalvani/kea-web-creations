@@ -15,7 +15,7 @@ Then visit `http://localhost:8000`.
 ## Publish with GitHub Pages
 
 1. On GitHub: **Settings → Pages → Source: Deploy from a branch → Branch: `main` / `root`**.
-2. The site will be live at `https://laasalvani.github.io/kea-web-creations/`.
+2. The site will be live at `https://laakeasalvani.github.io/kea-web-creations/`.
 
 ## Contact form
 
