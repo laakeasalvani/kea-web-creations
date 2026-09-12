@@ -1,27 +1,59 @@
 # Kea Web Creations
 
-Single-file website for Kea Web Creations (`index.html`, CSS and JS embedded, no build step).
+Static site for Kea Web Creations: websites and follow-up systems for home service
+businesses. Plain HTML, CSS and JavaScript — no build step.
+
+## Structure
+
+| File | What it is |
+|---|---|
+| `index.html` | Homepage |
+| `pricing.html` | Plans, founding offer, website only, build-your-own plan, lead leak calculator, FAQ |
+| `contact.html` | Free lead-leak audit request form |
+| `policy.html` | Terms, cancellation, privacy, texting consent |
+| `404.html` | Not-found page (served by GitHub Pages for missing paths) |
+| `styles.css` | All styles |
+| `site.js` | Menu drawer, scroll reveal, hero video, FAQ accordions, redirects for old `#/` links |
+| `pricing.js` | **All prices** and the pricing/calculator logic |
+| `contact.js` | Contact form behaviour |
+| `tests/` | Node tests for prices, the calculator, the form and every page |
+
+The header and footer are copied into each page. Change one, change them all.
+
+## Changing prices
+
+1. Edit `SERVICES` or `PLANS` in `pricing.js`.
+2. If a **plan** price changed, update the matching card in `pricing.html` (the
+   `data-setup`, `data-founding`, `data-monthly` attributes and the visible text) and
+   the preview card in `index.html`, plus the example lines under the calculator.
+3. Run the tests — they fail if the pages and `pricing.js` disagree.
+
+When a founding client signs, lower `FOUNDING_SPOTS_LEFT` in `pricing.js`. At `0` the
+founding banner and founding prices disappear.
+
+## Tests
+
+```bash
+node --test tests/*.test.js
+```
 
 ## Preview locally
 
-Open `index.html` directly in a browser, or serve it:
-
 ```bash
-python3 -m http.server 8000
+python3 -m http.server 4321
 ```
 
-Then visit `http://localhost:8000`.
+Then visit `http://localhost:4321`.
 
 ## Publish with GitHub Pages
 
 1. On GitHub: **Settings → Pages → Source: Deploy from a branch → Branch: `main` / `root`**.
 2. The site is live at `https://keawebcreations.com` (custom domain, set by the
-   `CNAME` file in the repo root). The old `https://laakeasalvani.github.io/kea-web-creations/`
-   address still works and redirects there.
+   `CNAME` file in the repo root).
 
 ## Contact form
 
-The form on `#/contact` posts to a Cloud Function, `keaInquiry`:
+The form on `contact.html` posts to a Cloud Function, `keaInquiry`:
 
     https://us-west1-capturewithki-69dd3.cloudfunctions.net/keaInquiry
 
@@ -53,10 +85,17 @@ Redeploy after either change:
 
     cd ~/capturewithki && firebase deploy --only functions:keaInquiry
 
-## Content to replace before launch
+The function only stores `name`, `email`, `phone`, `website`, `interest` and `message`.
+The audit form's extra fields — business name, trade, services picked in the pricing
+builder, and texting consent — are written into the top of `message` by `contact.js`.
+Posting from `localhost` is blocked by the origin allowlist; test real submissions on
+the live site.
 
-- Testimonials on the home page (`[Client name]` / `[Business name]`)
-- Case studies and portfolio projects (currently `Project One`–`Project Sixteen`)
-- Client logos (currently placeholder `Your Client` tiles)
+## Content to add when it exists
 
-`docs/` contains planning notes from an earlier iteration of this site and can be removed once no longer useful.
+- **Google reviews:** add a reviews section to the homepage once at least 3 real reviews exist.
+- **CaptureWithKi case study:** add after the 30–60 day pilot, with real before/after numbers.
+- **Services, About and FAQ pages:** planned for the next release.
+- **Phone number:** the site uses La'akea's personal number. Replace every
+  `(808) 306-8792` / `tel:+18083068792` (and `telephone` in each page's JSON-LD) when the
+  GoHighLevel number exists.

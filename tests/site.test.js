@@ -161,3 +161,24 @@ test('404 page is not indexed and works from any path', function () {
   assert.ok(html.indexOf('src="/site.js"') !== -1, 'root-absolute script');
   assert.ok(html.indexOf('href="/contact.html?plan=audit"') !== -1);
 });
+
+test('every internal link and anchor resolves', function () {
+  var pages = ['index.html', 'pricing.html', 'contact.html', 'policy.html', '404.html'];
+  pages.forEach(function (page) {
+    var html = H.read(page);
+    H.attrs(html, 'a').concat(H.attrs(html, 'link')).forEach(function (a) {
+      var href = a.href;
+      if (!href || /^(https?:|mailto:|tel:)/.test(href)) return;
+      var parts = href.replace(/^\//, '').split('#');
+      var file = parts[0].split('?')[0] || page;
+      var anchor = parts[1];
+      assert.ok(H.exists(file), page + ' links to missing file ' + href);
+      if (anchor) {
+        assert.ok(H.read(file).indexOf('id="' + anchor + '"') !== -1, page + ' links to missing anchor ' + href);
+      }
+    });
+    H.attrs(html, 'img').forEach(function (img) {
+      assert.ok(H.exists(img.src.replace(/^\//, '')), page + ' uses missing image ' + img.src);
+    });
+  });
+});
