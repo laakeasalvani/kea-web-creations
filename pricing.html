@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Pricing — Capture, Convert &amp; Keep Plans | Kea Web Creations</title>
+<meta name="description" content="Monthly plans for home service businesses: a website, missed-call text-back, automatic follow-up, estimate booking and past-customer campaigns. No contract on standard plans.">
+<link rel="canonical" href="https://keawebcreations.com/pricing.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&family=Sacramento&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<script>document.documentElement.className += ' js';</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"LocalBusiness","name":"Kea Web Creations","url":"https://keawebcreations.com/","telephone":"+1-808-306-8792","email":"keawebcreations@gmail.com","address":{"@type":"PostalAddress","addressLocality":"Beaverton","addressRegion":"OR","addressCountry":"US"},"areaServed":"Pacific Northwest"}
+</script>
+</head>
+<body>
+
+<!-- ══════════ HEADER (shared) ══════════ -->
+<header class="bar">
+  <div class="bar-in">
+    <nav class="nav" aria-label="Main left">
+      <a class="nav-link" href="index.html">Home</a>
+      <a class="nav-link on" href="pricing.html">Pricing</a>
+    </nav>
+
+    <a class="tile" href="index.html" aria-label="Kea Web Creations home">
+      <span class="tile-script">Kea.</span>
+      <span class="tile-sub">Web Creations</span>
+    </a>
+
+    <nav class="nav nav--r" aria-label="Main right">
+      <a class="nav-link" href="contact.html">Contact</a>
+      <a class="btn btn--fill nav-cta" href="contact.html?plan=audit">Get a free audit</a>
+    </nav>
+
+    <button class="burger" id="burger" aria-label="Menu" aria-expanded="false" aria-controls="drawer"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<div class="drawer" id="drawer">
+  <a class="drawer-row" href="index.html">Home</a>
+  <a class="drawer-row" href="pricing.html">Pricing</a>
+  <a class="drawer-row" href="contact.html">Contact</a>
+  <a class="btn btn--fill" href="contact.html?plan=audit" style="margin-top:28px">Get a free audit</a>
+</div>
+<!-- ══════════ END HEADER ══════════ -->
+
+<main>
+
+  <div class="page-banner">
+    <div class="wrap">
+      <h1>Simple pricing for home service businesses<span class="dot">.</span></h1>
+      <p class="sub">Every plan includes a website built for your business. The difference is how much of the follow-up runs for you.</p>
+    </div>
+  </div>
+
+  <!-- FOUNDING OFFER — pricing.js hides this when FOUNDING_SPOTS_LEFT is 0 -->
+  <div class="founding" id="foundingBanner">
+    <div class="wrap founding-in">
+      <p><strong>Founding clients:</strong> the first five home service businesses get founding setup pricing in exchange for a 90-day commitment and permission to share their before-and-after numbers.</p>
+      <p class="founding-count"><span id="foundingSpots">5</span> of 5 spots left</p>
+    </div>
+  </div>
+
+  <!-- PLANS — prices must match PLANS in pricing.js (tests check) -->
+  <section class="sec" id="plans">
+    <div class="wrap">
+      <div class="plans">
+        <article class="plan rv" id="capture" data-plan="capture" data-setup="750" data-founding="400" data-monthly="250">
+          <span class="plan-stage">Stage 1</span>
+          <h2 class="plan-name">Capture</h2>
+          <p class="plan-promise">Every call and form caught and answered in seconds.</p>
+          <p class="plan-price">$250<small>/mo</small></p>
+          <p class="plan-setup">$750 setup <span>· founding $400</span></p>
+          <ul class="checks">
+            <li>Website built for your business, hosting, and 30 minutes of updates a month</li>
+            <li>Lead forms and one leads inbox with a mobile app</li>
+            <li>Missed-call text-back</li>
+            <li>Google Business Profile setup</li>
+          </ul>
+          <a class="btn btn--out" href="contact.html?plan=capture">Start with Capture</a>
+        </article>
+
+        <article class="plan plan--hot rv" id="convert" data-plan="convert" data-setup="1000" data-founding="500" data-monthly="400">
+          <span class="tag">Most popular</span>
+          <span class="plan-stage">Stage 2</span>
+          <h2 class="plan-name">Convert</h2>
+          <p class="plan-promise">Every lead followed up and booked for an estimate.</p>
+          <p class="plan-price">$400<small>/mo</small></p>
+          <p class="plan-setup">$1,000 setup <span>· founding $500</span></p>
+          <ul class="checks">
+            <li><strong>Everything in Capture</strong></li>
+            <li>Automatic follow-up for new leads by text and email</li>
+            <li>Online estimate booking calendar</li>
+            <li>Automatic Google review requests</li>
+            <li>Local SEO foundations</li>
+            <li>Monthly results report</li>
+          </ul>
+          <a class="btn btn--fill" href="contact.html?plan=convert">Start with Convert</a>
+        </article>
+
+        <article class="plan rv" id="keep" data-plan="keep" data-setup="1500" data-founding="750" data-monthly="700">
+          <span class="plan-stage">Stage 3</span>
+          <h2 class="plan-name">Keep</h2>
+          <p class="plan-promise">Past customers come back for seasonal and repeat work.</p>
+          <p class="plan-price">$700<small>/mo</small></p>
+          <p class="plan-setup">$1,500 setup <span>· founding $750</span></p>
+          <ul class="checks">
+            <li><strong>Everything in Convert</strong></li>
+            <li>Past-customer campaigns by email, and by text to customers who opted in</li>
+            <li>Seasonal maintenance reminders</li>
+            <li>Referral follow-ups</li>
+            <li>Automatic review replies and website chat</li>
+            <li>Spam call screening</li>
+            <li>Priority support and a quarterly strategy call</li>
+          </ul>
+          <a class="btn btn--out" href="contact.html?plan=keep">Start with Keep</a>
+        </article>
+      </div>
+
+      <p class="fineprint">Google Ads management is coming soon as an add-on.</p>
+
+      <div class="website-only rv" id="website-only">
+        <div>
+          <span class="kicker">Just need a website?</span>
+          <h3>Website only — $1,000 setup + $50/mo</h3>
+          <p>A website built for your business, hosting, and 30 minutes of updates a month. Capture costs less to set up than a website alone — and answers your missed calls.</p>
+        </div>
+        <a class="btn btn--out" href="contact.html?plan=website">Ask about a website</a>
+      </div>
+
+      <ul class="terms">
+        <li>No contract on standard plans</li>
+        <li>Setup fees are non-refundable</li>
+        <li>30 minutes of updates every month</li>
+        <li>Your domain, website and contacts stay yours</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- BUILD YOUR OWN PLAN — rows are rendered by pricing.js from SERVICES -->
+  <section class="sec sec--sand" id="build">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <span class="kicker">Build your own plan</span>
+        <h2>Only need one or two pieces<span class="dot">?</span></h2>
+        <p class="sub">These are standalone prices. If you need two or more services, a plan above almost always costs less and includes more — follow-up, review requests, reminders and reports aren't sold on their own.</p>
+      </div>
+      <div class="builder">
+        <div class="builder-head">
+          <p>Tick what you need and the total updates as you go.</p>
+        </div>
+        <div id="builder"></div>
+        <noscript><p class="builder-empty">Turn on JavaScript to build a plan, or <a href="contact.html">ask me for prices</a>.</p></noscript>
+        <div class="builder-foot">
+          <p class="builder-total" id="builderTotal" aria-live="polite">Tick services above to see your total.</p>
+          <p class="builder-nudge" id="builderNudge" hidden></p>
+          <a class="btn btn--fill" id="builderSend" href="contact.html?plan=custom" hidden>Send me this plan</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LEAD LEAK CALCULATOR -->
+  <section class="sec" id="calculator">
+    <div class="wrap split" style="align-items:start">
+      <div class="rv">
+        <span class="kicker">Lead leak calculator</span>
+        <h2>What are missed leads costing you<span class="dot">?</span></h2>
+        <p class="sub" style="margin-top:18px">Example numbers — change them to yours. This is an estimate, not a promise.</p>
+        <div class="calc">
+          <div class="calc-row">
+            <label for="calcEnquiries">Calls and forms per month</label>
+            <div class="calc-inputs">
+              <input type="range" id="calcEnquiries" min="0" max="300" step="1" value="40">
+              <input type="number" id="calcEnquiriesNum" min="0" max="10000" step="1" value="40" aria-label="Calls and forms per month">
+            </div>
+          </div>
+          <div class="calc-row">
+            <label for="calcMissed">Share missed or answered too slowly (%)</label>
+            <div class="calc-inputs">
+              <input type="range" id="calcMissed" min="0" max="100" step="1" value="25">
+              <input type="number" id="calcMissedNum" min="0" max="100" step="1" value="25" aria-label="Share missed or answered too slowly, percent">
+            </div>
+          </div>
+          <div class="calc-row">
+            <label for="calcClose">Share of answered enquiries that become jobs (%)</label>
+            <div class="calc-inputs">
+              <input type="range" id="calcClose" min="0" max="100" step="1" value="35">
+              <input type="number" id="calcCloseNum" min="0" max="100" step="1" value="35" aria-label="Share of answered enquiries that become jobs, percent">
+            </div>
+          </div>
+          <div class="calc-row">
+            <label for="calcJob">Average job value ($)</label>
+            <div class="calc-inputs">
+              <input type="range" id="calcJob" min="0" max="5000" step="25" value="450">
+              <input type="number" id="calcJobNum" min="0" max="100000" step="25" value="450" aria-label="Average job value in dollars">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="calc-out rv" aria-live="polite">
+        <p class="calc-label">Estimated jobs lost each month</p>
+        <p class="calc-big" id="calcJobs">3.5</p>
+        <p class="calc-label">Estimated revenue lost</p>
+        <p class="calc-big"><span id="calcMonthly">$1,575</span><small>/mo</small></p>
+        <p class="calc-year"><span id="calcYearly">$18,900</span> a year</p>
+        <ul class="calc-plans" id="calcPlans">
+          <li>Capture is $250/mo — about 1 job a month covers it.</li>
+          <li>Convert is $400/mo — about 1 job a month covers it.</li>
+          <li>Keep is $700/mo — about 2 jobs a month cover it.</li>
+        </ul>
+        <p class="calc-formula">Calls and forms × share missed × share that become jobs × job value</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING FAQ -->
+  <section class="sec sec--sand" id="faq">
+    <div class="wrap" style="max-width:880px">
+      <div class="sec-head center rv"><span class="kicker">Questions</span><h2>Before you ask<span class="dot">.</span></h2></div>
+      <div class="faq"><button class="faq-q">What does the setup fee cover? <span>+</span></button>
+        <div class="faq-a"><p>Building your website, setting up your leads inbox and texting number, installing the automations for your plan, registering your business for texting with the phone carriers, testing everything end to end, and a walkthrough call before launch.</p></div></div>
+      <div class="faq"><button class="faq-q">What's the difference between standard and founding pricing? <span>+</span></button>
+        <div class="faq-a"><p>The first five home service businesses pay the founding setup fee in exchange for a 90-day commitment and permission to share their before-and-after numbers. After those spots are gone, standard pricing applies with no commitment. The monthly price is the same either way.</p></div></div>
+      <div class="faq"><button class="faq-q">Are texts and calls included? <span>+</span></button>
+        <div class="faq-a"><p>Normal texting and calling for your business is included in your monthly price. If your volume is unusually high — large text campaigns, for example — the extra is billed at cost, and you'll hear from me before it is.</p></div></div>
+      <div class="faq"><button class="faq-q">How long does setup take? <span>+</span></button>
+        <div class="faq-a"><p>It depends mostly on how quickly I get your content and account access, and you'll get a timeline before you pay. Texting registration with the carriers usually takes from a few days to a few weeks; texting features switch on as soon as it's approved.</p></div></div>
+      <div class="faq"><button class="faq-q">What counts as an update? <span>+</span></button>
+        <div class="faq-a"><p>Each month includes 30 minutes of small updates — hours, prices, phone numbers, photos and text changes. Unused time doesn't roll over. Time past 30 minutes is $50 an hour, and new pages or features are quoted before any work starts.</p></div></div>
+      <div class="faq"><button class="faq-q">What happens if I cancel? <span>+</span></button>
+        <div class="faq-a"><p>Standard plans have no contract: cancel any time and it takes effect at the end of that billing month. Your domain, Google Business Profile, reviews and website files are yours, your contacts are exported to you, and you can move your texting number within 30 days. <a class="more" href="policy.html#cancellation">Full cancellation details →</a></p></div></div>
+      <div class="faq"><button class="faq-q">Will Local SEO get me to the top of Google? <span>+</span></button>
+        <div class="faq-a"><p>Not a ranking guarantee — nobody can honestly promise one. Local SEO foundations covers the work that helps you show up: service and town keywords, on-page fixes, Google Business Profile optimization and ongoing site improvements.</p></div></div>
+      <div class="faq"><button class="faq-q">Do the plans bring me new leads? <span>+</span></button>
+        <div class="faq-a"><p>The plans make sure the leads you already get are answered, followed up and brought back. Google Ads management is coming soon for businesses that want more leads on top.</p></div></div>
+    </div>
+  </section>
+
+  <section class="sec sec--bar center">
+    <div class="wrap">
+      <h2>Not sure which plan fits<span class="dot">?</span></h2>
+      <p class="sub" style="margin:16px auto 30px">Start with a free lead-leak audit. I'll show you where enquiries slip away, and which plan — if any — fixes it.</p>
+      <a class="btn btn--fill" href="contact.html?plan=audit">Get my free audit</a>
+    </div>
+  </section>
+
+</main>
+
+<!-- ══════════ FOOTER (shared) — copy verbatim from index.html ══════════ -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <a class="f-tile" href="index.html" aria-label="Kea Web Creations home">
+          <span class="tile-script">Kea.</span><span class="tile-sub">Web Creations</span>
+        </a>
+        <p>Beaverton, Oregon<br>Serving home service businesses across the Pacific Northwest</p>
+        <p><a href="tel:+18083068792">(808) 306-8792</a><br><a href="mailto:keawebcreations@gmail.com">keawebcreations@gmail.com</a></p>
+        <a class="btn btn--fill" href="contact.html?plan=audit" style="margin-top:8px">Get a free audit</a>
+      </div>
+      <div><h5>Pages</h5><ul class="f-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="pricing.html">Pricing</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="policy.html">Policy</a></li></ul></div>
+      <div><h5>The Kea system</h5><ul class="f-links">
+        <li><a href="pricing.html#capture">Capture</a></li>
+        <li><a href="pricing.html#convert">Convert</a></li>
+        <li><a href="pricing.html#keep">Keep</a></li>
+        <li><a href="pricing.html#build">Build your own plan</a></li></ul></div>
+    </div>
+    <div class="footer-bar">
+      <p>Kea Web Creations © <span id="yr"></span> All rights reserved</p>
+      <p>Beaverton, Oregon</p>
+    </div>
+  </div>
+</footer>
+
+<script src="site.js"></script>
+<script src="pricing.js"></script>
+</body>
+</html>

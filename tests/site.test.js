@@ -85,3 +85,37 @@ test('homepage plan preview prices match PLANS', function () {
     assert.equal(Number(card['data-monthly']), p.monthly, p.id + ' monthly');
   });
 });
+
+test('pricing page has the shared essentials', function () {
+  checkCommon('pricing.html', 'https://keawebcreations.com/pricing.html');
+});
+
+test('pricing plan cards match PLANS exactly', function () {
+  var html = H.read('pricing.html');
+  var P = require('../pricing.js');
+  P.PLANS.forEach(function (p) {
+    var card = H.attrs(html, 'article').filter(function (a) { return a.id === p.id; })[0];
+    assert.ok(card, 'plan card #' + p.id);
+    assert.equal(card['data-plan'], p.id);
+    assert.equal(Number(card['data-setup']), p.standardSetup, p.id + ' standard setup');
+    assert.equal(Number(card['data-founding']), p.foundingSetup, p.id + ' founding setup');
+    assert.equal(Number(card['data-monthly']), p.monthly, p.id + ' monthly');
+    assert.ok(html.indexOf('href="contact.html?plan=' + p.id + '"') !== -1, p.id + ' button');
+  });
+});
+
+test('pricing page states the terms from the spec', function () {
+  var html = H.read('pricing.html');
+  ['id="website-only"', 'id="build"', 'id="calculator"', 'id="faq"', 'id="foundingBanner"', 'id="builder"',
+   '$1,000 setup', '$50/mo', '90-day commitment', 'non-refundable', '30 minutes', '$50 an hour',
+   'Not a ranking guarantee', 'customers who opted in', 'Google Ads management is coming soon',
+   'This is an estimate, not a promise']
+    .forEach(function (s) { assert.ok(html.indexOf(s) !== -1, 'pricing.html is missing: ' + s); });
+});
+
+test('calculator rest state shows the example result', function () {
+  var html = H.read('pricing.html');
+  assert.match(html, /id="calcMonthly">\$1,575</);
+  assert.match(html, /id="calcYearly">\$18,900</);
+  assert.match(html, /id="calcJobs">3\.5</);
+});
