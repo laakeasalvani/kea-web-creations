@@ -380,3 +380,16 @@ p{margin:0 0 1.15em}
 .consent{display:grid;grid-template-columns:20px minmax(0,1fr);gap:12px;align-items:start;font-size:.78rem;line-height:1.6;color:var(--soft);cursor:pointer}
 .consent input{width:18px;height:18px;margin:2px 0 0;accent-color:var(--accent-dk)}
 .consent a{color:var(--accent-dk);text-decoration:underline}
+
+/* ══════ POLICY ══════ */
+.policy{max-width:820px}
+.policy-block{margin-bottom:clamp(34px,4vw,48px);scroll-margin-top:calc(var(--bar-h) + 30px)}
+.policy-block h2{font-size:clamp(1.4rem,2.4vw,1.8rem);margin-bottom:14px}
+.policy-block p{color:var(--soft);font-size:.97rem;max-width:68ch}
+.policy-table{overflow-x:auto;border:1px solid var(--line)}
+.policy-table table{border-collapse:collapse;width:100%;min-width:520px;font-size:.92rem}
+.policy-table th,.policy-table td{text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid var(--line)}
+.policy-table th{font-size:.68rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--soft);background:var(--sand)}
+.policy-table td:first-child{font-weight:500;color:var(--ink);width:40%}
+.policy-table td{color:var(--soft)}
+.policy-table tr:last-child td{border-bottom:0}

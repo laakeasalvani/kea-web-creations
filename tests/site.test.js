@@ -139,3 +139,25 @@ test('contact form fields match what contact.js reads', function () {
 test('contact.js posts to the existing function', function () {
   assert.ok(H.read('contact.js').indexOf('https://us-west1-capturewithki-69dd3.cloudfunctions.net/keaInquiry') !== -1);
 });
+
+test('policy page has the shared essentials', function () {
+  checkCommon('policy.html', 'https://keawebcreations.com/policy.html');
+});
+
+test('policy page states the approved terms', function () {
+  var html = H.read('policy.html');
+  ['id="plans-billing"', 'id="founding"', 'id="updates"', 'id="cancellation"', 'id="privacy"', 'id="texting"',
+   'end of the current billing month', '90-day commitment', 'non-refundable', '30 minutes', '$50 an hour',
+   'billed at cost', 'Always yours', 'Handed over to you', 'within 30 days', 'Stay with Kea',
+   'Reply STOP to opt out, HELP for help. Mobile numbers are never shared or sold.']
+    .forEach(function (s) { assert.ok(html.indexOf(s) !== -1, 'policy.html missing: ' + s); });
+});
+
+test('404 page is not indexed and works from any path', function () {
+  var html = H.read('404.html');
+  assert.ok(H.attrs(html, 'meta').some(function (m) { return m.name === 'robots' && m.content === 'noindex'; }));
+  assert.equal(H.attrs(html, 'link').filter(function (l) { return l.rel === 'canonical'; }).length, 0);
+  assert.ok(html.indexOf('href="/styles.css"') !== -1, 'root-absolute stylesheet');
+  assert.ok(html.indexOf('src="/site.js"') !== -1, 'root-absolute script');
+  assert.ok(html.indexOf('href="/contact.html?plan=audit"') !== -1);
+});
