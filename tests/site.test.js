@@ -119,3 +119,23 @@ test('calculator rest state shows the example result', function () {
   assert.match(html, /id="calcYearly">\$18,900</);
   assert.match(html, /id="calcJobs">3\.5</);
 });
+
+test('contact page has the shared essentials', function () {
+  checkCommon('contact.html', 'https://keawebcreations.com/contact.html');
+});
+
+test('contact form fields match what contact.js reads', function () {
+  var html = H.read('contact.html');
+  var names = H.attrs(html, 'input').concat(H.attrs(html, 'select'), H.attrs(html, 'textarea'))
+    .map(function (a) { return a.name; }).filter(Boolean).sort();
+  assert.deepEqual(names, ['business', 'company', 'consent', 'email', 'interest', 'message', 'name', 'phone', 'trade', 'website']);
+  ['Free audit', 'Capture', 'Convert', 'Keep', 'Website only', 'Build my own plan', 'Not sure yet',
+   'HVAC', 'Plumbing', 'Electrical', 'Roofing', 'Landscaping', 'Reply STOP to opt out, HELP for help. Mobile numbers are never shared or sold.']
+    .forEach(function (s) { assert.ok(html.indexOf(s) !== -1, 'contact.html missing: ' + s); });
+  var scripts = H.attrs(html, 'script').map(function (s) { return s.src; }).filter(Boolean);
+  assert.deepEqual(scripts, ['site.js', 'pricing.js', 'contact.js'], 'script order');
+});
+
+test('contact.js posts to the existing function', function () {
+  assert.ok(H.read('contact.js').indexOf('https://us-west1-capturewithki-69dd3.cloudfunctions.net/keaInquiry') !== -1);
+});
