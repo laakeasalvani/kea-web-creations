@@ -263,7 +263,11 @@ p{margin:0 0 1.15em}
   display:flex;flex-direction:column}
 .tier-price{font-family:var(--serif);font-weight:500;font-size:clamp(1.9rem,3vw,2.4rem);
   line-height:1.1;color:var(--ink)}
+.tier-from{font-family:var(--sans);font-size:1.02rem;font-weight:600;color:var(--ink);
+  margin-top:10px;letter-spacing:.01em}
 .tier-mo{font-family:var(--sans);font-size:.86rem;color:var(--soft);margin-top:6px}
+.tier-care{font-family:var(--sans);font-size:.78rem;color:var(--soft);
+  margin-top:5px;line-height:1.55;opacity:.9}
 .tier-line{color:var(--soft);font-size:.92rem;line-height:1.6;margin:18px 0 22px;
   padding-bottom:22px;border-bottom:1px solid var(--line)}
 .tier ul{list-style:none;padding:0;margin:0 0 26px;flex:1}
@@ -761,28 +765,52 @@ document.getElementById('mePhoto').innerHTML = ME_PHOTO
 
 /* ══════ PACKAGES ══════
    ▼▼ YOUR PRICES LIVE HERE ▼▼  Change them once and both the home page
-   and the Services page update together. */
+   and the Services page update together.
+
+   ▼▼ STARTING PRICES — FILL THESE IN ▼▼
+   Each tier below has a  from:''  line. Put your build price in the quotes,
+   just the number and nothing else, like   from:'1200'
+   It then shows on the card as  "Starting at $1,200".
+   Left empty, no price line appears at all — the card looks exactly as it
+   does now, so an unfinished price never reaches the live site. */
+var MONTHLY   = 'Hosting &amp; care — $30 a month';
+var CARE_MEANS= 'Hosting and uptime, daily backups, security patches, '
+              + 'and your domain kept from lapsing.';
+var AFTER     = 'Edits after launch billed at $40 an hour';
+var AFTER_SELF= 'Anything beyond your own content edits, $40 an hour';
+
 var TIERS=[
- {n:'Tier 1', m:'Hosting &amp; care — $30 a month',
+ {n:'Tier 1', from:'', m:MONTHLY, care:CARE_MEANS,
   s:"A professional website, built and looked after. Changes come through me.",
   inc:['Up to 5 pages','Works properly on phones','Contact form',
        'Basic Google setup so people can find you','2 rounds of changes while I build it',
-       'About 2 weeks','Edits after launch billed at $40 an hour']},
- {n:'Tier 2', m:'Hosting &amp; care — $30 a month',
+       'About 2 weeks',AFTER]},
+ {n:'Tier 2', from:'', m:MONTHLY, care:CARE_MEANS,
   s:"Everything in Tier 1, and you can edit the site yourself.",
   inc:['Up to 8 pages','Log in and change your own words and pictures',
        'Private login, required to reach the editor','A training session and a written guide',
-       '2 rounds of changes while I build it','About 3–4 weeks']},
- {n:'Tier 3', m:'Hosting &amp; care — $30 a month',
+       '2 rounds of changes while I build it','About 3–4 weeks',AFTER_SELF]},
+ {n:'Tier 3', from:'', m:MONTHLY, care:CARE_MEANS,
   s:"Everything in Tier 2, plus a working system behind the website.",
   inc:['A dashboard for you — bookings, orders and enquiries in one place',
        'Accounts for your own customers, so each one sees only their material',
        '3 rounds of changes while I build it','About 6–8 weeks',
-       'Priced per project, because this varies the most']}
+       'Priced per project, because this varies the most',AFTER_SELF]}
 ];
+/* Turns  '1200'  into  Starting at $1,200 — and an empty price into nothing. */
+function tierFrom(v){
+ if(!v) return '';
+ var n=String(v).replace(/[^0-9.]/g,'');
+ if(!n) return '';
+ var parts=n.split('.');
+ parts[0]=parts[0].replace(/\B(?=(\d{3})+(?!\d))/g,',');
+ return '<div class="tier-from">Starting at $'+parts.join('.')+'</div>';}
 function tierHTML(t){
  return '<div class="tier rv">'
-  +'<div class="tier-price">'+t.n+'</div><div class="tier-mo">'+t.m+'</div>'
+  +'<div class="tier-price">'+t.n+'</div>'
+  +tierFrom(t.from)
+  +'<div class="tier-mo">'+t.m+'</div>'
+  +(t.care?'<div class="tier-care">'+t.care+'</div>':'')
   +'<p class="tier-line">'+t.s+'</p><ul>'
   +t.inc.map(function(i){return '<li>'+i+'</li>';}).join('')
   +'</ul><a class="btn btn--out" href="#/contact">Start Here</a></div>';}
