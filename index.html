@@ -3,690 +3,306 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Kea Web Creations — Website Design &amp; Development</title>
-<meta name="description" content="Website design and development for small businesses in Beaverton, Oregon. Three clear packages, built and maintained by one person.">
+<title>Kea Web Creations — Websites &amp; Follow-Up Systems for Home Service Businesses</title>
+<meta name="description" content="Stop losing customers who already found you. Websites, missed-call text-back and automatic follow-up for home service businesses in Beaverton and the Pacific Northwest.">
+<link rel="canonical" href="https://keawebcreations.com/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&family=Sacramento&display=swap" rel="stylesheet">
-<style>
-/* ═══════════════════════════════════════════════════════════
-   KEA WEB CREATIONS
-   ── CHANGE YOUR COLORS HERE ─────────────────────────────
-   --bar     = dark header / footer / banner background
-   --accent  = logo tile, buttons, periods, highlights
-   Alternates to try:
-     Navy + sea glass (current)  #16203D / #58B0A8
-     Plum + rose gold            #2A2244 / #C98A7A
-     Ink + coral                 #17262B / #E2705A
-     Forest + sand               #14312A / #CFA85F
-     Charcoal + electric blue    #1C1F26 / #4C8DF5
-   ═══════════════════════════════════════════════════════════ */
-:root{
-  --bar:#16203D;
-  --bar-2:#1D2B4F;
-  --accent:#58B0A8;
-  --accent-dk:#3E8E87;
-
-  --ink:#1B2233;
-  --soft:#5C6577;
-  --paper:#fff;
-  --sand:#F6F4F0;
-  --line:#E5E1DA;
-
-  --serif:"Playfair Display",Georgia,serif;
-  --sans:"Poppins",system-ui,sans-serif;
-  --script:"Sacramento",cursive;
-
-  --bar-h:84px;
-  --tile-w:132px;
-  --tile-h:150px;
-  --pad:clamp(18px,4.5vw,56px);
-  --maxw:1240px;
-}
-
-*{box-sizing:border-box}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--paper);color:var(--ink);
-  font-family:var(--sans);font-weight:300;font-size:16px;line-height:1.75;overflow-x:hidden}
-img{max-width:100%;display:block}
-a{color:inherit;text-decoration:none}
-button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
-:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
-
-h1,h2,h3{font-family:var(--serif);font-weight:500;margin:0;line-height:1.16}
-h1{font-size:clamp(2.1rem,4.4vw,3.3rem)}
-h2{font-size:clamp(1.8rem,3.4vw,2.7rem)}
-h3{font-size:clamp(1.15rem,1.8vw,1.45rem)}
-h4,h5{font-family:var(--sans);margin:0}
-p{margin:0 0 1.15em}
-/* the accent period, as in the reference */
-.dot{color:var(--accent)}
-
-.wrap{max-width:var(--maxw);margin:0 auto;padding-inline:var(--pad)}
-.sec{padding-block:clamp(56px,7.5vw,104px)}
-.sec--sand{background:var(--sand)}
-.sec--bar{background:var(--bar);color:#fff}
-.sec--bar h2{color:#fff}
-.sec--bar .sub{color:rgba(255,255,255,.72)}
-.center{text-align:center}
-.center .sub{margin-inline:auto}
-.kicker{font-family:var(--sans);font-size:.7rem;font-weight:600;letter-spacing:.22em;
-  text-transform:uppercase;color:var(--accent);display:block;margin-bottom:14px}
-.sub{color:var(--soft);font-size:1.02rem;max-width:66ch;font-weight:300}
-.sec-head{margin-bottom:clamp(30px,4vw,52px)}
-.sec-head h2{margin-bottom:14px}
-
-/* ── BUTTONS (flat rectangles, uppercase, letterspaced) ── */
-.btn{display:inline-block;padding:18px 40px;font-family:var(--sans);font-weight:500;
-  font-size:.82rem;letter-spacing:.13em;text-transform:uppercase;transition:background .25s,color .25s,border-color .25s}
-.btn--fill{background:var(--accent);color:#fff}
-.btn--fill:hover{background:var(--accent-dk)}
-.btn--out{border:1px solid var(--accent);color:var(--accent)}
-.btn--out:hover{background:var(--accent);color:#fff}
-.btn--white{border:1px solid rgba(255,255,255,.8);color:#fff}
-.btn--white:hover{background:#fff;color:var(--bar)}
-.more{display:inline-block;font-family:var(--sans);font-weight:500;font-size:.78rem;
-  letter-spacing:.1em;text-transform:uppercase;color:var(--accent);transition:letter-spacing .2s}
-.more:hover{letter-spacing:.16em}
-
-/* ══════ HEADER: dark bar, nav split around a hanging logo tile ══════ */
-.bar{position:fixed;inset:0 0 auto;height:var(--bar-h);background:var(--bar);z-index:400}
-.bar-in{max-width:1560px;margin:0 auto;height:100%;padding-inline:var(--pad);
-  display:flex;align-items:center;justify-content:space-between;gap:12px}
-.nav{display:flex;align-items:center;gap:clamp(10px,2.6vw,46px);flex:1}
-.nav--r{justify-content:flex-end}
-.nav-item{position:relative}
-.nav-link{display:flex;align-items:center;gap:8px;padding:30px 0;color:#fff;
-  font-family:var(--sans);font-weight:400;font-size:.86rem;letter-spacing:.06em;
-  text-transform:uppercase;white-space:nowrap;transition:color .2s}
-.nav-item:hover>.nav-link,.nav-link.on{color:var(--accent)}
-.caret{width:7px;height:7px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;
-  transform:translateY(-3px) rotate(45deg);transition:transform .25s}
-.nav-item:hover .caret{transform:translateY(1px) rotate(225deg)}
-
-.dropdown{position:absolute;top:100%;left:50%;transform:translate(-50%,10px);min-width:296px;
-  background:var(--bar-2);padding:8px 0;opacity:0;visibility:hidden;
-  box-shadow:0 22px 50px rgba(0,0,0,.4);transition:opacity .2s,transform .2s,visibility .2s}
-.nav-item:hover .dropdown,.nav-item:focus-within .dropdown{opacity:1;visibility:visible;transform:translate(-50%,0)}
-.dropdown a{display:block;padding:12px 24px;color:rgba(255,255,255,.82);font-size:.86rem;
-  font-weight:300;transition:background .18s,color .18s,padding-left .18s}
-.dropdown a:hover{background:rgba(255,255,255,.07);color:var(--accent);padding-left:31px}
-
-/* the tile — centered, overhangs below the bar */
-.tile{position:absolute;left:50%;top:0;transform:translateX(-50%);
-  width:var(--tile-w);height:var(--tile-h);background:var(--accent);z-index:2;
-  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;
-  transition:background .25s}
-.tile:hover{background:var(--accent-dk)}
-.tile-script{font-family:var(--script);font-size:3.5rem;color:#fff;line-height:.85;
-  transform:rotate(-4deg);text-shadow:0 1px 6px rgba(0,0,0,.14)}
-.tile-sub{font-family:var(--sans);font-weight:500;font-size:.44rem;letter-spacing:.28em;
-  text-transform:uppercase;color:rgba(255,255,255,.94);margin-top:8px}
-
-.flags{display:flex;gap:8px;margin-left:22px}
-.flags span{width:22px;height:15px;border-radius:2px;display:block;background-size:cover;opacity:.9}
-.burger{display:none;width:42px;height:42px;position:relative}
-.burger span{position:absolute;left:9px;right:9px;height:2px;background:#fff;transition:.3s}
-.burger span:nth-child(1){top:14px}.burger span:nth-child(2){top:20px}.burger span:nth-child(3){top:26px}
-.burger.on span:nth-child(1){top:20px;transform:rotate(45deg)}
-.burger.on span:nth-child(2){opacity:0}
-.burger.on span:nth-child(3){top:20px;transform:rotate(-45deg)}
-
-.drawer{position:fixed;inset:var(--bar-h) 0 0;background:var(--bar);z-index:390;overflow-y:auto;
-  padding:12px var(--pad) 60px;transform:translateX(102%);transition:transform .34s cubic-bezier(.5,0,.2,1)}
-.drawer.on{transform:none}
-.drawer-row{display:flex;justify-content:space-between;align-items:center;width:100%;text-align:left;
-  padding:18px 0;border-bottom:1px solid rgba(255,255,255,.14);color:#fff;
-  font-family:var(--sans);font-weight:400;font-size:.95rem;letter-spacing:.07em;text-transform:uppercase}
-.drawer-sub{max-height:0;overflow:hidden;transition:max-height .34s ease;background:rgba(0,0,0,.22)}
-.drawer-sub.on{max-height:340px}
-.drawer-sub a{display:block;padding:13px 20px;color:rgba(255,255,255,.75);font-size:.9rem;
-  border-bottom:1px solid rgba(255,255,255,.08)}
-.plus{color:var(--accent);font-size:1.3rem;transition:transform .3s}
-.plus.on{transform:rotate(45deg)}
-
-/* ══════ HERO ══════ */
-.hero{position:relative;height:100svh;min-height:600px;display:flex;align-items:center;
-  background:var(--bar) url('shots/hero-poster.jpg') center/cover no-repeat;
-  justify-content:center;overflow:hidden;text-align:center}
-#wave,.hero-vid{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
-.hero-vid{display:none}
-.hero-vid.on{display:block}
-.hero::after{content:"";position:absolute;inset:0;z-index:1;
-  background:linear-gradient(180deg,rgba(22,32,61,.62),rgba(22,32,61,.34) 45%,rgba(22,32,61,.7))}
-.hero .wrap{position:relative;z-index:2;color:#fff;padding-top:var(--bar-h)}
-.hero h1{font-family:var(--serif);font-weight:400;color:#fff;
-  font-size:clamp(2.3rem,6.4vw,5rem);line-height:1.12;letter-spacing:-.005em;
-  text-shadow:0 2px 26px rgba(0,0,0,.34);margin-bottom:clamp(22px,3vw,34px)}
-.hero .hero-sub{font-family:var(--sans);font-weight:300;font-size:clamp(.96rem,1.4vw,1.12rem);
-  color:rgba(255,255,255,.92);max-width:52ch;margin:0 auto 40px;line-height:1.7}
-.down{position:absolute;left:50%;bottom:26px;transform:translateX(-50%);z-index:3;
-  width:40px;height:40px;border:1px solid rgba(255,255,255,.6);border-radius:50%;
-  display:grid;place-items:center;color:#fff;animation:bob 2.2s ease-in-out infinite}
-.down::before{content:"";width:9px;height:9px;border-right:1.6px solid;border-bottom:1.6px solid;
-  transform:translateY(-2px) rotate(45deg)}
-@keyframes bob{0%,100%{transform:translate(-50%,0)}50%{transform:translate(-50%,8px)}}
-
-/* ══════ PAGES ══════ */
-.page{display:none}
-.page.on{display:block}
-.page-banner{background:var(--bar);color:#fff;text-align:center;
-  padding:calc(var(--bar-h) + clamp(52px,7vw,96px)) 0 clamp(52px,7vw,96px)}
-.page-banner h1{color:#fff}
-.page-banner .sub{color:rgba(255,255,255,.74);margin:16px auto 0}
-
-/* ══════ GRIDS / CARDS ══════ */
-.grid{display:grid;gap:clamp(18px,2.4vw,30px)}
-.g2{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
-.g3{grid-template-columns:repeat(auto-fit,minmax(285px,1fr))}
-.g4{grid-template-columns:repeat(auto-fit,minmax(215px,1fr))}
-.split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,5vw,76px);align-items:center}
-
-.box{background:#fff;border:1px solid var(--line);display:flex;flex-direction:column;overflow:hidden;
-  transition:box-shadow .3s,transform .3s}
-.box:hover{box-shadow:0 18px 42px rgba(27,34,51,.14);transform:translateY(-4px)}
-.box-img{aspect-ratio:16/9;position:relative;overflow:hidden;background:var(--sand)}
-.box-img svg,.box-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .55s}
-.box:hover .box-img svg,.box:hover .box-img img{transform:scale(1.06)}
-.box-body{padding:26px 26px 30px;display:flex;flex-direction:column;flex:1}
-.box-body h3{margin-bottom:12px}
-.box-body p{color:var(--soft);font-size:.92rem;flex:1}
-.box-body .more{margin-top:16px;align-self:flex-start}
-
-.case{position:relative;aspect-ratio:1;overflow:hidden;display:block;background:var(--sand)}
-.case svg,.case img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .55s}
-.case:hover svg,.case:hover img{transform:scale(1.07)}
-.case-label{position:absolute;inset:auto 0 0;z-index:2;padding:22px 20px;color:#fff;
-  background:linear-gradient(transparent,rgba(15,22,42,.9))}
-.case-label small{font-family:var(--sans);font-weight:500;font-size:.64rem;letter-spacing:.18em;
-  text-transform:uppercase;opacity:.86;display:block}
-.case-label strong{font-family:var(--serif);font-weight:500;font-size:1.1rem;display:block;margin-top:4px}
-
-.ba{display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,3vw,44px)}
-.ba-col h4{font-size:.74rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;
-  color:var(--accent);margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid var(--line)}
-.ba-col ul{list-style:none;margin:0;padding:0}
-.ba-col li{padding:13px 0;border-bottom:1px solid var(--line);font-size:.92rem;color:var(--soft);
-  display:flex;gap:11px;align-items:center}
-.ba-col li::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--accent);flex-shrink:0}
-
-.logos{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:1px;
-  background:var(--line);border:1px solid var(--line)}
-.logo-cell{background:#fff;aspect-ratio:3/2;display:grid;place-items:center;font-size:.66rem;
-  font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:#BDB8AF;transition:.25s}
-.logo-cell:hover{color:var(--accent);background:var(--sand)}
-
-.tools{display:flex;flex-wrap:wrap;justify-content:center;gap:11px}
-.tool{padding:10px 22px;border:1px solid var(--line);background:#fff;font-size:.78rem;
-  font-weight:400;color:var(--soft)}
-
-.quote{background:#fff;border:1px solid var(--line);padding:30px 28px;position:relative}
-.quote::before{content:"”";position:absolute;top:2px;right:20px;font-family:var(--serif);
-  font-size:5rem;color:var(--accent);opacity:.17;line-height:1}
-.quote h4{font-size:.88rem;font-weight:600;color:var(--accent);margin-bottom:12px}
-.quote p{font-family:var(--serif);font-size:1rem;color:var(--soft);font-style:italic;line-height:1.65}
-.quote cite{font-style:normal;font-weight:500;font-size:.82rem;display:block;margin-top:14px}
-.quote cite span{display:block;font-weight:300;font-size:.76rem;color:var(--soft)}
-
-.checks{list-style:none;padding:0;margin:0}
-.checks li{position:relative;padding:14px 0 14px 34px;border-bottom:1px solid var(--line);
-  color:var(--soft);font-size:.94rem}
-.checks li::before{content:"";position:absolute;left:2px;top:22px;width:13px;height:7px;
-  border-left:2px solid var(--accent);border-bottom:2px solid var(--accent);transform:rotate(-45deg)}
-.checks li strong{color:var(--ink);font-weight:500}
-
-/* ══════ PORTFOLIO ══════ */
-.pf{display:grid;grid-template-columns:repeat(auto-fill,minmax(clamp(240px,27vw,310px),1fr));gap:clamp(10px,1.4vw,18px)}
-.pf-cell{display:block}
-.pf-shot{position:relative;aspect-ratio:16/9;overflow:hidden;display:block;background:var(--sand)}
-.pf-shot svg,.pf-shot img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .55s}
-.pf-cell:hover .pf-shot svg,.pf-cell:hover .pf-shot img{transform:scale(1.07)}
-.pf-name{display:block;text-align:center;font-family:var(--serif);font-weight:500;
-  font-size:1.12rem;color:var(--ink);padding-top:16px;transition:color .2s}
-.pf-cell:hover .pf-name,.pf-cell:focus-visible .pf-name{color:var(--accent)}
-
-/* ══════ HOME: FEATURED WORK + COMPACT SERVICES ══════ */
-.work-grid{display:grid;gap:clamp(18px,2.4vw,30px);justify-content:center;
-  grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
-#mePhoto img,#mePhoto svg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.svc-row{display:grid;gap:clamp(16px,2.4vw,30px);
-  grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
-.svc-item{border-top:2px solid var(--accent);padding-top:20px}
-.svc-item h3{font-size:1.06rem;margin-bottom:10px}
-.svc-item p{color:var(--soft);font-size:.88rem;line-height:1.65;margin-bottom:14px}
-
-
-/* ══════ PRICING TIERS ══════ */
-.tiers{display:grid;gap:clamp(18px,2.4vw,28px);
-  grid-template-columns:repeat(auto-fit,minmax(270px,1fr))}
-.tier{background:#fff;border:1px solid var(--line);padding:34px 30px 36px;
-  display:flex;flex-direction:column}
-.tier-price{font-family:var(--serif);font-weight:500;font-size:clamp(1.9rem,3vw,2.4rem);
-  line-height:1.1;color:var(--ink)}
-.tier-from{font-family:var(--sans);font-size:1.02rem;font-weight:600;color:var(--ink);
-  margin-top:10px;letter-spacing:.01em}
-.tier-mo{font-family:var(--sans);font-size:.86rem;color:var(--soft);margin-top:6px}
-.tier-care{font-family:var(--sans);font-size:.78rem;color:var(--soft);
-  margin-top:5px;line-height:1.55;opacity:.9}
-.tier-line{color:var(--soft);font-size:.92rem;line-height:1.6;margin:18px 0 22px;
-  padding-bottom:22px;border-bottom:1px solid var(--line)}
-.tier ul{list-style:none;padding:0;margin:0 0 26px;flex:1}
-.tier li{position:relative;padding:0 0 12px 26px;color:var(--soft);font-size:.9rem;line-height:1.6}
-.tier li::before{content:"";position:absolute;left:2px;top:8px;width:11px;height:6px;
-  border-left:1.8px solid var(--accent);border-bottom:1.8px solid var(--accent);
-  transform:rotate(-45deg)}
-.tier .btn{align-self:flex-start}
-.fineprint{margin-top:clamp(24px,3vw,36px);text-align:center;color:var(--soft);
-  font-size:.88rem;font-style:italic}
-
-/* ══════ FAQ / FORM ══════ */
-.faq{border-bottom:1px solid var(--line)}
-/* filled variant — used for the What I Do accordion on the home page */
-.svc-split{display:grid;gap:clamp(30px,5vw,68px);align-items:start;
-  grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr)}
-@media(max-width:900px){.svc-split{grid-template-columns:1fr}}
-.faq--fill{border-bottom:0;background:#fff;margin-bottom:10px;padding:0 clamp(16px,2vw,24px);
-  transition:box-shadow .25s}
-.faq--fill:hover{box-shadow:0 6px 18px rgba(27,34,51,.07)}
-.faq--fill .faq-q{padding:20px 0}
-.faq--fill .faq-a p{padding-bottom:22px}
-.faq-q{display:flex;justify-content:space-between;align-items:center;gap:18px;width:100%;
-  text-align:left;padding:22px 0;font-family:var(--serif);font-weight:500;font-size:1.08rem}
-.faq-q span:last-child{color:var(--accent);font-size:1.4rem;transition:transform .3s;flex-shrink:0;font-family:var(--sans)}
-.faq-q.on span:last-child{transform:rotate(45deg)}
-.faq-a{max-height:0;overflow:hidden;transition:max-height .38s ease}
-.faq-a.on{max-height:460px}
-.faq-a p{color:var(--soft);font-size:.93rem;padding-bottom:20px;margin:0}
-
-.form{display:grid;gap:16px}
-.f-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.field label{display:block;font-size:.68rem;font-weight:500;letter-spacing:.15em;
-  text-transform:uppercase;color:var(--soft);margin-bottom:7px}
-.field input,.field textarea,.field select{width:100%;border:1px solid var(--line);background:#fff;
-  padding:13px 15px;font:inherit;font-size:.93rem;color:var(--ink);transition:border-color .2s}
-.field input:focus,.field textarea:focus,.field select:focus{border-color:var(--accent);outline:none}
-.field textarea{min-height:140px;resize:vertical}
-.ok{display:none;padding:14px 16px;background:var(--accent);color:#fff;font-size:.82rem;font-weight:500}
-.ok.on{display:block}
-.err{display:none;padding:14px 16px;background:#FCE9E6;border-left:2px solid #C0392B;
-  color:#8E2C22;font-size:.82rem;font-weight:500;line-height:1.6}
-.err.on{display:block}
-/* The honeypot must be invisible to people but present for scripts, so it is
-   moved off-screen rather than display:none — some bots skip hidden fields. */
-.hp{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
-.form button[disabled]{opacity:.55;cursor:progress}
-.note{font-size:.79rem;color:var(--soft)}
-.dl{margin:0}
-.dl div{display:flex;gap:16px;padding:16px 0;border-bottom:1px solid var(--line)}
-.dl dt{font-size:.67rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;
-  color:var(--accent);width:92px;flex-shrink:0;padding-top:3px}
-.dl dd{margin:0;color:var(--soft);font-size:.93rem}
-.dl dd a:hover{color:var(--accent)}
-
-/* ══════ FOOTER ══════ */
-.footer{background:var(--bar);color:rgba(255,255,255,.7);padding-top:clamp(50px,6vw,84px);font-size:.9rem;font-weight:300}
-.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.3fr;gap:clamp(26px,3.6vw,48px);padding-bottom:44px}
-.footer h5{font-family:var(--sans);font-weight:600;font-size:.74rem;letter-spacing:.18em;
-  text-transform:uppercase;color:#fff;margin-bottom:18px}
-.footer a:hover{color:var(--accent)}
-.f-links{list-style:none;padding:0;margin:0;display:grid;gap:9px}
-.f-links a{transition:padding-left .2s,color .2s}
-.f-links a:hover{padding-left:5px}
-.f-tile{width:96px;height:110px;background:var(--accent);display:flex;flex-direction:column;
-  align-items:center;justify-content:center;margin-bottom:20px}
-.f-tile .tile-script{font-size:2.5rem}
-.f-tile .tile-sub{font-size:.36rem;margin-top:6px}
-.socials{display:flex;gap:9px;margin-top:20px}
-.socials a{width:36px;height:36px;border:1px solid rgba(255,255,255,.24);border-radius:50%;
-  display:grid;place-items:center;transition:.25s}
-.socials a:hover{background:var(--accent);border-color:var(--accent);color:#fff}
-.socials svg{width:14px;height:14px;fill:currentColor}
-.footer-bar{border-top:1px solid rgba(255,255,255,.13);padding-block:22px;display:flex;
-  justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:.77rem}
-.footer-bar p{margin:0}
-
-.rv{opacity:0;transform:translateY(22px);transition:opacity .65s ease,transform .65s ease}
-.rv.in{opacity:1;transform:none}
-
-@media(max-width:1180px){
-  .nav,.flags{display:none}
-  .burger{display:block}
-  .bar-in{justify-content:space-between}
-  .bar-in .spacer{flex:1}
-  .footer-grid{grid-template-columns:1fr 1fr}
-}
-@media(max-width:760px){
-  :root{--bar-h:70px;--tile-w:96px;--tile-h:108px}
-  .tile-script{font-size:2.5rem}
-  .tile-sub{font-size:.36rem;letter-spacing:.22em}
-  .split,.ba{grid-template-columns:1fr}
-  .f-row{grid-template-columns:1fr}
-  .footer-grid{grid-template-columns:1fr;gap:34px}
-  .dl div{flex-direction:column;gap:5px}
-  .btn{padding:16px 30px;font-size:.76rem}
-}
-@media(prefers-reduced-motion:reduce){
-  *{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
-  .rv{opacity:1;transform:none}
-}
-</style>
+<link rel="stylesheet" href="styles.css">
+<script>document.documentElement.className += ' js';</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"LocalBusiness","name":"Kea Web Creations","url":"https://keawebcreations.com/","telephone":"+1-808-306-8792","email":"keawebcreations@gmail.com","address":{"@type":"PostalAddress","addressLocality":"Beaverton","addressRegion":"OR","addressCountry":"US"},"areaServed":"Pacific Northwest"}
+</script>
 </head>
 <body>
 
-<!-- ══════════ HEADER BAR ══════════ -->
+<!-- ══════════ HEADER (shared — copy to every page, move class "on") ══════════ -->
 <header class="bar">
   <div class="bar-in">
     <nav class="nav" aria-label="Main left">
-      <div class="nav-item"><a class="nav-link" href="#/home">Home</a></div>
-      <div class="nav-item"><a class="nav-link" href="#/services">Services</a></div>
-      <div class="nav-item">
-        <a class="nav-link" href="#/about">About <i class="caret"></i></a>
-        <div class="dropdown">
-          <a href="#/about">Kea Web Creations</a>
-          <a href="#/faq">FAQ</a>
-          <a href="#/policy">Our Policy</a>
-        </div>
-      </div>
+      <a class="nav-link on" href="index.html">Home</a>
+      <a class="nav-link" href="pricing.html">Pricing</a>
     </nav>
 
-    <a class="tile" href="#/home" aria-label="Kea Web Creations home">
+    <a class="tile" href="index.html" aria-label="Kea Web Creations home">
       <span class="tile-script">Kea.</span>
       <span class="tile-sub">Web Creations</span>
     </a>
 
     <nav class="nav nav--r" aria-label="Main right">
-      <div class="nav-item"><a class="nav-link" href="#/portfolio">Portfolio</a></div>
-      <div class="nav-item"><a class="nav-link" href="#/contact">Contact</a></div>
+      <a class="nav-link" href="contact.html">Contact</a>
+      <a class="btn btn--fill nav-cta" href="contact.html?plan=audit">Get a free audit</a>
     </nav>
 
-    <div class="spacer" style="display:none"></div>
-    <button class="burger" id="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <button class="burger" id="burger" aria-label="Menu" aria-expanded="false" aria-controls="drawer"><span></span><span></span><span></span></button>
   </div>
 </header>
 
 <div class="drawer" id="drawer">
-  <a class="drawer-row" href="#/home">Home</a>
-  <a class="drawer-row" href="#/services">Services</a>
-  <button class="drawer-row" data-t="d2">About <span class="plus">+</span></button>
-  <div class="drawer-sub" id="d2">
-    <a href="#/about">Kea Web Creations</a>
-    <a href="#/faq">FAQ</a>
-    <a href="#/policy">Our Policy</a>
-  </div>
-  <a class="drawer-row" href="#/portfolio">Portfolio</a>
-  <a class="drawer-row" href="#/contact">Contact</a>
-  <a class="btn btn--fill" href="#/contact" style="margin-top:28px">Let's Get Started Today</a>
+  <a class="drawer-row" href="index.html">Home</a>
+  <a class="drawer-row" href="pricing.html">Pricing</a>
+  <a class="drawer-row" href="contact.html">Contact</a>
+  <a class="btn btn--fill" href="contact.html?plan=audit" style="margin-top:28px">Get a free audit</a>
 </div>
+<!-- ══════════ END HEADER ══════════ -->
 
 <main>
 
-<!-- ══════════ HOME ══════════ -->
-<section class="page on" id="p-home">
-
+  <!-- 1. HERO -->
   <div class="hero">
     <video class="hero-vid" id="heroVid" autoplay muted loop playsinline preload="auto"
            poster="shots/hero-poster.jpg" src="waves.mp4"></video>
     <canvas id="wave" aria-hidden="true"></canvas>
     <div class="wrap">
-      <h1>Web Design and Web Development Services</h1>
-      <p class="hero-sub">Websites That Make Waves<span class="dot">.</span></p>
-      <a class="btn btn--fill" href="#work" data-scroll="work">See the Work</a>
+      <h1>Stop losing customers who already found you<span class="dot">.</span></h1>
+      <p class="hero-sub">Websites and follow-up systems for home service businesses in Beaverton and the Pacific Northwest — so every call, form and estimate request gets answered, followed up and booked.</p>
+      <div class="hero-actions">
+        <a class="btn btn--fill" href="contact.html?plan=audit">Get a free lead-leak audit</a>
+        <a class="btn btn--white" href="pricing.html">See plans</a>
+      </div>
     </div>
-    <a class="down" href="#work" data-scroll="work" aria-label="Scroll down"></a>
+    <a class="down" href="#problem" aria-label="Scroll down"></a>
   </div>
 
-  <!-- ══════ 2. THE WORK ══════ -->
-  <div class="sec" id="work">
+  <!-- 2. THE PROBLEM -->
+  <section class="sec" id="problem">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <span class="kicker">The problem</span>
+        <h2>You're on a job when the phone rings<span class="dot">.</span></h2>
+        <p class="sub">The work is out there. The leaks are in what happens after someone reaches out.</p>
+      </div>
+      <div class="grid g3">
+        <div class="leak rv">
+          <h3>Missed calls</h3>
+          <p>You can't answer from a ladder. If nobody picks up, the next company on the list is one tap away.</p>
+        </div>
+        <div class="leak rv">
+          <h3>Estimate requests that go quiet</h3>
+          <p>A form comes in at 9pm. By the time you reply, they've booked whoever answered first.</p>
+        </div>
+        <div class="leak rv">
+          <h3>Customers who forget you</h3>
+          <p>You did great work last spring. This spring, they can't remember your name.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. LEAD JOURNEY COMPARISON -->
+  <section class="sec sec--sand" id="journey">
     <div class="wrap">
       <div class="sec-head center rv">
+        <span class="kicker">Same homeowner, two outcomes</span>
+        <h2>A website alone doesn't answer the phone<span class="dot">.</span></h2>
+      </div>
+      <div class="journey">
+        <div class="path path--lose rv">
+          <h3>Without a system</h3>
+          <ol>
+            <li>Searches "AC repair near me" and finds you</li>
+            <li>Calls while you're on a roof</li>
+            <li>Gets your voicemail</li>
+            <li>Calls the next company</li>
+          </ol>
+          <p class="path-end">Job lost</p>
+        </div>
+        <div class="path path--win rv">
+          <h3>With the Kea system</h3>
+          <ol>
+            <li>Searches "AC repair near me" and finds you</li>
+            <li>Calls while you're on a roof</li>
+            <li>Gets a text back in seconds</li>
+            <li>Books an estimate from the text</li>
+            <li>Gets a reminder the day before</li>
+            <li>Is asked for a review after the job</li>
+            <li>Gets a tune-up reminder next spring</li>
+          </ol>
+          <p class="path-end">Repeat customer</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. THE KEA SYSTEM -->
+  <section class="sec" id="system">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <span class="kicker">The Kea system</span>
+        <h2>Three stages. One system<span class="dot">.</span></h2>
+        <p class="sub">Each plan adds the next stage. It runs automatically, and every lead lands in one inbox on your phone.</p>
+      </div>
+      <div class="grid g3">
+        <div class="stage rv">
+          <span class="stage-num">Stage 1</span>
+          <h3>Capture</h3>
+          <p class="stage-promise">Every call and form caught and answered in seconds.</p>
+          <p>Lead forms, missed-call text-back and one inbox with a mobile app.</p>
+          <a class="more" href="pricing.html#capture">See Capture →</a>
+        </div>
+        <div class="stage rv">
+          <span class="stage-num">Stage 2</span>
+          <h3>Convert</h3>
+          <p class="stage-promise">Every lead followed up and booked for an estimate.</p>
+          <p>Automatic follow-up, online estimate booking and review requests after every job.</p>
+          <a class="more" href="pricing.html#convert">See Convert →</a>
+        </div>
+        <div class="stage rv">
+          <span class="stage-num">Stage 3</span>
+          <h3>Keep</h3>
+          <p class="stage-promise">Past customers come back for seasonal and repeat work.</p>
+          <p>Seasonal reminders, past-customer campaigns and referral follow-ups.</p>
+          <a class="more" href="pricing.html#keep">See Keep →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. PLANS PREVIEW — prices must match PLANS in pricing.js (tests check) -->
+  <section class="sec sec--sand" id="plans">
+    <div class="wrap">
+      <div class="sec-head center rv">
+        <span class="kicker">Pricing</span>
+        <h2>Simple monthly plans<span class="dot">.</span></h2>
+        <p class="sub">No contract on standard plans. Founding pricing for the first five home service businesses.</p>
+      </div>
+      <div class="grid g3">
+        <article class="plan-mini rv" data-plan="capture" data-setup="750" data-monthly="250">
+          <h3>Capture</h3>
+          <p class="plan-promise">Every call and form caught and answered in seconds.</p>
+          <p class="plan-price">$250<small>/mo</small></p>
+          <p class="plan-setup">+ $750 setup</p>
+          <ul class="checks">
+            <li>Website built for your business</li>
+            <li>Missed-call text-back</li>
+            <li>One leads inbox with a mobile app</li>
+          </ul>
+          <a class="btn btn--out" href="pricing.html#capture">See Capture</a>
+        </article>
+        <article class="plan-mini plan-mini--hot rv" data-plan="convert" data-setup="1000" data-monthly="400">
+          <span class="tag">Most popular</span>
+          <h3>Convert</h3>
+          <p class="plan-promise">Every lead followed up and booked for an estimate.</p>
+          <p class="plan-price">$400<small>/mo</small></p>
+          <p class="plan-setup">+ $1,000 setup</p>
+          <ul class="checks">
+            <li>Everything in Capture</li>
+            <li>Automatic follow-up and estimate booking</li>
+            <li>Review requests after every job</li>
+          </ul>
+          <a class="btn btn--fill" href="pricing.html#convert">See Convert</a>
+        </article>
+        <article class="plan-mini rv" data-plan="keep" data-setup="1500" data-monthly="700">
+          <h3>Keep</h3>
+          <p class="plan-promise">Past customers come back for seasonal and repeat work.</p>
+          <p class="plan-price">$700<small>/mo</small></p>
+          <p class="plan-setup">+ $1,500 setup</p>
+          <ul class="checks">
+            <li>Everything in Convert</li>
+            <li>Seasonal reminders and past-customer campaigns</li>
+            <li>Referral follow-ups and priority support</li>
+          </ul>
+          <a class="btn btn--out" href="pricing.html#keep">See Keep</a>
+        </article>
+      </div>
+      <p class="center" style="margin-top:34px"><a class="more" href="pricing.html">Compare plans or build your own →</a></p>
+    </div>
+  </section>
+
+  <!-- 6. PROOF — real sites only. Reviews and case studies are added when real ones exist. -->
+  <section class="sec" id="work">
+    <div class="wrap">
+      <div class="sec-head rv">
         <span class="kicker">The work</span>
-        <h2>Real Projects, Live Right Now</h2>
-        <p class="sub">Every one of these is a working site I've built. Check it out.</p>
+        <h2>Sites I've built<span class="dot">.</span></h2>
+        <p class="sub">Real sites, live right now.</p>
       </div>
-      <div class="work-grid" id="workGrid"></div>
-      <div class="center" style="margin-top:40px"><a class="btn btn--out" href="#/portfolio">See All Work</a></div>
-    </div>
-  </div>
-
-  <!-- ══════ 3. WHAT I DO ══════ -->
-  <div class="sec sec--sand">
-    <div class="wrap">
-      <div class="svc-split">
-        <div class="rv">
-          <span class="kicker">What I do</span>
-          <h2>Services Designed To Your Needs</h2>
-          <p class="sub" style="margin-top:18px">Your website should feel like a natural extension of your brand. I thoughtfully shape every part of the experience, from the overall look and feel to how visitors interact with your site, creating a polished experience that feels intentional and true to your business.</p>
-        </div>
-        <div class="rv">
-          <div class="faq faq--fill"><button class="faq-q">Front-End Development <span>+</span></button>
-            <div class="faq-a"><p>My front-end development ensures that approved designs are translated accurately into clean, functional interfaces. I focus on performance, consistency, and accessibility so your website works smoothly across browsers and devices.</p><p style="margin-top:12px">Design and development are closely coordinated to maintain visual integrity and usability.</p></div></div>
-          <div class="faq faq--fill"><button class="faq-q">Backend &amp; Content Management <span>+</span></button>
-            <div class="faq-a"><p>I build websites with reliable backend functionality, including content management systems, databases, and dynamic features when needed. This allows your site to be updated easily and expanded over time.</p><p style="margin-top:12px">Whether you need a simple CMS-driven site or more complex functionality, I build with scalability and maintainability in mind.</p></div></div>
-          <div class="faq faq--fill"><button class="faq-q">E-Commerce &amp; Scheduling <span>+</span></button>
-            <div class="faq-a"><p>For businesses that sell products or accept bookings online, I offer e-commerce and scheduling integrations tailored to your needs. This can include product catalogs, secure checkout, booking calendars, and form-based workflows.</p><p style="margin-top:12px">My goal is to make online transactions and scheduling straightforward for both you and your customers.</p></div></div>
-          <div class="faq faq--fill"><button class="faq-q">Hosting &amp; Maintenance <span>+</span></button>
-            <div class="faq-a"><p>Every site I build stays on my hosting for $30 a month. That covers uptime, daily backups, security patches, and making sure your domain never lapses.</p><p style="margin-top:12px">Your domain and source files stay in your name — I hold the hosting so that keeping the site running is my job rather than yours.</p></div></div>
-          <div class="faq faq--fill"><button class="faq-q">Search &amp; Visibility <span>+</span></button>
-            <div class="faq-a"><p>Every build includes the groundwork that lets people find you: a clear page title and description, sensible headings, and your business set up so it turns up when someone searches your name.</p><p style="margin-top:12px">This is the foundation rather than an ongoing marketing campaign — it makes sure you are findable, not that you outrank everyone.</p></div></div>
-          <div class="faq faq--fill"><button class="faq-q">Training &amp; Handover <span>+</span></button>
-            <div class="faq-a"><p>Nothing I build is a black box. Tier 2 and Tier 3 come with a training session and a written guide for editing your own content, and every project ships with documentation.</p><p style="margin-top:12px">If you ever decide to move on, you take the files with you and the site goes with you.</p></div></div>
-        </div>
+      <div class="grid g3">
+        <a class="box rv" href="https://capturewithki.com" target="_blank" rel="noopener">
+          <div class="box-img"><img src="shots/capturewithki.jpg" alt="Homepage of CaptureWithKi" loading="lazy"></div>
+          <div class="box-body"><h3>CaptureWithKi</h3>
+            <p>A photography site with a custom client-gallery system — private galleries, self-serve delivery, and galleries that tidy themselves up after each shoot.</p>
+            <span class="more">Visit the site →</span></div>
+        </a>
+        <a class="box rv" href="https://rosie-rowe.mykajabi.com/" target="_blank" rel="noopener">
+          <div class="box-img"><img src="shots/ldah.jpg" alt="Homepage of LDAH Hawaiʻi" loading="lazy"></div>
+          <div class="box-body"><h3>LDAH Hawaiʻi</h3>
+            <p>A certification program training IEP advocates through Bronze, Silver and Gold tiers, with a built-in accessibility toolbar for read-aloud, contrast and text sizing.</p>
+            <span class="more">Visit the site →</span></div>
+        </a>
+        <a class="box rv" href="https://laakeasalvani.github.io/madebyhaaans/" target="_blank" rel="noopener">
+          <div class="box-img"><img src="shots/madebyhaaans.jpg" alt="Homepage of madebyhaaans" loading="lazy"></div>
+          <div class="box-body"><h3>madebyhaaans</h3>
+            <p>A one-page site for a home baker in Kakaʻako, Honolulu — a scrolling flavour picker, take-and-bake instructions, and ordering that hands straight off to Instagram.</p>
+            <span class="more">Visit the site →</span></div>
+        </a>
       </div>
     </div>
-  </div>
+  </section>
 
-  <!-- ══════ 4. LET'S TALK ══════ -->
-  <div class="sec sec--bar center">
-    <div class="wrap">
-      <h2>Thirty minutes, no pitch<span class="dot">.</span></h2>
-      <p class="sub" style="margin:16px auto 30px">Bring the messy version of the idea. That's the useful conversation.</p>
-      <a class="btn btn--fill" href="#/contact">Start The Conversation</a>
-    </div>
-  </div>
-</section>
-
-<!-- ══════════ SERVICES ══════════ -->
-<section class="page" id="p-services">
-  <div class="page-banner"><div class="wrap"><h1>Website Design &amp; Development</h1>
-    <p class="sub">One thing, done properly. Three packages, depending on how much of it you want to run yourself.</p></div></div>
-
-  <div class="sec"><div class="wrap">
-    <div class="tiers" id="tierGrid"></div>
-    <p class="fineprint rv">Logo and brand basics are available alongside any package, quoted separately.</p>
-  </div></div>
-
-  <div class="sec sec--sand"><div class="wrap">
-    <div class="sec-head center rv">
-      <span class="kicker">The monthly</span>
-      <h2>What $30 a Month Covers</h2>
-      <p class="sub">Every package includes it. It is what keeps the site online and working.</p>
-    </div>
-    <div class="split">
-      <ul class="checks rv">
-        <li><strong>Hosting and uptime</strong> — the site stays up, and I am the one who fixes it if it doesn't</li>
-        <li><strong>Daily backups</strong> — a bad day never becomes a lost website</li>
-        <li><strong>Security patches</strong> — applied as they're released, without you asking</li>
-        <li><strong>Domain renewal handled</strong> — in your name, but I make sure it never lapses</li>
-      </ul>
+  <!-- 7. FOUNDER -->
+  <section class="sec sec--sand" id="founder">
+    <div class="wrap split">
+      <div class="founder-photo rv"><img src="images/laakea.jpg" alt="La'akea Salvani, founder of Kea Web Creations" loading="lazy"></div>
       <div class="rv">
-        <p class="sub">Your domain and all source files stay in your name. I hold the hosting so that keeping the site running is my job rather than yours.</p>
-        <p class="sub">Fair use covers 25&nbsp;GB stored and 100&nbsp;GB downloaded a month — far more than a normal business site uses. Anything past that is billed at what it costs me, never marked up.</p>
-        <p class="sub">If you ever want to leave: thirty days' notice, I hand over the files, and the site moves with you.</p>
+        <span class="kicker">Who you'll deal with</span>
+        <h2>When you call, you reach me<span class="dot">.</span></h2>
+        <p class="sub" style="margin-top:18px">Kea Web Creations is one person: me, La'akea. I build your website, set up your system and answer when something needs fixing. No account managers, no ticket queue.</p>
+        <p class="sub">I'm based in Beaverton, Oregon, and work with home service businesses across the Pacific Northwest.</p>
+        <ul class="checks">
+          <li><strong>Straight pricing</strong> — setup and monthly prices are on the page</li>
+          <li><strong>Your accounts stay yours</strong> — domain, Google profile, website files and contacts</li>
+          <li><strong>Local and reachable</strong> — same time zone, replies within one business day</li>
+        </ul>
+        <a class="btn btn--out" href="tel:+18083068792" style="margin-top:26px">Call (808) 306-8792</a>
       </div>
     </div>
-  </div></div>
+  </section>
 
-  <div class="sec"><div class="wrap">
-    <div class="sec-head center rv">
-      <span class="kicker">How it works</span>
-      <h2>Before You Sign Anything</h2>
-    </div>
-    <ul class="checks rv">
-      <li><strong>Half to start, half before launch</strong> — the price is agreed in writing before any work begins</li>
-      <li><strong>The clock starts when your content arrives</strong> — not when you pay, so a slow week on your side never becomes a missed deadline on mine</li>
-      <li><strong>You supply the words and photos</strong> — writing is available as a paid add-on if you'd rather not</li>
-      <li><strong>Extra rounds of changes</strong> — beyond those included, billed at $40 an hour</li>
-      <li><strong>Not included</strong> — ongoing marketing, paid ads, photography, printed material</li>
-    </ul>
-  </div></div>
-
-  <div class="sec sec--bar center"><div class="wrap"><h2>Not sure which tier you need<span class="dot">?</span></h2>
-    <p class="sub" style="margin:16px auto 30px">Describe the business and I'll tell you which one actually fits — including when the honest answer is the cheapest one.</p>
-    <a class="btn btn--fill" href="#/contact">Tell Me About The Project</a></div></div>
-</section>
-
-<!-- ══════════ ABOUT ══════════ -->
-<section class="page" id="p-about">
-  <div class="page-banner"><div class="wrap"><h1>Kea Web Creations</h1>
-    <p class="sub">A one-person studio. You talk to the person who does the work, every time, from the first email to the last invoice.</p></div></div>
-  <div class="sec"><div class="wrap split" style="align-items:start">
-    <div class="rv"><span class="kicker">The approach</span><h2>One Person, Every Stage</h2>
-      <p class="sub" style="margin-top:18px">I build commercial websites and landing pages for small and mid-sized businesses, and I handle every stage of it myself — strategy, UX, copy, design, development, analytics and launch.</p>
-      <p class="sub">Carrying the whole project means nothing falls between people, and it leaves room to build for more than appearance. Four things go into every site:</p>
-      <p class="sub"><strong>Custom-Crafted Designs</strong> — every website is designed from the ground up, reflecting your brand's unique identity and values.</p>
-      <p class="sub"><strong>User-Centric Development</strong> — I prioritize user experience, ensuring that navigation, accessibility and engagement are at the heart of every design.</p>
-      <p class="sub"><strong>Scalable Solutions</strong> — your website is built to grow with your business, allowing for seamless updates and feature enhancements.</p>
-      <p class="sub"><strong>Integrated Marketing Tools</strong> — from search visibility to content management, every build comes equipped with the tools that drive traffic and conversions.</p>
-      <p class="sub">My tailored approach ensures that your website is not just a digital placeholder, but a powerful marketing asset that evolves with your business.</p>
-      <a class="btn btn--fill" href="#/contact" style="margin-top:12px">Get In Touch</a></div>
-    <div class="rv" id="mePhoto" style="aspect-ratio:4/5;position:relative;overflow:hidden;background:var(--sand)"></div>
-  </div></div>
-  <div class="sec sec--sand"><div class="wrap">
-    <div class="sec-head center rv"><h2>How I work</h2></div>
-    <ul class="checks rv">
-      <li><strong>Straight pricing</strong> — fixed scope, fixed number, agreed before anything starts</li>
-      <li><strong>You own what matters</strong> — your domain and all source files are in your name; I host and maintain the site so you never have to</li>
-      <li><strong>Built to be handed over</strong> — documentation and training come standard</li>
-      <li><strong>Local, and awake</strong> — based in Beaverton, Oregon, same time zone, actual replies</li>
-    </ul>
-  </div></div>
-  <div class="sec sec--bar center"><div class="wrap"><h2>Thirty minutes, no pitch<span class="dot">.</span></h2>
-    <p class="sub" style="margin:16px auto 30px">Bring the messy version of the idea. That's the useful conversation.</p>
-    <a class="btn btn--fill" href="#/contact">Start The Conversation</a></div></div>
-</section>
-
-<section class="page" id="p-faq">
-  <div class="page-banner"><div class="wrap"><h1>FAQ</h1><p class="sub">The questions that come up in nearly every first call.</p></div></div>
-  <div class="sec"><div class="wrap" style="max-width:880px">
-    <div class="faq"><button class="faq-q">What does a website cost? <span>+</span></button>
-      <div class="faq-a"><p>Most small-business sites land in a range rather than at a single number, because the work scales with page count, integrations and how much content already exists. You get a fixed quote after the first conversation, and it doesn't move unless you add scope. Every site also carries $30 a month for hosting and upkeep.</p></div></div>
-    <div class="faq"><button class="faq-q">How long does it take? <span>+</span></button>
-      <div class="faq-a"><p>Tier 1 is about two weeks, Tier 2 three to four, Tier 3 six to eight. The clock starts when your words and photos arrive, not when you pay — so a slow week on your side never turns into a missed deadline on mine.</p></div></div>
-    <div class="faq"><button class="faq-q">Can I update the site myself? <span>+</span></button>
-      <div class="faq-a"><p>That depends on the tier. Tier 2 and Tier 3 include a private login and an editor for your own words and pictures, plus a training session and a written guide. Tier 1 doesn't — those changes come to me and are billed at $40 an hour.</p></div></div>
-    <div class="faq"><button class="faq-q">Do I own everything at the end? <span>+</span></button>
-      <div class="faq-a"><p>Your domain and all source files are in your name from day one. I hold the hosting — that is what the $30 a month covers — so keeping the site online is my job rather than yours. If you ever want to move on, give me thirty days' notice and I hand everything over.</p></div></div>
-    <div class="faq"><button class="faq-q">Do you work with clients outside Oregon? <span>+</span></button>
-      <div class="faq-a"><p>Often. Most of the work happens over video calls and shared links regardless of where you are — just be aware of the time difference when scheduling.</p></div></div>
-    <div class="faq"><button class="faq-q">What if I already have a brand? <span>+</span></button>
-      <div class="faq-a"><p>Then we use it. I'll work inside your existing guidelines and flag anything that will cause problems on screen — usually contrast, or a logo that doesn't hold up small.</p></div></div>
-    <div class="faq"><button class="faq-q">What do you need from me? <span>+</span></button>
-      <div class="faq-a"><p>The words and the photos. That is where projects stall more than anywhere else, so the clock starts when your content arrives rather than when you pay. If writing isn't your thing, I can do it as a paid add-on.</p></div></div>
-    <div class="faq"><button class="faq-q">How does payment work? <span>+</span></button>
-      <div class="faq-a"><p>Half to start and half before the site goes live. The price is agreed in writing before any work begins, and nothing is handed over unpaid.</p></div></div>
-    <div class="faq"><button class="faq-q">What happens after launch? <span>+</span></button>
-      <div class="faq-a"><p>The $30 a month keeps it running: hosting and uptime, daily backups, security patches, and making sure your domain never lapses. Content changes are separate — on Tier 2 and Tier 3 you make them yourself, and on Tier 1 they come to me at $40 an hour.</p></div></div>
-  </div></div>
-</section>
-
-<section class="page" id="p-policy">
-  <div class="page-banner"><div class="wrap"><h1>Our Policy</h1><p class="sub">How projects run, what's expected on both sides, and what happens with your information.</p></div></div>
-  <div class="sec"><div class="wrap" style="max-width:820px">
-    <div class="rv" style="margin-bottom:38px"><h3 style="margin-bottom:12px">Project terms</h3>
-      <p class="sub">Work begins once a proposal is signed and a deposit is received. The balance is due at launch. Scope is fixed in writing; anything added mid-project is quoted separately before it's started, never after.</p></div>
-    <div class="rv" style="margin-bottom:38px"><h3 style="margin-bottom:12px">Revisions</h3>
-      <p class="sub">Two rounds are included at each stage. Beyond that, additional rounds are billed at the hourly rate quoted in your proposal. Consolidated feedback in one pass keeps projects on schedule and costs down.</p></div>
-    <div class="rv" style="margin-bottom:38px"><h3 style="margin-bottom:12px">Ownership</h3>
-      <p class="sub">On final payment, all rights to the delivered work transfer to you, including source files. Third-party assets — fonts, stock imagery, plugins — remain under their own licenses, listed in your handoff document.</p></div>
-    <div class="rv" style="margin-bottom:38px"><h3 style="margin-bottom:12px">Privacy</h3>
-      <p class="sub">Information submitted through this site is used only to respond to your enquiry. It isn't sold, rented or shared with third parties. Ask at any time and it's deleted.</p></div>
-    <div class="rv"><h3 style="margin-bottom:12px">Cancellation</h3>
-      <p class="sub">Either side can end a project in writing. You're billed for work completed to that point and receive every file produced so far. Deposits cover work already begun and aren't refundable.</p></div>
-  </div></div>
-</section>
-
-<!-- ══════════ PORTFOLIO ══════════ -->
-<section class="page" id="p-portfolio">
-  <div class="page-banner"><div class="wrap"><h1>Live Projects</h1>
-    <p class="sub">Every one of these is a working site I've built. Check it out.</p></div></div>
-  <div class="sec"><div class="wrap">
-    <div class="pf" id="pfGrid"></div>
-  </div></div>
-  <div class="sec sec--bar center"><div class="wrap"><h2>Let's make something worth showing<span class="dot">.</span></h2>
-    <p class="sub" style="margin:16px auto 30px">Tell me what you're working on and I'll tell you what it takes.</p>
-    <a class="btn btn--fill" href="#/contact">Get Started Today</a></div></div>
-</section>
-
-<!-- ══════════ CONTACT ══════════ -->
-<section class="page" id="p-contact">
-  <div class="page-banner"><div class="wrap"><h1>Contact</h1><p class="sub">Tell me a bit about the project. Every message gets a reply within one business day.</p></div></div>
-  <div class="sec"><div class="wrap split" style="align-items:start">
-    <div class="rv"><span class="kicker">Get in touch</span><h2>Kea Web Creations</h2>
-      <dl class="dl" style="margin-top:22px">
-        <div><dt>Email</dt><dd><a href="mailto:keawebcreations@gmail.com">keawebcreations@gmail.com</a></dd></div>
-        <div><dt>Phone</dt><dd><a href="tel:+18083068792">+1 (808) 306-8792</a></dd></div>
-        <div><dt>Based in</dt><dd>Beaverton, Oregon<br>Serving the Pacific Northwest &amp; clients nationwide</dd></div>
-        <div><dt>Hours</dt><dd>Monday–Friday, 9am–5pm PT</dd></div>
-      </dl>
+  <!-- 8. AUDIT CTA -->
+  <section class="sec sec--bar" id="audit">
+    <div class="wrap split" style="align-items:start">
+      <div class="rv">
+        <span class="kicker">Free lead-leak audit</span>
+        <h2>Find out where you're losing customers<span class="dot">.</span></h2>
+        <p class="sub" style="margin-top:18px">I'll check the places enquiries slip away and send you what I find. No pitch, no obligation.</p>
+        <a class="btn btn--fill" href="contact.html?plan=audit" style="margin-top:14px">Get my free audit</a>
       </div>
-    <div class="rv" style="background:var(--sand);padding:clamp(24px,3vw,36px);border:1px solid var(--line)">
-      <h3 style="margin-bottom:20px">Send a message</h3>
-      <form class="form" data-form>
-        <div class="f-row">
-          <div class="field"><label for="f1">Your name</label><input id="f1" name="name" autocomplete="name" required></div>
-          <div class="field"><label for="f2">Phone</label><input id="f2" name="phone" type="tel" autocomplete="tel"></div>
-        </div>
-        <div class="f-row">
-          <div class="field"><label for="f3">Email</label><input id="f3" name="email" type="email" autocomplete="email" required></div>
-          <div class="field"><label for="f4">Current website</label><input id="f4" name="website" placeholder="optional"></div>
-        </div>
-        <div class="field"><label for="f5">I'm interested in</label>
-          <select id="f5" name="interest"><option>Tier 1 — website only</option><option>Tier 2 — website + editor login</option>
-          <option>Tier 3 — website + dashboard and customer accounts</option>
-          <option>Not sure which tier</option>
-          <option>A private consultation</option><option>Something else</option></select></div>
-        <div class="field"><label for="f6">Your message</label><textarea id="f6" name="message" placeholder="What are you trying to build, and by when?"></textarea></div>
-        <!-- Honeypot. Invisible to people, irresistible to scrapers: anything
-             that arrives with this filled in is discarded server-side. -->
-        <div class="hp" aria-hidden="true"><label for="f7">Company</label><input id="f7" name="company" type="text" tabindex="-1" autocomplete="off"></div>
-        <button class="btn btn--fill" type="submit">Let's Get Started Today</button>
-        <div class="ok" data-ok>Thanks — message received. I'll be in touch within one business day.</div>
-        <div class="err" data-err role="alert"></div>
-      </form>
+      <ul class="audit-list rv">
+        <li>How easy it is to contact you from your website</li>
+        <li>Your Google Business Profile</li>
+        <li>What happens when someone calls after hours</li>
+        <li>How fast an enquiry gets a reply</li>
+        <li>Your reviews, and how you ask for them</li>
+      </ul>
     </div>
-  </div></div>
-</section>
+  </section>
 
 </main>
 
-<!-- ══════════ FOOTER ══════════ -->
+<!-- ══════════ FOOTER (shared — copy to every page) ══════════ -->
 <footer class="footer">
   <div class="wrap">
     <div class="footer-grid">
       <div>
-        <a class="f-tile" href="#/home" aria-label="Kea Web Creations home">
+        <a class="f-tile" href="index.html" aria-label="Kea Web Creations home">
           <span class="tile-script">Kea.</span><span class="tile-sub">Web Creations</span>
         </a>
-        <p>Beaverton, Oregon<br>Serving the Pacific Northwest<br>and clients nationwide</p>
-        <p>Phone: <a href="tel:+18083068792">+1 (808) 306-8792</a><br><a href="mailto:keawebcreations@gmail.com">keawebcreations@gmail.com</a></p>
-        <a class="btn btn--fill" href="#/contact" style="margin-top:8px">Get Started Today</a>
-        <div class="socials">
-          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M13.5 21v-8h2.7l.4-3.1h-3.1V7.9c0-.9.25-1.5 1.55-1.5H16.7V3.63C16.4 3.59 15.4 3.5 14.25 3.5c-2.4 0-4.05 1.47-4.05 4.17V9.9H7.5V13h2.7v8h3.3z"/></svg></a>
-          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.25.07 1.63.07 4.81s0 3.56-.07 4.81c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.25.06-1.63.07-4.85.07s-3.6 0-4.85-.07c-1.17-.05-1.8-.25-2.23-.41-.56-.22-.96-.48-1.38-.9-.42-.42-.68-.82-.9-1.38-.16-.42-.36-1.06-.41-2.23C2.21 15.56 2.2 15.18 2.2 12s0-3.56.07-4.81c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.44 2.21 8.82 2.2 12 2.2zm0 1.98c-3.13 0-3.5.01-4.73.07-.9.04-1.39.19-1.71.32-.43.17-.74.37-1.06.69-.32.32-.52.63-.69 1.06-.13.32-.28.81-.32 1.71-.06 1.23-.07 1.6-.07 4.73s.01 3.5.07 4.73c.04.9.19 1.39.32 1.71.17.43.37.74.69 1.06.32.32.63.52 1.06.69.32.13.81.28 1.71.32 1.23.06 1.6.07 4.73.07s3.5-.01 4.73-.07c.9-.04 1.39-.19 1.71-.32.43-.17.74-.37 1.06-.69.32-.32.52-.63.69-1.06.13-.32.28-.81.32-1.71.06-1.23.07-1.6.07-4.73s-.01-3.5-.07-4.73c-.04-.9-.19-1.39-.32-1.71a2.86 2.86 0 0 0-.69-1.06 2.86 2.86 0 0 0-1.06-.69c-.32-.13-.81-.28-1.71-.32-1.23-.06-1.6-.07-4.73-.07zm0 3.37a4.45 4.45 0 1 1 0 8.9 4.45 4.45 0 0 1 0-8.9zm0 7.34a2.89 2.89 0 1 0 0-5.78 2.89 2.89 0 0 0 0 5.78zm5.67-7.54a1.04 1.04 0 1 1-2.08 0 1.04 1.04 0 0 1 2.08 0z"/></svg></a>
-          <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M6.94 5.5a2 2 0 1 1-4 0 2 2 0 0 1 4 0zM3.2 20h3.5V8.9H3.2V20zM9.3 8.9V20h3.5v-6.1c0-1.6 1-2.2 1.95-2.2.9 0 1.75.7 1.75 2.2V20h3.5v-6.6c0-3.4-1.9-4.8-4-4.8-1.75 0-2.75.95-3.2 1.65V8.9H9.3z"/></svg></a>
-        </div>
+        <p>Beaverton, Oregon<br>Serving home service businesses across the Pacific Northwest</p>
+        <p><a href="tel:+18083068792">(808) 306-8792</a><br><a href="mailto:keawebcreations@gmail.com">keawebcreations@gmail.com</a></p>
+        <a class="btn btn--fill" href="contact.html?plan=audit" style="margin-top:8px">Get a free audit</a>
       </div>
-      <div><h5>Main</h5><ul class="f-links">
-        <li><a href="#/home">Home Page</a></li><li><a href="#/about">About</a></li>
-        <li><a href="#/faq">FAQ</a></li>
-        <li><a href="#/policy">Policy</a></li><li><a href="#/contact">Contact</a></li></ul></div>
-      <div><h5>Services</h5><ul class="f-links">
-        <li><a href="#/services">Website Design &amp; Development</a></li>
-        <li><a href="#/services">Packages &amp; Pricing</a></li>
-        </ul></div>
-      <div><h5>Portfolio</h5>
-        <p>Helping brands &amp; businesses elevate their online presence through professional design and development.</p>
-        <a class="more" href="#/portfolio">View Our Works →</a></div>
+      <div><h5>Pages</h5><ul class="f-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="pricing.html">Pricing</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="policy.html">Policy</a></li></ul></div>
+      <div><h5>The Kea system</h5><ul class="f-links">
+        <li><a href="pricing.html#capture">Capture</a></li>
+        <li><a href="pricing.html#convert">Convert</a></li>
+        <li><a href="pricing.html#keep">Keep</a></li>
+        <li><a href="pricing.html#build">Build your own plan</a></li></ul></div>
     </div>
     <div class="footer-bar">
       <p>Kea Web Creations © <span id="yr"></span> All rights reserved</p>
@@ -694,263 +310,8 @@ p{margin:0 0 1.15em}
     </div>
   </div>
 </footer>
+<!-- ══════════ END FOOTER ══════════ -->
 
-
-<script>
-/* ══════ WAVE HERO ══════ */
-(function(){
-  var cv=document.getElementById('wave'); if(!cv) return;
-  var vid=document.getElementById('heroVid');
-  if(vid&&vid.getAttribute('src')){vid.classList.add('on');cv.style.display='none';return;}
-  var ctx=cv.getContext('2d'), reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var w,h,dpr;
-  function size(){dpr=Math.min(devicePixelRatio||1,2);w=cv.offsetWidth;h=cv.offsetHeight;
-    cv.width=w*dpr;cv.height=h*dpr;ctx.setTransform(dpr,0,0,dpr,0,0);}
-  size(); addEventListener('resize',size);
-  var L=[
-    {a:.055,l:.0016,s:.00022,y:.58,c:'22,32,61',o:.9,h:.4},
-    {a:.048,l:.0022,s:.00034,y:.66,c:'29,43,79',o:.9,h:.55},
-    {a:.040,l:.0030,s:.00048,y:.74,c:'38,72,92',o:.8,h:.7},
-    {a:.030,l:.0042,s:.00068,y:.83,c:'62,142,135',o:.6,h:.9},
-    {a:.020,l:.0058,s:.00094,y:.91,c:'88,176,168',o:.35,h:1.1}
-  ];
-  function draw(t){
-    ctx.clearRect(0,0,w,h);
-    var g=ctx.createLinearGradient(0,0,0,h);
-    g.addColorStop(0,'#101833');g.addColorStop(.5,'#1B2C4A');g.addColorStop(1,'#2E6A6B');
-    ctx.fillStyle=g;ctx.fillRect(0,0,w,h);
-    L.forEach(function(v,i){
-      function yAt(x){return h*v.y+Math.sin(x*v.l+t*v.s)*(h*v.a)
-        +Math.sin(x*v.l*2.3+t*v.s*1.7)*(h*v.a*v.h*.38)
-        +Math.sin(x*v.l*.55-t*v.s*.8)*(h*v.a*.3);}
-      ctx.beginPath();ctx.moveTo(0,h);
-      for(var x=0;x<=w;x+=4)ctx.lineTo(x,yAt(x));
-      ctx.lineTo(w,h);ctx.closePath();
-      ctx.fillStyle='rgba('+v.c+','+v.o+')';ctx.fill();
-      if(i>=3){ctx.beginPath();
-        for(var x2=0;x2<=w;x2+=4){x2===0?ctx.moveTo(x2,yAt(x2)):ctx.lineTo(x2,yAt(x2));}
-        ctx.strokeStyle='rgba(224,248,244,'+(i===4?.4:.18)+')';ctx.lineWidth=1.2;ctx.stroke();}
-    });
-  }
-  if(reduce){draw(0);}
-  else{var r;(function loop(n){draw(n);r=requestAnimationFrame(loop);})(0);
-    document.addEventListener('visibilitychange',function(){
-      if(document.hidden)cancelAnimationFrame(r);
-      else (function loop(n){draw(n);r=requestAnimationFrame(loop);})(performance.now());});}
-})();
-
-/* ══════ PLACEHOLDER ARTWORK ══════ */
-function art(i,r){
-  var p=[['#1B2C4A','#3E8E87'],['#22355A','#58B0A8'],['#16203D','#2E6A6B'],['#2A3E63','#6BC3BA']][i%4];
-  var o=(i*37)%100, W=400, H=r==='sq'?400:300;
-  return '<svg viewBox="0 0 '+W+' '+H+'" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">'
-   +'<defs><linearGradient id="a'+i+r+'" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="'+p[0]+'"/><stop offset="100%" stop-color="'+p[1]+'"/></linearGradient></defs>'
-   +'<rect width="'+W+'" height="'+H+'" fill="url(#a'+i+r+')"/>'
-   +'<path d="M0 '+(H*.62+o*.3)+' C '+(W*.2)+' '+(H*.52+o*.4)+', '+(W*.35)+' '+(H*.76-o*.3)+', '+(W*.53)+' '+(H*.65+o*.2)+' S '+(W*.85)+' '+(H*.5+o*.35)+', '+W+' '+(H*.6+o*.25)+' L'+W+' '+H+' L0 '+H+'Z" fill="#fff" opacity=".12"/>'
-   +'<path d="M0 '+(H*.75+o*.2)+' C '+(W*.22)+' '+(H*.66+o*.3)+', '+(W*.38)+' '+(H*.87-o*.2)+', '+(W*.55)+' '+(H*.77+o*.15)+' S '+(W*.88)+' '+(H*.65+o*.3)+', '+W+' '+(H*.73+o*.2)+' L'+W+' '+H+' L0 '+H+'Z" fill="#fff" opacity=".2"/>'
-   +'<circle cx="'+(W*.18+o*2)+'" cy="'+(H*.25+o*.4)+'" r="'+(W*.07+o*.25)+'" fill="none" stroke="#fff" stroke-width="1.4" opacity=".28"/></svg>';
-}
-/* ══════ WHO I AM — PHOTO ══════
-   ▼▼ ADD YOUR PHOTO ▼▼  Put the file in this folder as  images/laakea.jpg
-   then change the empty quotes below to  'images/laakea.jpg'  */
-var ME_PHOTO='images/laakea.jpg';
-document.getElementById('mePhoto').innerHTML = ME_PHOTO
- ? '<img src="'+ME_PHOTO+'" alt="La\'akea Salvani, Kea Web Creations">'
- : '<svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0;width:100%;height:100%">'
-  +'<defs><linearGradient id="ia" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#16203D"/><stop offset="100%" stop-color="#3E8E87"/></linearGradient></defs>'
-  +'<rect width="400" height="500" fill="url(#ia)"/>'
-  +'<path d="M0 330 C90 300,150 370,220 340 S350 300,400 325 L400 500 L0 500Z" fill="#fff" opacity=".13"/>'
-  +'<path d="M0 385 C90 358,150 424,220 396 S350 358,400 382 L400 500 L0 500Z" fill="#fff" opacity=".21"/>'
-  +'<circle cx="105" cy="140" r="46" fill="none" stroke="#fff" stroke-width="2" opacity=".28"/></svg>';
-
-/* ══════ PACKAGES ══════
-   ▼▼ YOUR PRICES LIVE HERE ▼▼  Change them once and both the home page
-   and the Services page update together.
-
-   ▼▼ STARTING PRICES — FILL THESE IN ▼▼
-   Each tier below has a  from:''  line. Put your build price in the quotes,
-   just the number and nothing else, like   from:'1200'
-   It then shows on the card as  "Starting at $1,200".
-   Left empty, no price line appears at all — the card looks exactly as it
-   does now, so an unfinished price never reaches the live site. */
-var MONTHLY   = 'Hosting &amp; care — $30 a month';
-var CARE_MEANS= 'Hosting and uptime, daily backups, security patches, '
-              + 'and your domain kept from lapsing.';
-var AFTER     = 'Edits after launch billed at $40 an hour';
-var AFTER_SELF= 'Anything beyond your own content edits, $40 an hour';
-
-var TIERS=[
- {n:'Tier 1', from:'', m:MONTHLY, care:CARE_MEANS,
-  s:"A professional website, built and looked after. Changes come through me.",
-  inc:['Up to 5 pages','Works properly on phones','Contact form',
-       'Basic Google setup so people can find you','2 rounds of changes while I build it',
-       'About 2 weeks',AFTER]},
- {n:'Tier 2', from:'', m:MONTHLY, care:CARE_MEANS,
-  s:"Everything in Tier 1, and you can edit the site yourself.",
-  inc:['Up to 8 pages','Log in and change your own words and pictures',
-       'Private login, required to reach the editor','A training session and a written guide',
-       '2 rounds of changes while I build it','About 3–4 weeks',AFTER_SELF]},
- {n:'Tier 3', from:'', m:MONTHLY, care:CARE_MEANS,
-  s:"Everything in Tier 2, plus a working system behind the website.",
-  inc:['A dashboard for you — bookings, orders and enquiries in one place',
-       'Accounts for your own customers, so each one sees only their material',
-       '3 rounds of changes while I build it','About 6–8 weeks',
-       'Priced per project, because this varies the most',AFTER_SELF]}
-];
-/* Turns  '1200'  into  Starting at $1,200 — and an empty price into nothing. */
-function tierFrom(v){
- if(!v) return '';
- var n=String(v).replace(/[^0-9.]/g,'');
- if(!n) return '';
- var parts=n.split('.');
- parts[0]=parts[0].replace(/\B(?=(\d{3})+(?!\d))/g,',');
- return '<div class="tier-from">Starting at $'+parts.join('.')+'</div>';}
-function tierHTML(t){
- return '<div class="tier rv">'
-  +'<div class="tier-price">'+t.n+'</div>'
-  +tierFrom(t.from)
-  +'<div class="tier-mo">'+t.m+'</div>'
-  +(t.care?'<div class="tier-care">'+t.care+'</div>':'')
-  +'<p class="tier-line">'+t.s+'</p><ul>'
-  +t.inc.map(function(i){return '<li>'+i+'</li>';}).join('')
-  +'</ul><a class="btn btn--out" href="#/contact">Start Here</a></div>';}
-document.getElementById('tierGrid').innerHTML=TIERS.map(tierHTML).join('');
-
-/* ══════ FEATURED WORK (home page) ══════
-   ▼▼ ADD YOUR PROJECTS HERE ▼▼
-   n = business name, u = the live web address, d = one sentence on what you built.
-   img = a screenshot, e.g. 'shots/capturewithki.jpg'. Leave img:'' to show artwork instead. */
-var FEATURED=[
- {n:'LDAH Hawaiʻi', u:'https://rosie-rowe.mykajabi.com/', img:'shots/ldah.jpg',
-  d:"Leadership in Disabilities and Achievement of Hawaiʻi — an official certification program training IEP advocates through Bronze, Silver and Gold tiers, with a built-in accessibility toolbar for read-aloud, contrast and text sizing."},
- {n:'CaptureWithKi', u:'https://capturewithki.com', img:'shots/capturewithki.jpg',
-  d:"A photography site with a custom client-gallery system — private galleries, self-serve delivery, and galleries that tidy themselves up after each shoot."},
- {n:'madebyhaaans', u:'https://laakeasalvani.github.io/madebyhaaans/', img:'shots/madebyhaaans.jpg',
-  d:"A one-page site for a home baker in Kakaʻako, Honolulu — a scrolling flavour picker, take-and-bake instructions for frozen pans, and ordering that hands straight off to Instagram."}
-];
-document.getElementById('workGrid').innerHTML=FEATURED.map(function(p,i){
- var m=p.img?'<img src="'+p.img+'" alt="Homepage of '+p.n+'">':art(i+1,'wide');
- return '<a class="box rv" href="'+p.u+'" target="_blank" rel="noopener">'
-  +'<div class="box-img">'+m+'</div>'
-  +'<div class="box-body"><h3>'+p.n+'</h3><p>'+p.d+'</p>'
-  +'<span class="more">Visit The Site →</span></div></a>';}).join('');
-
-/* ══════ PORTFOLIO ══════
-   ▼▼ ADD YOUR PROJECTS HERE ▼▼
-   n = business name, u = the live web address,
-   img = a screenshot such as 'shots/name.jpg'. */
-var WORK=[
- {n:'LDAH Hawaiʻi',u:'https://rosie-rowe.mykajabi.com/',img:'shots/ldah.jpg'},
- {n:'CaptureWithKi',u:'https://capturewithki.com',img:'shots/capturewithki.jpg'},
- {n:'madebyhaaans',u:'https://laakeasalvani.github.io/madebyhaaans/',img:'shots/madebyhaaans.jpg'}
-];
-(function(){
- var g=document.getElementById('pfGrid');
- g.innerHTML=WORK.map(function(p,i){
-  var m=p.img?'<img src="'+p.img+'" alt="Homepage of '+p.n+'">':art(i,'wide');
-  var link=p.u?'href="'+p.u+'" target="_blank" rel="noopener"':'href="#/contact"';
-  return '<a class="pf-cell" '+link+'><span class="pf-shot">'+m+'</span>'
-   +'<span class="pf-name">'+p.n+'</span></a>';}).join('');
-})();
-
-/* ══════ SMOOTH SCROLL for in-page links (the router owns #/ links) ══════ */
-document.addEventListener('click',function(e){
- var a=e.target.closest('[data-scroll]'); if(!a)return;
- e.preventDefault();
- var t=document.getElementById(a.dataset.scroll);
- if(t)t.scrollIntoView({behavior:'smooth',block:'start'});
-});
-
-/* ══════ ROUTER / UI ══════ */
-(function(){
- var pages=document.querySelectorAll('.page'),
-     links=document.querySelectorAll('.nav-link'),
-     burger=document.getElementById('burger'),
-     drawer=document.getElementById('drawer');
- var io=new IntersectionObserver(function(es){es.forEach(function(e){
-  if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.1});
- function scan(){document.querySelectorAll('.page.on .rv:not(.in)').forEach(function(el){io.observe(el);});}
- function shut(){drawer.classList.remove('on');burger.classList.remove('on');
-  burger.setAttribute('aria-expanded','false');document.body.style.overflow='';}
- function route(){
-  var id=location.hash.replace('#/','')||'home';
-  var t=document.getElementById('p-'+id)||document.getElementById('p-home');
-  pages.forEach(function(p){p.classList.toggle('on',p===t);});
-  links.forEach(function(l){l.classList.toggle('on',l.getAttribute('href')==='#/'+id);});
-  shut(); scrollTo(0,0); scan();
- }
- addEventListener('hashchange',route);
- if(!location.hash)location.hash='#/home';
- route();
- burger.addEventListener('click',function(){
-  var o=drawer.classList.toggle('on');
-  burger.classList.toggle('on',o);
-  burger.setAttribute('aria-expanded',o?'true':'false');
-  document.body.style.overflow=o?'hidden':'';});
- drawer.querySelectorAll('[data-t]').forEach(function(b){
-  b.addEventListener('click',function(){
-   document.getElementById(b.dataset.t).classList.toggle('on');
-   b.querySelector('.plus').classList.toggle('on');});});
- drawer.querySelectorAll('a').forEach(function(a){a.addEventListener('click',shut);});
-})();
-
-document.querySelectorAll('.faq-q').forEach(function(q){
- q.addEventListener('click',function(){q.classList.toggle('on');q.nextElementSibling.classList.toggle('on');});});
-/* ── Contact form ─────────────────────────────────────────────────────────
-   Posts to a Cloud Function that holds the Resend API key. The key can never
-   live in this file: the site is static and public, so anything written here
-   is readable by anyone who opens View Source. The function validates the
-   submission, records it, emails the owner and auto-replies to the sender. */
-(function(){
- var ENDPOINT='https://us-west1-capturewithki-69dd3.cloudfunctions.net/keaInquiry';
- var FIELDS=['name','phone','email','website','interest','message'];
-
- document.querySelectorAll('[data-form]').forEach(function(f){
-  var ok=f.querySelector('[data-ok]'), err=f.querySelector('[data-err]'),
-      btn=f.querySelector('[type=submit]'), label=btn.textContent;
-  /* When this form became fillable. Anything completed in under three seconds
-     was completed by a script, and the function bins it without a word. Reset
-     after each send so a second genuine message is not judged by the first. */
-  var renderedAt=Date.now();
-
-  f.addEventListener('submit',function(e){
-   e.preventDefault();
-   ok.classList.remove('on'); err.classList.remove('on');
-   btn.disabled=true; btn.textContent='Sending…';
-
-   var d=new FormData(f), payload={renderedAt:renderedAt, honeypot:d.get('company')||''};
-   FIELDS.forEach(function(k){payload[k]=d.get(k)||'';});
-
-   fetch(ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json'},
-                   body:JSON.stringify(payload)})
-    .then(function(r){
-      /* A 500 from the platform itself has no JSON body, so parsing must not
-         be what decides whether this failed. */
-      return r.json().catch(function(){return {ok:false};});
-    })
-    .then(function(j){
-      if(!j||!j.ok){
-        /* Only the server writes sentences meant for a visitor. A failure that
-           did not come from it carries browser jargon — "Failed to fetch",
-           "NetworkError when attempting to fetch resource" — which tells a
-           stranger nothing, so it is flagged here and swapped out below. */
-        var e2=new Error(j&&j.error?j.error:''); e2.fromServer=!!(j&&j.error); throw e2;
-      }
-      ok.classList.add('on'); f.reset(); renderedAt=Date.now();
-    })
-    .catch(function(ex){
-      /* Never leave someone with no way through. The address below is the one
-         the messages land in anyway, so the fallback costs nothing. */
-      var msg=(ex&&ex.fromServer&&ex.message)?ex.message:'Something went wrong sending that.';
-      err.textContent=msg+' You can also email keawebcreations@gmail.com or call (808) 306-8792.';
-      err.classList.add('on');
-    })
-    .then(function(){btn.disabled=false; btn.textContent=label;});
-  });
- });
-})();
-
-document.getElementById('yr').textContent=new Date().getFullYear();
-</script>
+<script src="site.js"></script>
 </body>
 </html>
