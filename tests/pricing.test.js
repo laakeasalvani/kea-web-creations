@@ -96,3 +96,28 @@ test('founding spots is a whole number between 0 and 5', function () {
   assert.ok(Number.isInteger(P.FOUNDING_SPOTS_LEFT));
   assert.ok(P.FOUNDING_SPOTS_LEFT >= 0 && P.FOUNDING_SPOTS_LEFT <= 5);
 });
+
+test('coverLine matches the static rest state on the pricing page', function () {
+  var byId = {};
+  P.PLANS.forEach(function (p) { byId[p.id] = p; });
+  assert.equal(P.coverLine(byId.capture, 450), 'Capture is $250/mo — about 1 job a month covers it.');
+  assert.equal(P.coverLine(byId.convert, 450), 'Convert is $400/mo — about 1 job a month covers it.');
+  assert.equal(P.coverLine(byId.keep, 450), 'Keep is $700/mo — about 2 jobs a month cover it.');
+});
+
+test('coverLine without a job value states the price only', function () {
+  assert.equal(P.coverLine(P.PLANS[0], 0), 'Capture is $250/mo.');
+});
+
+test('sendHref lists only real, available services', function () {
+  assert.equal(P.sendHref(['website', 'seo']), 'contact.html?plan=custom&services=website,seo');
+  assert.equal(P.sendHref(['ads', 'nope', 'spam']), 'contact.html?plan=custom&services=spam');
+  assert.equal(P.sendHref([]), 'contact.html?plan=custom');
+});
+
+test('the pricing page rest state matches coverLine output', function () {
+  var html = require('node:fs').readFileSync(require('node:path').join(__dirname, '..', 'pricing.html'), 'utf8');
+  P.PLANS.forEach(function (p) {
+    assert.ok(html.indexOf('<li>' + P.coverLine(p, 450) + '</li>') !== -1, 'static line for ' + p.id);
+  });
+});
