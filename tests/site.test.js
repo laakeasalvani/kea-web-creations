@@ -19,6 +19,16 @@ test('legacyTarget sends unknown old routes home and ignores normal anchors', fu
   assert.equal(S.legacyTarget(''), null);
 });
 
+test('samePage treats / and /index.html as the same page, otherwise compares pathnames', function () {
+  assert.equal(S.samePage('/index.html', '/index.html'), true);
+  assert.equal(S.samePage('/', '/index.html'), true);
+  assert.equal(S.samePage('/index.html', '/'), true);
+  assert.equal(S.samePage('/', '/'), true);
+  assert.equal(S.samePage('/index.html', '/pricing.html'), false);
+  assert.equal(S.samePage('/pricing.html', '/pricing.html'), true);
+  assert.equal(S.samePage('/pricing.html', '/policy.html'), false);
+});
+
 test('styles.css keeps the brand tokens and drops retired components', function () {
   var css = H.read('styles.css');
   ['--bar:#16203D', '--accent:#58B0A8', '--accent-dk:#3E8E87', '--sand:#F6F4F0'].forEach(function (t) {
@@ -75,7 +85,7 @@ test('homepage leads with the problem and the audit', function () {
   assert.equal(html.indexOf('#/'), -1, 'no hash-route links remain');
 });
 
-test('homepage plan preview prices match PLANS', function () {
+test('homepage plan preview prices match PLANS, including the visible text', function () {
   var html = H.read('index.html');
   var P = require('../pricing.js');
   P.PLANS.forEach(function (p) {
@@ -83,6 +93,13 @@ test('homepage plan preview prices match PLANS', function () {
     assert.ok(card, 'preview card for ' + p.id);
     assert.equal(Number(card['data-setup']), p.standardSetup, p.id + ' setup');
     assert.equal(Number(card['data-monthly']), p.monthly, p.id + ' monthly');
+
+    var block = H.articleBlock(html, 'data-plan="' + p.id + '"');
+    assert.ok(block, 'preview card markup for ' + p.id);
+    assert.ok(block.indexOf(P.money(p.monthly) + '<small>/mo') !== -1,
+      p.id + ' visible monthly price should read ' + P.money(p.monthly) + '/mo');
+    assert.ok(block.indexOf('+ ' + P.money(p.standardSetup) + ' setup') !== -1,
+      p.id + ' visible setup price should read + ' + P.money(p.standardSetup) + ' setup');
   });
 });
 
@@ -90,7 +107,7 @@ test('pricing page has the shared essentials', function () {
   checkCommon('pricing.html', 'https://keawebcreations.com/pricing.html');
 });
 
-test('pricing plan cards match PLANS exactly', function () {
+test('pricing plan cards match PLANS exactly, including the visible text', function () {
   var html = H.read('pricing.html');
   var P = require('../pricing.js');
   P.PLANS.forEach(function (p) {
@@ -101,6 +118,15 @@ test('pricing plan cards match PLANS exactly', function () {
     assert.equal(Number(card['data-founding']), p.foundingSetup, p.id + ' founding setup');
     assert.equal(Number(card['data-monthly']), p.monthly, p.id + ' monthly');
     assert.ok(html.indexOf('href="contact.html?plan=' + p.id + '"') !== -1, p.id + ' button');
+
+    var block = H.articleBlock(html, 'data-plan="' + p.id + '"');
+    assert.ok(block, 'plan card markup for ' + p.id);
+    assert.ok(block.indexOf(P.money(p.monthly) + '<small>/mo') !== -1,
+      p.id + ' visible monthly price should read ' + P.money(p.monthly) + '/mo');
+    assert.ok(block.indexOf(P.money(p.standardSetup) + ' setup') !== -1,
+      p.id + ' visible standard setup price should read ' + P.money(p.standardSetup) + ' setup');
+    assert.ok(block.indexOf('founding ' + P.money(p.foundingSetup)) !== -1,
+      p.id + ' visible founding setup price should read founding ' + P.money(p.foundingSetup));
   });
 });
 

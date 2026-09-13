@@ -22,4 +22,15 @@ function attrs(html, tag) {
   return out;
 }
 
-module.exports = { ROOT: ROOT, read: read, exists: exists, attrs: attrs };
+/* Returns the full <article ...>…</article> markup (not just its attributes)
+   for the article whose opening tag contains needle, e.g. 'data-plan="keep"'. */
+function articleBlock(html, needle) {
+  var re = /<article\b[^>]*>[\s\S]*?<\/article>/g, m;
+  while ((m = re.exec(html))) {
+    var open = m[0].slice(0, m[0].indexOf('>') + 1);
+    if (open.indexOf(needle) !== -1) return m[0];
+  }
+  return null;
+}
+
+module.exports = { ROOT: ROOT, read: read, exists: exists, attrs: attrs, articleBlock: articleBlock };
