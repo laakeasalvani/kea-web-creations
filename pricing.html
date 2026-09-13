@@ -20,9 +20,9 @@
 <!-- ══════════ HEADER (shared) ══════════ -->
 <header class="bar">
   <div class="bar-in">
-    <nav class="nav" aria-label="Main left">
+    <nav class="nav" aria-label="Primary">
       <a class="nav-link" href="index.html">Home</a>
-      <a class="nav-link on" href="pricing.html">Pricing</a>
+      <a class="nav-link on" href="pricing.html" aria-current="page">Pricing</a>
     </nav>
 
     <a class="tile" href="index.html" aria-label="Kea Web Creations home">
@@ -30,7 +30,7 @@
       <span class="tile-sub">Web Creations</span>
     </a>
 
-    <nav class="nav nav--r" aria-label="Main right">
+    <nav class="nav nav--r" aria-label="Secondary">
       <a class="nav-link" href="contact.html">Contact</a>
       <a class="btn btn--fill nav-cta" href="contact.html?plan=audit">Get a free audit</a>
     </nav>
@@ -201,11 +201,11 @@
           </div>
         </div>
       </div>
-      <div class="calc-out rv" aria-live="polite">
+      <div class="calc-out rv">
         <p class="calc-label">Estimated jobs lost each month</p>
         <p class="calc-big" id="calcJobs">3.5</p>
         <p class="calc-label">Estimated revenue lost</p>
-        <p class="calc-big"><span id="calcMonthly">$1,575</span><small>/mo</small></p>
+        <p class="calc-big" aria-live="polite"><span id="calcMonthly">$1,575</span><small>/mo</small></p>
         <p class="calc-year"><span id="calcYearly">$18,900</span> a year</p>
         <ul class="calc-plans" id="calcPlans">
           <li>Capture is $250/mo — about 1 job a month covers it.</li>
@@ -221,21 +221,21 @@
   <section class="sec sec--sand" id="faq">
     <div class="wrap" style="max-width:880px">
       <div class="sec-head center rv"><span class="kicker">Questions</span><h2>Before you ask<span class="dot">.</span></h2></div>
-      <div class="faq"><button class="faq-q">What does the setup fee cover? <span>+</span></button>
+      <div class="faq"><button class="faq-q">What does the setup fee cover? <span aria-hidden="true">+</span></button>
         <div class="faq-a"><p>Building your website, setting up your leads inbox and texting number, installing the automations for your plan, registering your business for texting with the phone carriers, testing everything end to end, and a walkthrough call before launch.</p></div></div>
-      <div class="faq"><button class="faq-q">What's the difference between standard and founding pricing? <span>+</span></button>
+      <div class="faq"><button class="faq-q">What's the difference between standard and founding pricing? <span aria-hidden="true">+</span></button>
         <div class="faq-a"><p>The first five home service businesses pay the founding setup fee in exchange for a 90-day commitment and permission to share their before-and-after numbers. After those spots are gone, standard pricing applies with no commitment. The monthly price is the same either way.</p></div></div>
-      <div class="faq"><button class="faq-q">Are texts and calls included? <span>+</span></button>
+      <div class="faq"><button class="faq-q">Are texts and calls included? <span aria-hidden="true">+</span></button>
         <div class="faq-a"><p>Normal texting and calling for your business is included in your monthly price. If your volume is unusually high — large text campaigns, for example — the extra is billed at cost, and you'll hear from me before it is.</p></div></div>
-      <div class="faq"><button class="faq-q">How long does setup take? <span>+</span></button>
+      <div class="faq"><button class="faq-q">How long does setup take? <span aria-hidden="true">+</span></button>
         <div class="faq-a"><p>It depends mostly on how quickly I get your content and account access, and you'll get a timeline before you pay. Texting registration with the carriers usually takes from a few days to a few weeks; texting features switch on as soon as it's approved.</p></div></div>
-      <div class="faq"><button class="faq-q">What counts as an update? <span>+</span></button>
+      <div class="faq"><button class="faq-q">What counts as an update? <span aria-hidden="true">+</span></button>
         <div class="faq-a"><p>Each month includes 30 minutes of small updates — hours, prices, phone numbers, photos and text changes. Unused time doesn't roll over. Time past 30 minutes is $50 an hour, and new pages or features are quoted before any work starts.</p></div></div>
-      <div class="faq"><button class="faq-q">What happens if I cancel? <span>+</span></button>
-        <div class="faq-a"><p>Standard plans have no contract: cancel any time and it takes effect at the end of that billing month. Your domain, Google Business Profile, reviews and website files are yours, your contacts are exported to you, and you can move your texting number within 30 days. <a class="more" href="policy.html#cancellation">Full cancellation details →</a></p></div></div>
-      <div class="faq"><button class="faq-q">Will Local SEO get me to the top of Google? <span>+</span></button>
+      <div class="faq"><button class="faq-q">What happens if I cancel? <span aria-hidden="true">+</span></button>
+        <div class="faq-a"><p>Standard plans have no contract: cancel any time and it takes effect at the end of that billing month. Your domain, Google Business Profile, reviews and website files are yours, your contacts are exported to you on request within 30 days, and you can move your texting number within 30 days. <a class="more" href="policy.html#cancellation">Full cancellation details →</a></p></div></div>
+      <div class="faq"><button class="faq-q">Will Local SEO get me to the top of Google? <span aria-hidden="true">+</span></button>
         <div class="faq-a"><p>Not a ranking guarantee — nobody can honestly promise one. Local SEO foundations covers the work that helps you show up: service and town keywords, on-page fixes, Google Business Profile optimization and ongoing site improvements.</p></div></div>
-      <div class="faq"><button class="faq-q">Do the plans bring me new leads? <span>+</span></button>
+      <div class="faq"><button class="faq-q">Do the plans bring me new leads? <span aria-hidden="true">+</span></button>
         <div class="faq-a"><p>The plans make sure the leads you already get are answered, followed up and brought back. Google Ads management is coming soon for businesses that want more leads on top.</p></div></div>
     </div>
   </section>
@@ -274,7 +274,7 @@
         <li><a href="pricing.html#build">Build your own plan</a></li></ul></div>
     </div>
     <div class="footer-bar">
-      <p>Kea Web Creations © <span id="yr"></span> All rights reserved</p>
+      <p>Kea Web Creations © <span id="yr">2026</span> All rights reserved</p>
       <p>Beaverton, Oregon</p>
     </div>
   </div>
