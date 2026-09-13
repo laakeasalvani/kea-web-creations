@@ -14,19 +14,56 @@
     return LEGACY[key] || 'index.html';
   }
 
-  var api = { legacyTarget: legacyTarget };
+  /* Old hash-router links like /index.html#/about resolve to a page + optional
+     anchor (index.html#founder). If that resolved page is the one already
+     loaded, a full navigation is unnecessary (and breaks init, see below) —
+     only the hash needs updating. Treats "/" and "/index.html" as one page. */
+  function samePage(currentPath, targetPath) {
+    function norm(p) {
+      if (!p) return '/';
+      p = p.replace(/\/index\.html$/, '/');
+      return p === '' ? '/' : p;
+    }
+    return norm(currentPath) === norm(targetPath);
+  }
+
+  var api = { legacyTarget: legacyTarget, samePage: samePage };
   if (typeof module === 'object' && module.exports) { module.exports = api; return; }
   root.KeaSite = api;
 
-  var target = legacyTarget(location.hash);
-  if (target) { location.replace(target); return; }
+  /* location.replace('index.html#founder') from /index.html#/about would only
+     change the hash (no reload) — if we then `return` before initialising the
+     rest of the page, reveal/drawer/FAQ/hero/footer year never run. So: only
+     bounce away when the target is a different page; on the same page, just
+     fix up the URL and keep going, then scroll the anchor in after init. */
+  var scrollHash = '';
+  var legacy = legacyTarget(location.hash);
+  if (legacy) {
+    var legacyAbs = new URL(legacy, location.href);
+    if (samePage(location.pathname, legacyAbs.pathname)) {
+      history.replaceState(null, '', location.pathname + location.search + (legacyAbs.hash || ''));
+      scrollHash = legacyAbs.hash;
+    } else {
+      location.replace(legacy);
+      return;
+    }
+  }
 
   /* ── Hero: play the video; fall back to the drawn waves if it is missing ── */
   (function () {
     var cv = document.getElementById('wave'); if (!cv) return;
     var vid = document.getElementById('heroVid');
+    var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    /* WCAG 2.2.2: don't autoplay/loop the video or animate the canvas when the
+       visitor asked for reduced motion. Neither gets shown — the .hero's own
+       poster background (shots/hero-poster.jpg) covers the space instead. */
+    if (reduce) {
+      if (vid) { vid.pause(); vid.removeAttribute('autoplay'); }
+      cv.style.display = 'none';
+      return;
+    }
     if (vid && vid.getAttribute('src')) { vid.classList.add('on'); cv.style.display = 'none'; return; }
-    var ctx = cv.getContext('2d'), reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var ctx = cv.getContext('2d');
     var w, h, dpr;
     function size() { dpr = Math.min(devicePixelRatio || 1, 2); w = cv.offsetWidth; h = cv.offsetHeight;
       cv.width = w * dpr; cv.height = h * dpr; ctx.setTransform(dpr, 0, 0, dpr, 0, 0); }
@@ -56,7 +93,6 @@
           ctx.strokeStyle = 'rgba(224,248,244,' + (i === 4 ? .4 : .18) + ')'; ctx.lineWidth = 1.2; ctx.stroke(); }
       });
     }
-    if (reduce) { draw(0); return; }
     var r;
     function loop(n) { draw(n); r = requestAnimationFrame(loop); }
     loop(0);
@@ -78,6 +114,15 @@
       document.body.style.overflow = o ? 'hidden' : '';
     });
     drawer.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', shut); });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && drawer.classList.contains('on')) { shut(); burger.focus(); }
+    });
+    /* Widening past the burger breakpoint (nav becomes visible again) should
+       close a drawer left open, rather than leaving it floating over the nav. */
+    var wide = matchMedia('(min-width: 1181px)');
+    function onWide(e) { if (e.matches && drawer.classList.contains('on')) shut(); }
+    if (wide.addEventListener) wide.addEventListener('change', onWide);
+    else if (wide.addListener) wide.addListener(onWide);
   })();
 
   /* ── Scroll reveal ── */
@@ -91,11 +136,16 @@
   })();
 
   /* ── FAQ accordions ── */
-  document.querySelectorAll('.faq-q').forEach(function (q) {
+  document.querySelectorAll('.faq-q').forEach(function (q, i) {
+    var a = q.nextElementSibling;
     q.setAttribute('aria-expanded', 'false');
+    if (a) {
+      if (!a.id) a.id = 'faq-a-' + i;
+      q.setAttribute('aria-controls', a.id);
+    }
     q.addEventListener('click', function () {
       var open = q.classList.toggle('on');
-      q.nextElementSibling.classList.toggle('on', open);
+      if (a) a.classList.toggle('on', open);
       q.setAttribute('aria-expanded', open ? 'true' : 'false');
     });
   });
@@ -103,4 +153,11 @@
   /* ── Footer year ── */
   var yr = document.getElementById('yr');
   if (yr) yr.textContent = new Date().getFullYear();
+
+  /* Same-page legacy hash (see above): now that everything above has run,
+     bring the target section into view. */
+  if (scrollHash) {
+    var anchorEl = document.getElementById(scrollHash.slice(1));
+    if (anchorEl) anchorEl.scrollIntoView();
+  }
 })(this);
