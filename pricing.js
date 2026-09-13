@@ -29,13 +29,13 @@
   ];
 
   var PLANS = [
-    { id: 'capture', name: 'Capture', promise: 'Every call and form caught and answered in seconds.',
+    { id: 'capture', name: 'Capture', promise: 'Catch every call and form, even when you\'re on a job.',
       standardSetup: 750, foundingSetup: 400, monthly: 250,
       serviceIds: ['website', 'missed-call', 'dashboard'] },
-    { id: 'convert', name: 'Convert', promise: 'Every lead followed up and booked for an estimate.',
+    { id: 'convert', name: 'Convert', promise: 'Follow up fast and get the estimate booked.',
       standardSetup: 1000, foundingSetup: 500, monthly: 400,
       serviceIds: ['website', 'missed-call', 'dashboard', 'calendar', 'seo'] },
-    { id: 'keep', name: 'Keep', promise: 'Past customers come back for seasonal and repeat work.',
+    { id: 'keep', name: 'Keep', promise: 'Bring past customers back for repeat work.',
       standardSetup: 1500, foundingSetup: 750, monthly: 700,
       serviceIds: ['website', 'missed-call', 'dashboard', 'calendar', 'seo', 'campaigns', 'spam'] }
   ];

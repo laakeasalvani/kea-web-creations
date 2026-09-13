@@ -208,3 +208,13 @@ test('every internal link and anchor resolves', function () {
     });
   });
 });
+
+test('plan promises on both pages match PLANS', function () {
+  var P = require('../pricing.js');
+  ['index.html', 'pricing.html'].forEach(function (page) {
+    var html = H.read(page);
+    P.PLANS.forEach(function (p) {
+      assert.ok(html.indexOf('>' + p.promise + '</p>') !== -1, page + ' shows the ' + p.id + ' promise');
+    });
+  });
+});
